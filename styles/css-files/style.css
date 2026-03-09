@@ -1,0 +1,8 @@
+* {
+    background: whitesmoke;
+}
+h1 {
+    justify-content: center;
+    display: flex;
+    justify-items: center;
+}
