@@ -3,17 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../styles/css-files/style.css">
+        <link rel="stylesheet" href="../../styles/css-files/sign-in.css">
         <title>HRIS</title>
     </head>
     <body>
-
-        <h1>Welcome to the HRIS system</h1>
-        <button id="alert">hello</button>
-        <h1> welcome </h1>
-        <h2> Welocme this is me  </h2>
-        <h3> Welocme this is Ali23 </h3>
-        <h3> Welocme this is noura</h3>
-        <script src="../../backend/script-files/script.js"></script>
-    </body>
-</html>
+        <div class="login-container">
+            <div class="welcome-message">
+                <h1>Welcome to the HRIS system</h1>
+            </div>
+            <div class="wrapper">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Please Sign In</h2>
+                    <input type="text" class="form-control" name="username"
+                        placeholder="Your ID" required autofocus />
+                    <input type="password" class="form-control" name="password"
+                        placeholder="Password" required />
+                    <a href="home.html">
+                        <button class="btn btn-lg btn-primary btn-block"
+                            type="submit" id="loginButton">Sign In</button>
+                    </a>
+                    <a href="#">
+                        Forget password
+                    </a>
+                </form>
+            </div>
+            <script src="../../backend/script-files/script.js"></script>
+        </body>
+    </html>
