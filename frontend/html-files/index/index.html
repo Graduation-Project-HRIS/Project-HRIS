@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- This is the sign-in page for the HRIS system -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
-            href="../../../styles/css-files/index/sign-in.css">
+            href="../../../styles/css-files/index/signin.css">
         <title>HRIS</title>
     </head>
     <body>
@@ -12,21 +13,44 @@
             <div class="welcome-message">
                 <h1>Welcome to the HRIS system</h1>
             </div>
+
             <div class="wrapper">
-                <form class="form-signin">
-                    <h2 class="form-signin-heading">Please Sign In</h2>
-                    <input type="text" class="form-control" name="username"
-                        placeholder="Your ID" required autofocus />
-                    <input type="password" class="form-control" name="password"
-                        placeholder="Password" required />
-                        <button class="btn btn-lg btn-primary btn-block"
-                            type="submit" id="SignInButton">Sign In</button>
-                    <a href="#">
-                        Forget password
-                    </a>
+                <form class="form-signin" id="formSignIn">
+                    <h2 class="form-signin-heading">Sign In</h2>
+                    <!-- Here we have the user ID input field with validation (idError) -->
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        id="userId"
+                        placeholder="ID"
+                        maxlength="8"
+                        required
+                        autofocus>
+                    <h3 id="idError" class="error-message"></h3>
+                    <!-- Here we have the user Password input field with validation (passwordError) -->
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        id="userPassword"
+                        maxlength="6"
+                        placeholder="Password"
+                        required>
+                    <h3 id="passwordError" class="error-message"></h3>
+
+                    <button
+                        class="btn btn-lg btn-primary btn-block"
+                        type="submit"
+                        id="SignInButton">
+                        Sign In
+                    </button>
+
+                    <a href="#">Forget password</a>
                 </form>
             </div>
-            <script
-                src="../../../backend/script-files/index/signin.js"></script>
-        </body>
-    </html>
+        </div>
+
+        <script src="../../../backend/script-files/index/signin.js"></script>
+    </body>
+</html>
