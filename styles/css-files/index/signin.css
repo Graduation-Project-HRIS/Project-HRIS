@@ -85,12 +85,11 @@ body {
     width: 20px;
     height: 20px;
     object-fit: contain;
-    display: block;
     background-color: rgba(133, 129, 129, 0.679);
     border-radius: 60px;
 }
 
-#hidePasswordIcon {
+#showPasswordIcon {
     display: none;
 }
 
