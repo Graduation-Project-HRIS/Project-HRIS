@@ -32,30 +32,6 @@ function validateId() {
     userIdInput.style.border = "3.5px solid green";
     return true;
 }
-/* 
-
-So this part means:
-the hidden image (icon) is always shown
-the show image (icon) is hidden 
-user type the function works one the hidden image (icon) like a click 
-user click the hidden image (icon) , the text shows and the hidden image (icon ) changes to the show image (icon)   
-
-
-*/
-// function togglePasswordVisibility() {
-//     if (userPasswordInput.type === "password") {
-//         hidePasswordIcon.style.display = "none"
-//         userPasswordInput.type = "text";
-//     } else {
-//         userPasswordInput.type = "password";
-//         userPasswordInput.type = "text";
-//         hidePasswordIcon.style.display = "none"
-//         showPasswordIcon.style.display = "block";
-//     }
-// }
-
-// togglePasswordButton.addEventListener("click", togglePasswordVisibility);
-
 
 togglePasswordButton.addEventListener("click", () => {
     if (userPasswordInput.type === "password") {
