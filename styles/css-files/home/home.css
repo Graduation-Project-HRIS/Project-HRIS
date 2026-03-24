@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.home-container {
+    width: 100%;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 30px;
+}
+
+.departments-container {
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.departments-container h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.departments-container > div {
+    display: inline-block;
+    margin: 10px;
+}
+
+.departments-container button {
+    width: 300px;
+    height: 150px;
+    font-size: 30px;
+    margin: 10px;
+    font-style: bold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.departments-container button:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
