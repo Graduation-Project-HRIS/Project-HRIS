@@ -53,6 +53,47 @@ body {
     color: #1f2a37;
 }
 
+.input-group-container {
+    width: 100%;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+
+#togglePassword {
+    position: absolute;
+    top: 38%;
+    right: 12px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#showPasswordIcon,
+#hidePasswordIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    background-color: rgba(133, 129, 129, 0.679);
+    border-radius: 60px;
+}
+
+#hidePasswordIcon {
+    display: none;
+}
+
 .form-control {
     width: 100%;
     padding: 14px 14px;
@@ -63,6 +104,10 @@ body {
     background-color: #fff;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     box-sizing: border-box;
+}
+
+.password-field .form-control {
+    padding-right: 90px;
 }
 
 .form-control:focus {
