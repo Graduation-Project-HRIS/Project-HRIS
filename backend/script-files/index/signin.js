@@ -42,21 +42,45 @@ user click the hidden image (icon) , the text shows and the hidden image (icon )
 
 
 */
-function togglePasswordVisibility() {
-    if (userPasswordInput.type === "password"){
-        hidePasswordIcon.style.display = "block";
-        userPasswordInput.type = "text";
-    } else {
-    }
-}
+// function togglePasswordVisibility() {
+//     if (userPasswordInput.type === "password") {
+//         hidePasswordIcon.style.display = "none"
+//         userPasswordInput.type = "text";
+//     } else {
+//         userPasswordInput.type = "password";
+//         userPasswordInput.type = "text";
+//         hidePasswordIcon.style.display = "none"
+//         showPasswordIcon.style.display = "block";
+//     }
+// }
 
-togglePasswordButton.addEventListener("click", togglePasswordVisibility);
+// togglePasswordButton.addEventListener("click", togglePasswordVisibility);
+
+
+togglePasswordButton.addEventListener("click", () => {
+    if (userPasswordInput.type === "password") {
+        userPasswordInput.type = "text";
+        hidePasswordIcon.style.display = "none";
+        showPasswordIcon.style.display = "block";
+    } else {
+        userPasswordInput.type = "password";
+        showPasswordIcon.style.display = "none";
+        hidePasswordIcon.style.display = "block";
+    }
+});
+
 
 function validatePassword() {
     let userPassword = userPasswordInput.value;
 
     userPassword = userPassword.slice(0, 6);
     userPasswordInput.value = userPassword;
+
+    // if (!passwordPattern.test(userPassword)) {
+    //     passwordError.textContent = "Password must contain characters not nu";
+    //     userPasswordInput.style.border = "3.5px solid red";
+    //     return false;
+    // }
 
     if (userPassword.length < 6) {
         passwordError.textContent = "Password must 6 characters, 1 uppercase, 1 special character";
