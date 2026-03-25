@@ -34,23 +34,32 @@ body {
     font-size: 50px;
 }
 
-.departments-container > div {
+.departments-container>div {
     display: inline-block;
     margin: 10px;
 }
 
-.departments-container button {
+.departments-container button,
+.departments-container .department-link {
     width: 300px;
     height: 150px;
     font-size: 30px;
     margin: 10px;
-    font-style: bold;
+    font-weight: 700;
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease-in-out;
 }
 
-.departments-container button:hover {
+.departments-container button:hover,
+.departments-container .department-link:hover {
     background-color: #f0f0f0;
     cursor: pointer;
+    border-color: #999;
 }

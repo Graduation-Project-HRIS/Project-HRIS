@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
-            href="../../../styles/css-files/index/signin.css">
+            href="/styles/css-files/index/signin.css">
         <title>HRIS</title>
     </head>
     <body>
@@ -21,7 +21,7 @@
                     <div class="input-group-container id-container">
                         <input type="text" class="form-control" name="username"
                             id="userId" placeholder="ID" maxlength="8" required
-                            autofocus>
+                            autofocus autocomplete="username">
                         <h3 id="idError" class="error-message"></h3>
                     </div>
 
@@ -29,7 +29,7 @@
                         <div class="password-field">
                             <input type="password" class="form-control"
                                 name="password" id="userPassword" maxlength="6"
-                                placeholder="Password" required>
+                                placeholder="Password" required autocomplete="current-password">
                             <button type="button" id="togglePassword">
                                 <img
                                     src="../../../images/index-signin/hide-password.png"
@@ -50,6 +50,6 @@
             </div>
         </div>
 
-        <script src="../../../backend/script-files/index/signin.js"></script>
+        <script src="/backend/script-files/index/signin.js"></script>
     </body>
 </html>

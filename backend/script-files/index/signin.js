@@ -101,6 +101,6 @@ formSignIn.addEventListener("submit", (e) => {
     const isValidPassword = validatePassword();
 
     if (isValidId && isValidPassword) {
-        window.location.href = "../../../frontend/html-files/home.html";
+        window.location.href = "/frontend/html-files/home-html/home.html";
     }
 })
