@@ -27,44 +27,6 @@ body {
     padding: 4px 6px 14px;
 }
 
-/* Left Navigation bar (logout button) */
-.left-nav {
-    background-color: #e4edff;
-}
-
-.left-nav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.left-nav a:hover {
-    background-color: #5a92d8;
-    color: black;
-}
-
-/* Right Navigation bar (Profile button) */
-
-.right-nav {
-    background-color: #e4edff;
-}
-
-.right-nav a {
-    float: right;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.right-nav a:hover {
-    background-color: #5a92d8;
-    color: black;
-}
 
 .welcome-message {
     text-align: center;
