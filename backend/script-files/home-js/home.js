@@ -1,67 +1,52 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    trackPreviousPage();
-    showPageLocation();
+    trackPageHistory();
     setupBackButton();
 });
 
-function trackPreviousPage() {
-    const currentPage = window.location.pathname;
-
-    const lastPage = sessionStorage.getItem("currentPage");
-    if (lastPage && lastPage !== currentPage) {
-        sessionStorage.setItem("previousPage", lastPage);
-    }
-
-    sessionStorage.setItem("currentPage", currentPage);
+function getCurrentLocation() {
+    return window.location.origin + window.location.pathname + window.location.search + window.location.hash;
 }
 
+function trackPageHistory() {
+    const current = getCurrentLocation();
+    const history = JSON.parse(sessionStorage.getItem("pageHistory") || "[]");
 
-function showPageLocation() {
-    const locationBox = document.getElementById("page-location");
-    if (!locationBox) return;
-
-    let fileName = window.location.pathname.split("/").pop();
-
-    if (!fileName) {
-        fileName = "home.html";
+    if (!history.length || history[history.length - 1] !== current) {
+        history.push(current);
+        if (history.length > 50) history.shift();
+        sessionStorage.setItem("pageHistory", JSON.stringify(history));
     }
-
-    let pageName = fileName.replace(".html", "");
-    pageName = pageName.replace(/[-_]/g, " ");
-    pageName = pageName.replace(/\b\w/g, function (char) {
-        return char.toUpperCase();
-    });
-
-    locationBox.textContent = "Current Page: " + pageName;
 }
 
 function setupBackButton() {
     const backButton = document.getElementById("backButton");
     if (!backButton) return;
 
-    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-
-    if (currentPage === "home.html" || currentPage === "index.html" || currentPage === "") {
-        backButton.style.display = "none";
-        return;
-    }
-
     backButton.addEventListener("click", function () {
-        const previousPage = sessionStorage.getItem("previousPage");
+        const history = JSON.parse(sessionStorage.getItem("pageHistory") || "[]");
 
-        if (!previousPage) {
+        if (history.length <= 1) {
+            if (window.history.length > 1) {
+                window.history.back();
+                return;
+            }
             alert("No previous page found.");
             return;
         }
 
-        const previousFile = previousPage.split("/").pop().toLowerCase();
+        history.pop(); // remove current
+        const previous = history.pop(); // get previous
 
-        if (previousFile === "home.html" || previousFile === "index.html") {
-            alert("You cannot go back to the Home page using this button.");
+        if (!previous) {
+            alert("No previous page found.");
             return;
         }
 
-        window.location.href = previousPage;
-    })
+        history.push(previous);
+        sessionStorage.setItem("pageHistory", JSON.stringify(history));
+
+        window.location.href = previous;
+    });
 }
+
