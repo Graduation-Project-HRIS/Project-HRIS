@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     trackPreviousPage();
-    pageLocation();
+    showPageLocation();
     setupBackButton();
 });
 
@@ -16,7 +16,8 @@ function trackPreviousPage() {
     sessionStorage.setItem("currentPage", currentPage);
 }
 
-function pageLocation() {
+
+function showPageLocation() {
     const locationBox = document.getElementById("page-location");
     if (!locationBox) return;
 
@@ -62,5 +63,5 @@ function setupBackButton() {
         }
 
         window.location.href = previousPage;
-    });
+    })
 }
