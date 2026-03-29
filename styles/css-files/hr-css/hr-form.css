@@ -1,0 +1,74 @@
+.hr-form {
+    align-items: flex-start;
+    display: flex;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: min(95%, 780px);
+    margin: 30px auto;
+    padding: 24px;
+    border: 1px solid #d8e5f4;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+label {
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: #1f365d;
+}
+
+input,
+select,
+textarea {
+    padding: 12px 14px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border: 1px solid #b8c9e7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #1d3f67;
+    background-color: #fcfdff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4d8cf0;
+    box-shadow: 0 0 0 3px rgba(77, 140, 240, 0.18);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+
+#employee-id-error {
+    font-size: 0.9rem;
+    color: #c0252d;
+    margin: -12px 1px;
+    min-height: 1em;
+}
