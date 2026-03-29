@@ -1,5 +1,6 @@
 const employeeIdInput = document.getElementById("employee-id");
 const employeeIdError = document.getElementById("employee-id-error");
+const submitMessage = document.getElementById("submit-message");
 
 const hrForm = document.getElementById("hr-form");
 
@@ -32,11 +33,20 @@ function validateId() {
 employeeIdInput.addEventListener("input", validateId);
 
 hrForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
     if (!validateId()) {
-        e.preventDefault();
+        submitMessage.classList.remove("show");
+        return;
         // Error is already shown
     } else {
-        window.location.href = "/frontend/html-files/home-html/home.html";
+        submitMessage.textContent = "Request submitted successfully!";
+        submitMessage.classList.add("show");
+
     }
+    setTimeout(function () {
+        window.location.href = "/frontend/html-files/home-html/home.html";
+        submitMessage.classList.remove("show");
+    }, 2000);
 });
 
