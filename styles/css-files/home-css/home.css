@@ -109,13 +109,13 @@ body {
 
 .page-tools {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    margin: 20px;
-    padding: 10px 15px;
-    background-color: #E8F0FF;
-    border-radius: 8px;
-    float: left;
+    width: 100%;
+    margin: 28px 0 0;
+    padding: 0;
+    background: transparent;
+    float: none;
 }
 
 #page-location {
@@ -125,17 +125,23 @@ body {
 }
 
 #backButton {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
     background-color: #0d4988;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
+    color: #ffffff;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    box-shadow: 0 18px 32px rgba(13, 73, 136, 0.18);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #backButton:hover {
-    background-color: #0a3767;
+    transform: translateY(-1px);
+    background-color: #0a3b6c;
 }
 
 /* Responsive Design */
