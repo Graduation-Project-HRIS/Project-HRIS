@@ -1,5 +1,7 @@
 const employeeIdInput = document.getElementById("employee-id");
 const employeeIdError = document.getElementById("employee-id-error");
+const submitMessage = document.getElementById("submit-message");
+
 const digitalForm = document.getElementById("digital-form");
 
 function validateId() {
@@ -31,9 +33,19 @@ function validateId() {
 employeeIdInput.addEventListener("input", validateId);
 
 digitalForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
     if (!validateId()) {
-        e.preventDefault();
+        submitMessage.classList.remove("show");
+        return;
+        // Error is already shown
     } else {
-        window.location.href ="/frontend/html-files/support-groups/support-groups-index/support-groups-departments.html"
+        submitMessage.textContent = "Request submitted successfully!";
+        submitMessage.classList.add("show");
+
     }
+    setTimeout(function () {
+        window.location.href = "/frontend/html-files/home-html/home.html";
+        submitMessage.classList.remove("show");
+    }, 1000);
 });

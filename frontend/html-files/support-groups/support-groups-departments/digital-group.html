@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/styles/css-files/home-css/home.css">
         <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
-        <link rel="stylesheet" href="/styles/css-files/support-group/digital-group/digital.css">
+        <link rel="stylesheet"
+            href="/styles/css-files/support-group/digital-group/digital.css">
         <title>Digital Group</title>
     </head>
     <body>
@@ -31,15 +32,21 @@
                 <h2>Submit IT support requests and technical help tickets</h2>
             </div>
 
+            <div id="submit-message" class="top-notification" role="status"
+                aria-live="polite"></div>
+
             <div class="digital-form">
-                <form id="digital-form" action="#" method="post">
+                <form id="digital-form"
+                    action="/frontend/html-files/home-html/home.html"
+                    method="get">
                     <label for="employee-id">Employee ID</label>
-                    <input type="text" name="employee-id" id="employee-id" required>
+                    <input type="text" name="employee-id" id="employee-id"
+                        required>
                     <div id="employee-id-error" class="error-message"></div>
 
                     <label for="request-type">Request Type:</label>
                     <select name="request-type" id="request-type" required>
-                        <option value="">Select a request type</option>
+                        <option value>Select a request type</option>
                         <option value="password-reset">Password Reset</option>
                         <option value="access-request">Access Request</option>
                         <option value="hardware">Hardware Request</option>
@@ -50,7 +57,7 @@
 
                     <label for="priority">Priority:</label>
                     <select name="priority" id="priority" required>
-                        <option value="">Select priority level</option>
+                        <option value>Select priority level</option>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
@@ -61,35 +68,19 @@
                         placeholder="Describe your IT request or issue in detail..."
                         required></textarea>
 
-                    <button type="submit" id="submitButton">Submit Request</button>
+                    <button type="submit" id="submitButton">Submit
+                        Request</button>
                 </form>
             </div>
 
-            <section class="contact-info">
-                <h2>Digital Group Support</h2>
-                <div class="info-item">
-                    <span class="info-label">Help Desk Email:</span>
-                    <span class="info-value">support@company.com</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Support Phone:</span>
-                    <span class="info-value">+966 50 xxx xxxx</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Support Hours:</span>
-                    <span class="info-value">8:00 AM - 5:00 PM (Sunday - Thursday)</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Average Response Time:</span>
-                    <span class="info-value">2-4 hours</span>
-                </div>
-            </section>
-
             <div class="page-tools">
-                <button id="backButton" type="button">Go Back</button>
+                <a id="backButton"
+                    href="/frontend/html-files/support-groups/support-groups-index/support-groups-departments.html">Go
+                    Back</a>
             </div>
         </div>
-        <script src="/backend/script-files/home-js/home.js"></script>
-        <script src="/backend/script-files/support-group/digital-group/digital.js"></script>
+        <!--  <script src="/backend/script-files/home-js/home.js"></script> -->
+        <script
+            src="/backend/script-files/support-group/digital-group/digital.js"></script>
     </body>
 </html>
