@@ -47,6 +47,6 @@ hrForm.addEventListener("submit", function (e) {
     setTimeout(function () {
         window.location.href = "/frontend/html-files/home-html/home.html";
         submitMessage.classList.remove("show");
-    }, 2000);
+    }, 1000);
 });
 
