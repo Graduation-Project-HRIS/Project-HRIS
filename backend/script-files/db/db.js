@@ -1,5 +1,5 @@
 let db;
-
+// Get HTML elements
 const form = document.getElementById("employeeForm");
 const employeeIdInput = document.getElementById("employeeId");
 const employeeNameInput = document.getElementById("employeeName");
@@ -11,7 +11,7 @@ const updateButton = document.getElementById("updateButton");
 
 // Open or create database
 const request = indexedDB.open("EmployeeDB", 1);
-
+// Create object store and indexes
 request.onupgradeneeded = function (event) {
     db = event.target.result;
 
@@ -19,12 +19,12 @@ request.onupgradeneeded = function (event) {
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: true });
 };
-
+// Handle database open success
 request.onsuccess = function (event) {
     db = event.target.result;
     showEmployees();
 };
-
+// Handle database open error
 request.onerror = function () {
     message.textContent = "Database error.";
 };
@@ -33,16 +33,15 @@ request.onerror = function () {
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const employee = {
+    const employeesData = ({
         id: employeeIdInput.value.trim(),
         name: employeeNameInput.value.trim(),
         email: employeeEmailInput.value.trim()
-    };
+    });
 
     const transaction = db.transaction(["employees"], "readwrite");
     const objectStore = transaction.objectStore("employees");
-    const addRequest = objectStore.add(employee);
-
+    const addRequest = objectStore.add(employeesData);
     addRequest.onsuccess = function () {
         message.textContent = "Employee saved successfully.";
         form.reset();
@@ -50,7 +49,7 @@ form.addEventListener("submit", function (e) {
     };
 
     addRequest.onerror = function () {
-        message.textContent = "Error: ID or email already exists.";
+        message.textContent = "Error: ID or email may already exist.";
     };
 });
 
