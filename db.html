@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee IndexedDB</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #message {
+            margin: 10px 0 20px;
+            font-weight: bold;
+        }
+
+        .action-btn {
+            margin-right: 5px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Employee Form</h1>
+
+        <form id="employeeForm">
+            <input type="text" id="employeeId" placeholder="Employee ID"
+                required>
+            <input type="text" id="employeeName" placeholder="Employee Name"
+                required>
+            <input type="email" id="employeeEmail" placeholder="Employee Email"
+                required>
+
+            <button type="submit" id="saveButton">Save Employee</button>
+            <button type="button" id="updateButton"
+                style="display: none;">Update Employee</button>
+        </form>
+
+        <div id="message"></div>
+
+        <h2>Employees List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+        </table>
+
+        <script src="/backend/script-files/db/db.js"></script>
+    </body>
+</html>
