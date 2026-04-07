@@ -7,7 +7,11 @@ const employeeEmailInput = document.getElementById("employeeEmail");
 const employeeTableBody = document.getElementById("employeeTableBody");
 const message = document.getElementById("message");
 const saveButton = document.getElementById("saveButton");
-const updateButton = document.getElementById("updateButton");
+const editButton = document.getElementById("editButton");
+const submitMessage = document.getElementById("submitMessage");
+const submitMessageError = document.getElementById("submitMessageError");
+const updateEmployee = document.getElementById("updateEmployee");
+
 
 // Open or create database
 const request = indexedDB.open("EmployeeDB", 1);
@@ -42,15 +46,25 @@ form.addEventListener("submit", function (e) {
     const transaction = db.transaction(["employees"], "readwrite");
     const objectStore = transaction.objectStore("employees");
     const addRequest = objectStore.add(employeesData);
-    addRequest.onsuccess = function () {
-        message.textContent = "Employee saved successfully.";
+    addRequest.onsuccess = () => {
+        submitMessage.textContent = "Employee has been added successfully!";
+        submitMessage.classList.add("show");
+        setTimeout(() => {
+            submitMessage.classList.remove("show");
+        }, 2000);
         form.reset();
         showEmployees();
     };
 
     addRequest.onerror = function () {
-        message.textContent = "Error: ID or email may already exist.";
+        submitMessageError.textContent = "Error when adding employee.";
+        submitMessageError.classList.add("show");
+        setTimeout(() => {
+            submitMessageError.classList.remove("show");
+        }, 2000);
     };
+
+
 });
 
 // Show all employees
@@ -72,8 +86,8 @@ function showEmployees() {
                 <td>${employee.name}</td>
                 <td>${employee.email}</td>
                 <td>
-                    <button class="action-btn" onclick="editEmployee('${employee.id}')">Edit</button>
-                    <button class="action-btn" onclick="deleteEmployee('${employee.id}')">Delete</button>
+                    <button class="action-btn"  onclick="editEmployee('${employee.id}')">Edit</button>
+                    <button class="action-btn"  onclick="deleteEmployee('${employee.id}')">Delete</button>
                 </td>
             `;
 
@@ -102,14 +116,13 @@ function editEmployee(id) {
 
         employeeIdInput.disabled = true;
         saveButton.style.display = "none";
-        updateButton.style.display = "inline-block";
+        editButton.style.display = "inline-block";
 
-        message.textContent = "You can now update this employee.";
     };
 }
 
 // Update employee
-updateButton.addEventListener("click", function () {
+editButton.addEventListener("click", function () {
     const employee = {
         id: employeeIdInput.value.trim(),
         name: employeeNameInput.value.trim(),
@@ -121,13 +134,21 @@ updateButton.addEventListener("click", function () {
     const updateRequest = objectStore.put(employee);
 
     updateRequest.onsuccess = function () {
-        message.textContent = "Employee updated successfully.";
+        updateEmployee.textContent = "Updated employee successfully!";
+        updateEmployee.classList.add("show");
+        setTimeout(function () {
+            updateEmployee.classList.remove("show");
+        }, 2000);
         resetForm();
         showEmployees();
     };
 
     updateRequest.onerror = function () {
-        message.textContent = "Error updating employee.";
+        submitMessageError.textContent = "Error when editing employee.";
+        submitMessageError.classList.add("show");
+        setTimeout(() => {
+            submitMessageError.classList.remove("show");
+        }, 2000);
     };
 });
 
@@ -138,12 +159,10 @@ function deleteEmployee(id) {
     const deleteRequest = objectStore.delete(id);
 
     deleteRequest.onsuccess = function () {
-        message.textContent = "Employee deleted successfully.";
         showEmployees();
     };
 
     deleteRequest.onerror = function () {
-        message.textContent = "Error deleting employee.";
     };
 }
 
@@ -152,5 +171,7 @@ function resetForm() {
     form.reset();
     employeeIdInput.disabled = false;
     saveButton.style.display = "inline-block";
-    updateButton.style.display = "none";
+    editButton.style.display = "none";
+    submitMessage.textContent = "";
+
 }

@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Employee IndexedDB</title>
+        <link rel="stylesheet"
+            href="/styles/css-files/support-group/hr-css/hr-form.css">
         <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,7 +50,12 @@
     </head>
     <body>
         <h1>Employee Form</h1>
-
+        <div id="submitMessage" class="top-notification" role="status"
+            aria-live="polite"></div>
+        <div id="updateEmployee" class="top-notification" role="status"
+            aria-live="polite"></div>
+        <div id="submitMessageError" class="top-notification-error" role="status"
+            aria-live="polite"></div>
         <form id="employeeForm">
             <input type="text" id="employeeId" placeholder="Employee ID"
                 required>
@@ -58,8 +65,8 @@
                 required>
 
             <button type="submit" id="saveButton">Save Employee</button>
-            <button type="button" id="updateButton"
-                style="display: none;">Update Employee</button>
+            <button type="button" id="editButton"
+                style="display: none;">Edit Employee</button>
         </form>
 
         <div id="message"></div>
