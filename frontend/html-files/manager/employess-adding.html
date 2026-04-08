@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee IndexedDB</title>
+        <link rel="stylesheet"
+            href="/styles/css-files/support-group/hr-css/hr-form.css">
+        <link rel="stylesheet"
+            href="/styles/css-files/manager/employee-form.css">
+    </head>
+    <body>
+        <h1>Employee Form</h1>
+        <div id="submitMessage" class="top-notification" role="status"
+            aria-live="polite"></div>
+
+        <div id="updateEmployee" class="top-notification" role="status"
+            aria-live="polite"></div>
+
+        <div id="submitMessageError" class="top-notification-error"
+            role="status"
+            aria-live="polite"></div>
+
+        <form id="employeeForm">
+            <input type="text" id="employeeId" placeholder="Employee ID"
+                required>
+            <input type="text" id="employeeName" placeholder="Employee Name"
+                required>
+            <input type="email" id="employeeEmail" placeholder="Employee Email"
+                required>
+
+            <button type="submit" id="saveButton">Add Employee</button>
+            <button type="button" id="editButton"
+                style="display: none;">Edit Employee</button>
+        </form>
+
+        <a href="/frontend/html-files/manager/employess-database.html">View
+            Employees Data
+            Base</a>
+        <script src="/backend/script-files/db/add/add-employess.js"></script>
+    </body>
+</html>

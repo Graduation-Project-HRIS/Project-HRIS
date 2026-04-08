@@ -54,18 +54,18 @@ form.addEventListener("submit", (e) => {
         name: employeeNameInput.value.trim(),
         email: employeeEmailInput.value.trim()
     };
-
-    const objectStore = db.transaction(["employees"], "readwrite").objectStore("employees");
+    const transaction = db.transaction(["employees"], "readwrite");
+    const objectStore = transaction.objectStore("employees");
     const addRequest = objectStore.add(employeeData);
 
     addRequest.onsuccess = () => {
-        showToast(submitMessage, "Employee added successfully!");
+        showNotification(submitMessage, "Employee added successfully!");
         form.reset();
         showEmployees();
     };
 
     addRequest.onerror = () => {
-        showToast(submitMessageError, "Error: Could not add employee. ID or Email may already exist.");
+        showNotification(submitMessageError, "Error: Could not add employee. ID or Email may already exist.");
     };
 });
 
@@ -137,13 +137,13 @@ editButton.addEventListener("click", () => {
     const updateRequest = objectStore.put(employeeData);
 
     updateRequest.onsuccess = () => {
-        showToast(updateEmployee, "Employee updated successfully!");
+        showNotification(updateEmployee, "Employee updated successfully!");
         resetForm();
         showEmployees();
     };
 
     updateRequest.onerror = () => {
-        showToast(submitMessageError, "Error: Could not update employee.");
+        showNotification(submitMessageError, "Error: Could not update employee.");
     };
 });
 
@@ -155,10 +155,13 @@ function deleteEmployee(id) {
     const objectStore = db.transaction(["employees"], "readwrite").objectStore("employees");
     const deleteRequest = objectStore.delete(id);
 
-    deleteRequest.onsuccess = () => showEmployees();
+    deleteRequest.onsuccess = () => {
+        showEmployees();
+    };
+
 
     deleteRequest.onerror = () => {
-        showToast(submitMessageError, "Error: Could not delete employee.");
+        showNotification(submitMessageError, "Error: Could not delete employee.");
     };
 }
 
@@ -175,7 +178,7 @@ function resetForm() {
 }
 
 // Show a temporary toast notification and auto-hide after 2 seconds
-function showToast(element, message) {
+function showNotification(element, message) {
     element.textContent = message;
     element.classList.add("show");
     setTimeout(() => element.classList.remove("show"), 2000);
