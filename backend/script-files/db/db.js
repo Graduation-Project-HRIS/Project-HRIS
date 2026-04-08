@@ -1,84 +1,86 @@
+// =============================================
+// Database Initialization
+// =============================================
+
 let db;
+
 // Get HTML elements
 const form = document.getElementById("employeeForm");
 const employeeIdInput = document.getElementById("employeeId");
 const employeeNameInput = document.getElementById("employeeName");
 const employeeEmailInput = document.getElementById("employeeEmail");
 const employeeTableBody = document.getElementById("employeeTableBody");
-const message = document.getElementById("message");
 const saveButton = document.getElementById("saveButton");
 const editButton = document.getElementById("editButton");
 const submitMessage = document.getElementById("submitMessage");
 const submitMessageError = document.getElementById("submitMessageError");
 const updateEmployee = document.getElementById("updateEmployee");
 
+// =============================================
+// Open / Create IndexedDB Database
+// =============================================
 
-// Open or create database
 const request = indexedDB.open("EmployeeDB", 1);
-// Create object store and indexes
-request.onupgradeneeded = function (event) {
-    db = event.target.result;
+
+// Handle database open errors
+request.onerror = (e) => {
+    console.error("An error occurred with IndexedDB:", e);
+};
+
+// Runs only when the DB is created or upgraded — sets up the object store and indexes
+request.onupgradeneeded = (e) => {
+    db = e.target.result;
 
     const objectStore = db.createObjectStore("employees", { keyPath: "id" });
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: true });
 };
-// Handle database open success
-request.onsuccess = function (event) {
-    db = event.target.result;
+
+// Runs when the DB opens successfully — load the employee list
+request.onsuccess = (e) => {
+    db = e.target.result;
     showEmployees();
 };
-// Handle database open error
-request.onerror = function () {
-    message.textContent = "Database error.";
-};
 
-// Save new employee
-form.addEventListener("submit", function (e) {
+// =============================================
+// Add New Employee
+// =============================================
+
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const employeesData = ({
+    const employeeData = {
         id: employeeIdInput.value.trim(),
         name: employeeNameInput.value.trim(),
         email: employeeEmailInput.value.trim()
-    });
+    };
 
-    const transaction = db.transaction(["employees"], "readwrite");
-    const objectStore = transaction.objectStore("employees");
-    const addRequest = objectStore.add(employeesData);
+    const objectStore = db.transaction(["employees"], "readwrite").objectStore("employees");
+    const addRequest = objectStore.add(employeeData);
+
     addRequest.onsuccess = () => {
-        submitMessage.textContent = "Employee has been added successfully!";
-        submitMessage.classList.add("show");
-        setTimeout(() => {
-            submitMessage.classList.remove("show");
-        }, 2000);
+        showToast(submitMessage, "Employee added successfully!");
         form.reset();
         showEmployees();
     };
 
-    addRequest.onerror = function () {
-        submitMessageError.textContent = "Error when adding employee.";
-        submitMessageError.classList.add("show");
-        setTimeout(() => {
-            submitMessageError.classList.remove("show");
-        }, 2000);
+    addRequest.onerror = () => {
+        showToast(submitMessageError, "Error: Could not add employee. ID or Email may already exist.");
     };
-
-
 });
 
-// Show all employees
+// =============================================
+// Display All Employees
+// =============================================
+
 function showEmployees() {
     employeeTableBody.innerHTML = "";
 
-    const transaction = db.transaction(["employees"], "readonly");
-    const objectStore = transaction.objectStore("employees");
+    const objectStore = db.transaction(["employees"], "readonly").objectStore("employees");
     const getAllRequest = objectStore.getAll();
 
-    getAllRequest.onsuccess = function () {
-        const employees = getAllRequest.result;
-
-        employees.forEach(function (employee) {
+    getAllRequest.onsuccess = () => {
+        getAllRequest.result.forEach((employee) => {
             const row = document.createElement("tr");
 
             row.innerHTML = `
@@ -86,8 +88,8 @@ function showEmployees() {
                 <td>${employee.name}</td>
                 <td>${employee.email}</td>
                 <td>
-                    <button class="action-btn"  onclick="editEmployee('${employee.id}')">Edit</button>
-                    <button class="action-btn"  onclick="deleteEmployee('${employee.id}')">Delete</button>
+                    <button class="action-btn" onclick="editEmployee('${employee.id}')">Edit</button>
+                    <button class="action-btn" onclick="deleteEmployee('${employee.id}')">Delete</button>
                 </td>
             `;
 
@@ -96,82 +98,85 @@ function showEmployees() {
     };
 }
 
-// Edit employee: get one employee and put values in form
+// =============================================
+// Edit Employee — Populate Form with Data
+// =============================================
+
 function editEmployee(id) {
-    const transaction = db.transaction(["employees"], "readonly");
-    const objectStore = transaction.objectStore("employees");
+    const objectStore = db.transaction(["employees"], "readonly").objectStore("employees");
     const getRequest = objectStore.get(id);
 
-    getRequest.onsuccess = function () {
+    getRequest.onsuccess = () => {
         const employee = getRequest.result;
+        if (!employee) return;
 
-        if (!employee) {
-            message.textContent = "Employee not found.";
-            return;
-        }
-
+        // Populate form fields
         employeeIdInput.value = employee.id;
         employeeNameInput.value = employee.name;
         employeeEmailInput.value = employee.email;
 
+        // Switch to edit mode
         employeeIdInput.disabled = true;
         saveButton.style.display = "none";
         editButton.style.display = "inline-block";
-
     };
 }
 
-// Update employee
-editButton.addEventListener("click", function () {
-    const employee = {
+// =============================================
+// Update Existing Employee
+// =============================================
+
+editButton.addEventListener("click", () => {
+    const employeeData = {
         id: employeeIdInput.value.trim(),
         name: employeeNameInput.value.trim(),
         email: employeeEmailInput.value.trim()
     };
 
-    const transaction = db.transaction(["employees"], "readwrite");
-    const objectStore = transaction.objectStore("employees");
-    const updateRequest = objectStore.put(employee);
+    const objectStore = db.transaction(["employees"], "readwrite").objectStore("employees");
+    const updateRequest = objectStore.put(employeeData);
 
-    updateRequest.onsuccess = function () {
-        updateEmployee.textContent = "Updated employee successfully!";
-        updateEmployee.classList.add("show");
-        setTimeout(function () {
-            updateEmployee.classList.remove("show");
-        }, 2000);
+    updateRequest.onsuccess = () => {
+        showToast(updateEmployee, "Employee updated successfully!");
         resetForm();
         showEmployees();
     };
 
-    updateRequest.onerror = function () {
-        submitMessageError.textContent = "Error when editing employee.";
-        submitMessageError.classList.add("show");
-        setTimeout(() => {
-            submitMessageError.classList.remove("show");
-        }, 2000);
+    updateRequest.onerror = () => {
+        showToast(submitMessageError, "Error: Could not update employee.");
     };
 });
 
-// Delete employee
+// =============================================
+// Delete Employee
+// =============================================
+
 function deleteEmployee(id) {
-    const transaction = db.transaction(["employees"], "readwrite");
-    const objectStore = transaction.objectStore("employees");
+    const objectStore = db.transaction(["employees"], "readwrite").objectStore("employees");
     const deleteRequest = objectStore.delete(id);
 
-    deleteRequest.onsuccess = function () {
-        showEmployees();
-    };
+    deleteRequest.onsuccess = () => showEmployees();
 
-    deleteRequest.onerror = function () {
+    deleteRequest.onerror = () => {
+        showToast(submitMessageError, "Error: Could not delete employee.");
     };
 }
 
-// Reset form after update
+// =============================================
+// Utility Functions
+// =============================================
+
+// Reset form back to "Add" mode after editing
 function resetForm() {
     form.reset();
     employeeIdInput.disabled = false;
     saveButton.style.display = "inline-block";
     editButton.style.display = "none";
-    submitMessage.textContent = "";
+}
 
+// Show a temporary toast notification and auto-hide after 2 seconds
+function showToast(element, message) {
+    element.textContent = message;
+    element.classList.add("show");
+    setTimeout(() => element.classList.remove("show"), 2000);
 }
