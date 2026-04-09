@@ -186,17 +186,3 @@ function showNotification(element, message) {
     element.classList.add("show");
     setTimeout(() => element.classList.remove("show"), 3000);
 }
-
-// =============================================
-// Close Modal on Outside Click
-// =============================================
-
-window.onclick = (event) => {
-    if (event.target === editModal) {
-        closeEditModal();
-    }
-    if (event.target === deleteModal) {
-        closeDeleteModal();
-    }
-};
-
