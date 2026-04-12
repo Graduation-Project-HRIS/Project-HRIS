@@ -39,3 +39,10 @@ td {
     padding: 6px 10px;
     cursor: pointer;
 }
+
+.error-message {
+    font-size: 0.9rem;
+    color: #c0252d;
+    margin: -10px 14px;
+    min-height: 1em;
+}

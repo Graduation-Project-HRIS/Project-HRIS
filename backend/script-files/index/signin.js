@@ -1,3 +1,4 @@
+
 const formSignIn = document.getElementById("formSignIn");
 
 const userIdInput = document.getElementById("userId");
@@ -25,6 +26,7 @@ togglePasswordButton.addEventListener("click", () => {
         hidePasswordIcon.style.display = "block";
     }
 });
+
 
 function validateId() {
     let rawUserId = userIdInput.value.trim();
