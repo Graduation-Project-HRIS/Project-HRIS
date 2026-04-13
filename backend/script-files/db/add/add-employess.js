@@ -5,37 +5,60 @@
 let db;
 
 const form = document.getElementById("employeeForm");
-const employeeIdInput = document.getElementById("employeeId");
+const employeeIdGenerator = document.getElementById("employeeId");
 const employeeNameInput = document.getElementById("employeeName");
 const employeeEmailInput = document.getElementById("employeeEmail");
 const submitMessage = document.getElementById("submitMessage");
 const submitMessageError = document.getElementById("submitMessageError");
-const saveButton = document.getElementById("saveButton");
+const generateIdButton = document.getElementById("generateId");
 
 const request = indexedDB.open("EmployeeDB", 1);
+
 // Handle database open errors
 request.onerror = (e) => {
     console.error("IndexedDB error:", e);
 };
-// Runs only when the DB is created or upgraded — sets up the object store and indexes
+
+// Runs only when the DB is created or upgraded
 request.onupgradeneeded = (e) => {
     db = e.target.result;
+
     const objectStore = db.createObjectStore("employees", { keyPath: "id" });
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: true });
 };
-// Runs when the DB opens successfully — load the employee list
+
+// Runs when the DB opens successfully
 request.onsuccess = (e) => {
     db = e.target.result;
 };
-// Generate a random Employee ID in the format of 8 digits "ID XXXXXXXX"
-function getEmployeeID() {
-    return "ID:" + " " + Math.floor(10000000 + Math.random() * 90000000).toString();
+
+// =============================================
+// Generate Employee ID
+// =============================================
+
+function generateEmployeeID() {
+    return Math.floor(10000000 + Math.random() * 90000000).toString();
 }
-employeeIdInput.value = getEmployeeID();
 
+generateIdButton.addEventListener("click", () => {
+    employeeIdGenerator.value = generateEmployeeID();
+    employeeIdGenerator.style.cursor = "not-allowed";
+});
 
-// before submit, validate the employee ID input
+// =============================================
+// Name Input Validation
+// Prevent numbers and symbols while typing
+// =============================================
+
+employeeNameInput.addEventListener("input", () => {
+    employeeNameInput.value = employeeNameInput.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+// =============================================
+// Form Submit
+// =============================================
+
 if (form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -46,10 +69,15 @@ if (form) {
         }
 
         const employeeData = {
-            id: employeeIdInput.value.trim(),
+            id: employeeIdGenerator.value.trim(),
             name: employeeNameInput.value.trim(),
             email: employeeEmailInput.value.trim()
         };
+
+        if (!employeeData.id || !employeeData.name || !employeeData.email) {
+            showNotification(submitMessageError, "Error: Please fill in all fields.");
+            return;
+        }
 
         const transaction = db.transaction(["employees"], "readwrite");
         const objectStore = transaction.objectStore("employees");
@@ -60,16 +88,27 @@ if (form) {
             form.reset();
         };
 
-        addRequest.onerror = () => {
-            showNotification(submitMessageError, "Error: Could not add Employee. ID or Email may already exist.");
+        addRequest.onerror = (event) => {
+            const error = event.target.error;
+            showNotification(
+                submitMessageError,
+                "Could not add Employee. " + (error ? error.message : "Unknown error.")
+            );
         };
     });
 }
 
-// function to display success or error messages
+// =============================================
+// Notification Function
+// =============================================
+
 function showNotification(element, message) {
     if (!element) return;
+
     element.textContent = message;
     element.classList.add("show");
-    setTimeout(() => element.classList.remove("show"), 2000);
+
+    setTimeout(() => {
+        element.classList.remove("show");
+    }, 3000);
 }

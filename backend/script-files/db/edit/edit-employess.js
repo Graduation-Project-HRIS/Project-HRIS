@@ -48,7 +48,7 @@ function showEmployees() {
         if (employees.length === 0) {
             employeeTableBody.innerHTML = `
                 <tr>
-                    <td colspan="4" style="text-align:center; padding:18px; color:#4d5d7a">No employees found.</td>
+                    <td colspan="4" style="text-align:center; padding:18px; color:#4d5d7a;">No employees found.</td>
                 </tr>`;
             return;
         }
@@ -138,9 +138,9 @@ function saveEdit() {
 
     updateRequest.onerror = (e) => {
         if (e.target.error.name === "ConstraintError") {
-            showNotification(notificationError, "Email already exists.");
+            showNotification(notificationError, "Email Already Exists.");
         } else {
-            showNotification(notificationError, "Failed to update employee.");
+            showNotification(notificationError, "Failed to Update Employee.");
         }
     };
 }
@@ -166,7 +166,7 @@ function confirmDelete() {
     const deleteRequest = deleteTransaction.delete(currentDeletingEmployeeId);
 
     deleteRequest.onsuccess = () => {
-        showNotification(notificationSuccess, "Employee deleted successfully.");
+        showNotification(notificationSuccess, "Employee Deleted Successfully.");
         closeDeleteModal();
         showEmployees();
     };

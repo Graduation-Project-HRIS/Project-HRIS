@@ -27,6 +27,8 @@
     text-align: left;
     border-bottom: 1px solid #e1e7ef;
     color: #1d3f67;
+    border-bottom: 1px solid #dcdcdc;
+
 }
 
 .employees-list thead {
@@ -37,15 +39,16 @@
     font-weight: 700;
     color: #0f2547;
     text-transform: uppercase;
+    font-style: bold;
     letter-spacing: 0.04em;
 }
 
-.employees-list tbody tr:hover {
-    background-color: #f8fbff;
+.employees-list td {
+    vertical-align: middle;
 }
 
-.employees-list tbody tr:nth-child(even) {
-    background-color: #fbfdff;
+.employees-list tbody td {
+    font-weight: bold;
 }
 
 .action-btn {
@@ -76,13 +79,6 @@
     background-color: #c82333;
 }
 
-.employees-list tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.employees-list td {
-    vertical-align: middle;
-}
 
 /* =============================================
     Notification Toast
