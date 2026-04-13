@@ -30,7 +30,7 @@ body {
 
 .welcome-message {
     text-align: center;
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.2rem, 3vw, 2.1rem);
     font-weight: 800;
     color: #1f3a5a;
     margin: 20px auto;
