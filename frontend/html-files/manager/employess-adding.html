@@ -6,8 +6,15 @@
         <title>Employee IndexedDB</title>
         <link rel="stylesheet"
             href="/styles/css-files/manager/employee-form.css">
+        <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
     </head>
     <body>
+        <nav>
+            <div class="left-nav">
+                <a class="active"
+                    href="/frontend/html-files/home-html/home.html">Home</a>
+            </div>
+        </nav>
         <h1>Employee Form</h1>
         <div id="submitMessage" class="top-notification" role="status"
             aria-live="polite"></div>
@@ -19,13 +26,17 @@
         <form id="employeeForm">
             <label for="employeeId">Employee ID:</label>
             <div style="display: flex; gap: 10px;">
-                <input type="text" id="employeeId" placeholder="Employee ID (Generated)" readonly required style="flex: 1;">
+                <input type="text" id="employeeId"
+                    placeholder="Employee ID (Generated)" readonly required
+                    style="flex: 1;">
                 <button type="button" id="generateId">Generate ID</button>
             </div>
             <label for="employeeName">Employee Name:</label>
-            <input type="text" id="employeeName" placeholder="Employee Name" required>
+            <input type="text" id="employeeName" placeholder="Employee Name"
+                required>
             <label for="employeeEmail">Employee Email:</label>
-            <input type="email" id="employeeEmail" placeholder="Employee Email" required>
+            <input type="email" id="employeeEmail" placeholder="Employee Email"
+                required>
 
             <button type="submit" id="saveButton">Add Employee</button>
         </form>
