@@ -9,13 +9,16 @@
     </head>
     <body>
         <!-- Notification Toast -->
-        <div id="notificationSuccess" class="toast-notification toast-success" role="status" aria-live="polite"></div>
-        <div id="notificationError" class="toast-notification toast-error" role="status" aria-live="polite"></div>
+        <div id="notificationSuccess" class="toast-notification toast-success"
+            role="status" aria-live="polite"></div>
+        <div id="notificationError" class="toast-notification toast-error"
+            role="status" aria-live="polite"></div>
 
         <h2 id="employeeListHead">Employees List</h2>
         <table class="employees-list">
             <thead>
                 <tr>
+                    <th>Number</th>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -24,20 +27,23 @@
             </thead>
             <tbody id="employeeTableBody"></tbody>
         </table>
-        <a href="/frontend/html-files/manager/employess-adding.html">Add New Employee</a>
+        <a href="/frontend/html-files/manager/employess-adding.html">Add New
+            Employee</a>
 
         <!-- Edit Modal -->
         <div id="editModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Edit Employee</h3>
-                    <span class="modal-close" onclick="closeEditModal()">&times;</span>
+                    <span class="modal-close"
+                        onclick="closeEditModal()">&times;</span>
                 </div>
                 <div class="modal-body">
                     <form id="editForm">
                         <div class="form-group">
                             <label for="editEmployeeId">Employee ID </label>
-                            <input type="text" id="editEmployeeId" readonly disabled>
+                            <input type="text" id="editEmployeeId" readonly
+                                disabled>
                         </div>
                         <div class="form-group">
                             <label for="editEmployeeName">Name</label>
@@ -50,8 +56,10 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
-                    <button type="button" class="btn-save" onclick="saveEdit()">Save Changes</button>
+                    <button type="button" class="btn-cancel"
+                        onclick="closeEditModal()">Cancel</button>
+                    <button type="button" class="btn-save"
+                        onclick="saveEdit()">Save Changes</button>
                 </div>
             </div>
         </div>
@@ -61,14 +69,18 @@
             <div class="modal-content modal-danger">
                 <div class="modal-header">
                     <h3>Delete Employee</h3>
-                    <span class="modal-close" onclick="closeDeleteModal()">&times;</span>
+                    <span class="modal-close"
+                        onclick="closeDeleteModal()">&times;</span>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete this employee? This action cannot be undone.</p>
+                    <p>Are you sure you want to delete this employee? This
+                        action cannot be undone.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-cancel" onclick="closeDeleteModal()">Cancel</button>
-                    <button type="button" class="btn-delete" onclick="confirmDelete()">Delete</button>
+                    <button type="button" class="btn-cancel"
+                        onclick="closeDeleteModal()">Cancel</button>
+                    <button type="button" class="btn-delete"
+                        onclick="confirmDelete()">Delete</button>
                 </div>
             </div>
         </div>

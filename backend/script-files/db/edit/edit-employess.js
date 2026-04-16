@@ -45,17 +45,22 @@ function showEmployees() {
 
     getAllRequest.onsuccess = () => {
         const employees = getAllRequest.result;
+
         if (employees.length === 0) {
             employeeTableBody.innerHTML = `
                 <tr>
-                    <td colspan="4" style="text-align:center; padding:18px; color:#4d5d7a;">No employees found.</td>
-                </tr>`;
+                    <td colspan="5" style="text-align:center; padding:18px; color:#4d5d7a;">
+                        No employees found.
+                    </td>
+                </tr>
+            `;
             return;
         }
 
-        employees.forEach((employee) => {
+        employees.forEach((employee, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
+                <td>${index + 1}</td>
                 <td>${employee.id}</td>
                 <td>${employee.name}</td>
                 <td>${employee.email}</td>
