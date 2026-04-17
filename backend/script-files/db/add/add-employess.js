@@ -1,6 +1,7 @@
 // =============================================
 // Database Initialization
 // =============================================
+import defaultEmployeesIfEmpty from "./default/default-employess.js"
 
 let db;
 
@@ -31,19 +32,51 @@ request.onupgradeneeded = (e) => {
 // Runs when the DB opens successfully
 request.onsuccess = (e) => {
     db = e.target.result;
+    defaultEmployeesIfEmpty();
 };
 
 // =============================================
 // Generate Employee ID
 // =============================================
-
+// Generate a random 8-digit ID
 function generateEmployeeID() {
     return Math.floor(10000000 + Math.random() * 90000000).toString();
 }
+// Generate a unique Employee ID by checking against existing IDs in the database
+function generateUniqueEmployeeID(callback) {
+    if (!db) {
+        showNotification(submitMessageError, "Database is not ready.");
+        return;
+    }
 
+    function tryID() {
+        const newId = generate8DigitID();
+        const transaction = db.transaction(["employees"], "readonly").objectStore("employees");
+        const getRequest = objectStore.get(newId);
+
+        getRequest.onsuccess = () => {
+            if (getRequest.result) {
+                tryID();
+            } else {
+                callback(newId);
+            }
+        };
+
+        getRequest.onerror = () => {
+            showNotification(submitMessageError, "Failed to generate unique ID.");
+        };
+    }
+
+    tryID();
+}
+
+// Event listener for Generate ID button
 generateIdButton.addEventListener("click", () => {
-    employeeIdGenerator.value = generateEmployeeID();
-    employeeIdGenerator.style.cursor = "not-allowed";
+    generateUniqueEmployeeID((newId) => {
+        employeeIdGenerator.value = newId;
+        employeeIdGenerator.readOnly = true;
+        employeeIdGenerator.style.cursor = "not-allowed";
+    });
 });
 
 // =============================================

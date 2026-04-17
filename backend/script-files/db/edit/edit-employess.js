@@ -1,6 +1,7 @@
 // =============================================
 // Database Initialization for employee list and edit/delete
 // =============================================
+import defaultEmployeesIfEmpty from "./default/default-employess.js"
 
 let db;
 let currentEditingEmployeeId = null;
@@ -28,6 +29,7 @@ request.onupgradeneeded = (e) => {
 
 request.onsuccess = (e) => {
     db = e.target.result;
+    defaultEmployeesIfEmpty();
     showEmployees();
 };
 
@@ -108,13 +110,13 @@ function editEmployee(id) {
         showNotification(notificationError, "Failed to load employee details.");
     };
 }
-
+// Close Edit Modal and Reset Form
 function closeEditModal() {
     editModal.style.display = "none";
     currentEditingEmployeeId = null;
     document.getElementById("editForm").reset();
 }
-
+// Save Edited Employee Details
 function saveEdit() {
     if (!db || !currentEditingEmployeeId) return;
 
@@ -163,7 +165,7 @@ function closeDeleteModal() {
     deleteModal.style.display = "none";
     currentDeletingEmployeeId = null;
 }
-
+// Confirm Deletion of Employee
 function confirmDelete() {
     if (!db || !currentDeletingEmployeeId) return;
 
