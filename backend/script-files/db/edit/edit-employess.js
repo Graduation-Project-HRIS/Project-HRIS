@@ -1,7 +1,7 @@
 // =============================================
 // Database Initialization for employee list and edit/delete
 // =============================================
-import defaultEmployeesIfEmpty from "./default/default-employess.js"
+// import defaultEmployeesIfEmpty from "./default/default-employess.js"
 
 let db;
 let currentEditingEmployeeId = null;
@@ -29,7 +29,7 @@ request.onupgradeneeded = (e) => {
 
 request.onsuccess = (e) => {
     db = e.target.result;
-    defaultEmployeesIfEmpty();
+    // defaultEmployeesIfEmpty();
     showEmployees();
 };
 
