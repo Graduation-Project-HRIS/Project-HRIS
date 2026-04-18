@@ -1,7 +1,7 @@
 // =============================================
 // Database Initialization
 // =============================================
-import defaultEmployeesIfEmpty from "./default/default-employess.js"
+// import defaultEmployeesIfEmpty from "./default/default-employess.js"
 
 let db;
 
@@ -32,7 +32,7 @@ request.onupgradeneeded = (e) => {
 // Runs when the DB opens successfully
 request.onsuccess = (e) => {
     db = e.target.result;
-    defaultEmployeesIfEmpty();
+    // defaultEmployeesIfEmpty();
 };
 
 // =============================================
@@ -42,42 +42,49 @@ request.onsuccess = (e) => {
 function generateEmployeeID() {
     return Math.floor(10000000 + Math.random() * 90000000).toString();
 }
+
+generateIdButton.addEventListener("click", () => {
+    employeeIdGenerator.value = generateEmployeeID();
+    employeeIdGenerator.readOnly = true;
+    employeeIdGenerator.style.cursor = "not-allowed";
+});
+
 // Generate a unique Employee ID by checking against existing IDs in the database
-function generateUniqueEmployeeID(callback) {
-    if (!db) {
-        showNotification(submitMessageError, "Database is not ready.");
-        return;
-    }
+// function generateUniqueEmployeeID(callback) {
+//     if (!db) {
+//         showNotification(submitMessageError, "Database is not ready.");
+//         return;
+//     }
 
-    function tryID() {
-        const newId = generate8DigitID();
-        const transaction = db.transaction(["employees"], "readonly").objectStore("employees");
-        const getRequest = objectStore.get(newId);
+//     function tryID() {
+//         const newId = generate8DigitID();
+//         const transaction = db.transaction(["employees"], "readonly").objectStore("employees");
+//         const getRequest = objectStore.get(newId);
 
-        getRequest.onsuccess = () => {
-            if (getRequest.result) {
-                tryID();
-            } else {
-                callback(newId);
-            }
-        };
+//         getRequest.onsuccess = () => {
+//             if (getRequest.result) {
+//                 tryID();
+//             } else {
+//                 callback(newId);
+//             }
+//         };
 
-        getRequest.onerror = () => {
-            showNotification(submitMessageError, "Failed to generate unique ID.");
-        };
-    }
+//         getRequest.onerror = () => {
+//             showNotification(submitMessageError, "Failed to generate unique ID.");
+//         };
+//     }
 
-    tryID();
-}
+//     tryID();
+// }
 
 // Event listener for Generate ID button
-generateIdButton.addEventListener("click", () => {
-    generateUniqueEmployeeID((newId) => {
-        employeeIdGenerator.value = newId;
-        employeeIdGenerator.readOnly = true;
-        employeeIdGenerator.style.cursor = "not-allowed";
-    });
-});
+// generateIdButton.addEventListener("click", () => {
+//     generateUniqueEmployeeID((newId) => {
+//         employeeIdGenerator.value = newId;
+//         employeeIdGenerator.readOnly = true;
+//         employeeIdGenerator.style.cursor = "not-allowed";
+//     });
+// });
 
 // =============================================
 // Name Input Validation

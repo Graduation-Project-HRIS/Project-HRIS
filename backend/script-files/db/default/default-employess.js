@@ -1,6 +1,6 @@
 // Default Employees Data 50 Employee
 
- const defaultEmployees = [
+const defaultEmployees = [
     { name: "Liam Carter", email: "liam.carter01@gmail.com" },
     { name: "Noah Bennett", email: "noah.bennett02@gmail.com" },
     { name: "Oliver Hughes", email: "oliver.hughes03@gmail.com" },

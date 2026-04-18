@@ -6,16 +6,9 @@
         <title>Employee IndexedDB</title>
         <link rel="stylesheet"
             href="/styles/css-files/manager/employee-form.css">
-        <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
     </head>
     <body>
-        <nav>
-            <div class="left-nav">
-                <a class="active"
-                    href="/frontend/html-files/home-html/home.html">Home</a>
-            </div>
-        </nav>
-        <h1>Employee Form</h1>
+        <h1 class="body">Employee Form</h1>
         <div id="submitMessage" class="top-notification" role="status"
             aria-live="polite"></div>
 
@@ -23,7 +16,7 @@
             role="status"
             aria-live="polite"></div>
 
-        <form id="employeeForm">
+        <form id="employeeForm" class="body">
             <label for="employeeId">Employee ID:</label>
             <div style="display: flex; gap: 10px;">
                 <input type="text" id="employeeId"
@@ -40,10 +33,11 @@
 
             <button type="submit" id="saveButton">Add Employee</button>
         </form>
-
-        <a href="/frontend/html-files/manager/employess-database.html">View
-            Employees Data
-            Base</a>
+        <div class="page-tools">
+            <a class="back-button"
+                href="/frontend/html-files/manager/index/manager-index.html">Go
+                Back</a>
+        </div>
         <script src="/backend/script-files/db/add/add-employess.js"></script>
     </body>
 </html>
