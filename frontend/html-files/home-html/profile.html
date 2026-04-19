@@ -3,37 +3,74 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Profile</title>
-        <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
-        <link rel="stylesheet" href="/styles/css-files/home-css/home.css">
+        <title>Employee Profile</title>
         <link rel="stylesheet" href="/styles/css-files/profile/profile.css">
     </head>
     <body>
+        <div class="profile-shell">
 
-        <div class="home-contaniter">
-            <nav>
-                <div class="left-nav">
-                    <a class="active"
+            <nav class="profile-topbar">
+                <div class="profile-topbar-links">
+                    <a class="profile-topbar-link"
                         href="/frontend/html-files/home-html/home.html">Home</a>
                 </div>
             </nav>
-            <br>
 
-            <br>
+            <header class="profile-hero">
+                <h1 class="profile-hero-title">Welcome John Doe</h1>
+            </header>
 
-            <div class="user-info">
-                <h1>Name: John Doe</h1>
-                <h1>Position: HR Manager</h1>
-                <h1>Department: HR Group</h1>
-                <h1>Email: test@gmail.com</h1>
-            </div>
-        </div>
+            <main class="profile-layout">
+                <section class="profile-details-card">
+                    <h2 class="profile-section-title">Employee Information</h2>
 
-        <div class="page-tools">
-            <footer class="footer">
-                <a class="back-button"
+                    <div class="profile-details-grid">
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Name</span>
+                            <span class="profile-detail-value">John Doe</span>
+                        </div>
+
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">ID</span>
+                            <span class="profile-detail-value">12345678</span>
+                        </div>
+
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Position</span>
+                            <span class="profile-detail-value">HR Manager</span>
+                        </div>
+
+                        <div class="profile-detail-item">
+                            <span class="profile-detail-label">Department</span>
+                            <span class="profile-detail-value">HR Group</span>
+                        </div>
+
+                        <div
+                            class="profile-detail-item profile-detail-item-full">
+                            <span class="profile-detail-label">Email</span>
+                            <span
+                                class="profile-detail-value">John_Doe@gmail.com</span>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="profile-actions-panel">
+                    <h2 class="profile-section-title">Quick Actions</h2>
+
+                    <a href="/frontend/html-files/Leave-request/leave-form.html"
+                        class="profile-action-tile">
+                        <span class="profile-action-title">Leave Request</span>
+                        <span class="profile-action-text">Submit and manage
+                            leave requests</span>
+                    </a>
+                </aside>
+            </main>
+
+            <div class="profile-bottom-tools">
+                <a class="profile-back-link"
                     href="/frontend/html-files/home-html/home.html">Go Back</a>
-            </footer>
+            </div>
+
         </div>
         <script src="/register-unregister-check.js"></script>
         <script src="/sw.js"></script>
