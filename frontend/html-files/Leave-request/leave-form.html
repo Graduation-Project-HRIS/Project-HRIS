@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/css-files/home-css/home.css">
+        <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
+        <link rel="stylesheet"
+            href="/styles/css-files/profile/leave-request.css">
+        <title>Leave Form</title>
+    </head>
+    <body>
+        <div class="home-container">
+            <nav>
+                <div class="left-nav">
+                    <a class="active"
+                        href="/frontend/html-files/home-html/home.html">Home</a>
+                </div>
+            </nav>
+            <div class="welcome-message">
+                <h2>Submit Leave Request </h2>
+            </div>
+
+            <div id="submit-message" class="top-notification" role="status"
+                aria-live="polite"></div>
+
+            <div class="leave-form">
+                <form id="leave-form"
+                    action="/frontend/html-files/home-html/home.html"
+                    method="get">
+                    <label for="employee-id">Employee ID</label>
+                    <input type="text" name="employee-id" id="employee-id"
+                        required>
+                    <div id="employee-id-error" class="error-message"></div>
+
+                    <label for="request-type">Leave Type:</label>
+                    <select name="request-type" id="request-type" required>
+                        <label for="">Select a leave type</label>
+                        <option id="leave-Type" style="display: none;">Select a leave type</option>
+                        <option value="annual-leave">Annual Leave (30 days)</option>
+                        <option value="sick-leave">Sick Leave</option>
+                        <option value="maternity-leave">Maternity leave</option>
+                        <option value="study-leave">Study leave</option>
+                        <option value="official-holiday-leave">Official holiday leave</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="calender">Calender:</label>
+                    <select name="calender" id="calender" required>
+                        <input type="date" name="calender" id="calender"
+                            required>
+                    </select>
+
+                    <label for="details">Description:</label>
+                    <textarea id="details" name="details" rows="4"
+                        placeholder="Describe your IT request or issue in detail..."
+                        required></textarea>
+
+                    <button type="submit" id="submitButton">Submit
+                        Request</button>
+                </form>
+            </div>
+
+            <div class="page-tools">
+                <a class="back-button"
+                    href="/frontend/html-files/home-html/profile.html">Go
+                    Back</a>
+            </div>
+        </div>
+        <script
+            src="/backend/script-files/profile/leave-request.js"></script>
+        <script src="/register-unregister-check.js"></script>
+        <script src="/sw.js"></script>
+    </body>
+</html>
