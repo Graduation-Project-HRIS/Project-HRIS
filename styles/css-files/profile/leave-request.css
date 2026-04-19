@@ -4,6 +4,7 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     width: min(95%, 780px);
     margin: 30px auto;
+    margin-bottom: 90px;
     padding: 24px;
     border: 1px solid #d8e5f4;
     border-radius: 10px;
@@ -49,6 +50,22 @@
     border-color: #4d8cf0;
     box-shadow: 0 0 0 3px rgba(77, 140, 240, 0.18);
 }
+
+.welcome-message-leave {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f3a5a;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.welcome-message-leave h1 {
+    font-weight: inherit;
+}
+
+
 
 .leave-form button {
     margin-top: 20px;
