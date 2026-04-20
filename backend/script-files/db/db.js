@@ -3,6 +3,8 @@
 // =============================================
 
 let db;
+let currentEditingEmployeeId = null;
+let currentDeletingEmployeeId = null;
 
 const form = document.getElementById("employeeForm");
 const employeeIdGenerator = document.getElementById("employeeId");
@@ -12,34 +14,54 @@ const submitMessage = document.getElementById("submitMessage");
 const submitMessageError = document.getElementById("submitMessageError");
 const generateIdButton = document.getElementById("generateId");
 
+const employeeTableBody = document.getElementById("employeeTableBody");
+const notificationSuccess = document.getElementById("notificationSuccess");
+const notificationError = document.getElementById("notificationError");
+const editModal = document.getElementById("editModal");
+const deleteModal = document.getElementById("deleteModal");
+
 const request = indexedDB.open("EmployeeDB", 1);
 
 // Handle database open errors
 request.onerror = (e) => {
     console.error("IndexedDB error:", e);
+    showNotification(notificationError || submitMessageError, "Database error occurred.");
 };
 
 // Runs only when the DB is created or upgraded
 request.onupgradeneeded = (e) => {
     db = e.target.result;
-
-    const objectStore = db.createObjectStore("employees", { keyPath: "id" });
-    objectStore.createIndex("name", "name", { unique: false });
-    objectStore.createIndex("email", "email", { unique: true });
-};
+    if (!db.objectStoreNames.contains("employees")) {
+        employeesObjectStore = db.createObjectStore("employees", { keyPath: "id" });
+        employeesObjectStore.createIndex("name", "name", { unique: false });
+        employeesObjectStore.createIndex("email", "email", { unique: false });
+    }
+    if (!db.objectStoreNames.contains("leaveRequests")) {
+        leaveObjectStore = db.createObjectStore("leaveRequests", { keyPath: "leaveId" });
+        leaveObjectStore.createIndex("name", "name", { unique: false });
+        leaveObjectStore.createIndex("leaveType", "leaveType", { unique: false });
+        leaveObjectStore.createIndex("leaveDate", "leaveDate", { unique: false });
+    }
+}
 
 // Runs when the DB opens successfully
 request.onsuccess = (e) => {
     db = e.target.result;
+
+    if (employeeTableBody) {
+        showEmployees();
+    }
 };
 
 // =============================================
 // Generate Employee ID
 // =============================================
+
 // Generate a random 8-digit ID
 function generateEmployeeID() {
     return Math.floor(10000000 + Math.random() * 90000000).toString();
 }
+
 // Generate a unique Employee ID by checking against existing IDs in the database
 function generateUniqueEmployeeID(callback) {
     if (!db) {
@@ -48,8 +70,10 @@ function generateUniqueEmployeeID(callback) {
     }
 
     function tryID() {
-        const newId = generate8DigitID();
-        const transaction = db.transaction(["employees"], "readonly").objectStore("employees");
+        const newId = generateEmployeeID();
+
+        const transaction = db.transaction(["employees"], "readonly");
+        const objectStore = transaction.objectStore("employees");
         const getRequest = objectStore.get(newId);
 
         getRequest.onsuccess = () => {
@@ -69,22 +93,26 @@ function generateUniqueEmployeeID(callback) {
 }
 
 // Event listener for Generate ID button
-generateIdButton.addEventListener("click", () => {
-    generateUniqueEmployeeID((newId) => {
-        employeeIdGenerator.value = newId;
-        employeeIdGenerator.readOnly = true;
-        employeeIdGenerator.style.cursor = "not-allowed";
+if (generateIdButton) {
+    generateIdButton.addEventListener("click", () => {
+        generateUniqueEmployeeID((newId) => {
+            employeeIdGenerator.value = newId;
+            employeeIdGenerator.readOnly = true;
+            employeeIdGenerator.style.cursor = "not-allowed";
+        });
     });
-});
+}
 
 // =============================================
 // Name Input Validation
 // Prevent numbers and symbols while typing
 // =============================================
 
-employeeNameInput.addEventListener("input", () => {
-    employeeNameInput.value = employeeNameInput.value.replace(/[^A-Za-z\s]/g, "");
-});
+if (employeeNameInput) {
+    employeeNameInput.addEventListener("input", () => {
+        employeeNameInput.value = employeeNameInput.value.replace(/[^A-Za-z\s]/g, "");
+    });
+}
 
 // =============================================
 // Form Submit
@@ -128,59 +156,6 @@ if (form) {
         };
     });
 }
-
-// =============================================
-// Notification Function
-// =============================================
-
-function showNotification(element, message) {
-    if (!element) return;
-
-    element.textContent = message;
-    element.classList.add("show");
-
-    setTimeout(() => {
-        element.classList.remove("show");
-    }, 3000);
-}
-
-
-
-
-
-
-// =============================================
-// Database Initialization for employee list and edit/delete
-// =============================================
-
-let db;
-let currentEditingEmployeeId = null;
-let currentDeletingEmployeeId = null;
-
-const employeeTableBody = document.getElementById("employeeTableBody");
-const notificationSuccess = document.getElementById("notificationSuccess");
-const notificationError = document.getElementById("notificationError");
-const editModal = document.getElementById("editModal");
-const deleteModal = document.getElementById("deleteModal");
-
-const request = indexedDB.open("EmployeeDB", 1);
-
-request.onerror = (e) => {
-    console.error("IndexedDB error:", e);
-    showNotification(notificationError, "Database error occurred.");
-};
-
-request.onupgradeneeded = (e) => {
-    db = e.target.result;
-    const objectStore = db.createObjectStore("employees", { keyPath: "id" });
-    objectStore.createIndex("name", "name", { unique: false });
-    objectStore.createIndex("email", "email", { unique: true });
-};
-
-request.onsuccess = (e) => {
-    db = e.target.result;
-    showEmployees();
-};
 
 // =============================================
 // Display Employees List
@@ -242,6 +217,7 @@ function editEmployee(id) {
 
     getRequest.onsuccess = () => {
         const employee = getRequest.result;
+
         if (!employee) {
             showNotification(notificationError, "Employee not found.");
             return;
@@ -259,12 +235,14 @@ function editEmployee(id) {
         showNotification(notificationError, "Failed to load employee details.");
     };
 }
+
 // Close Edit Modal and Reset Form
 function closeEditModal() {
     editModal.style.display = "none";
     currentEditingEmployeeId = null;
     document.getElementById("editForm").reset();
 }
+
 // Save Edited Employee Details
 function saveEdit() {
     if (!db || !currentEditingEmployeeId) return;
@@ -314,6 +292,7 @@ function closeDeleteModal() {
     deleteModal.style.display = "none";
     currentDeletingEmployeeId = null;
 }
+
 // Confirm Deletion of Employee
 function confirmDelete() {
     if (!db || !currentDeletingEmployeeId) return;
@@ -333,12 +312,16 @@ function confirmDelete() {
 }
 
 // =============================================
-// Notification Toast
+// Notification Function
 // =============================================
 
 function showNotification(element, message) {
     if (!element) return;
+
     element.textContent = message;
     element.classList.add("show");
-    setTimeout(() => element.classList.remove("show"), 3000);
+
+    setTimeout(() => {
+        element.classList.remove("show");
+    }, 3000);
 }
