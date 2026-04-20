@@ -28,7 +28,8 @@ const FILES_TO_CACHE = [
     "/frontend/html-files/manager/index/manager-index.html",
     "/frontend/html-files/manager/add-employess/employess-adding.html",
     "/frontend/html-files/manager/edit-employess/employess-edit.html",
-    "/frontend/html-files/Leave-request/leave-form.html",
+    "/frontend/html-files/leave/leave-calendar.html",
+    "/frontend/html-files/leave/leave-form.html",
     // Cache the main CSS files
     "/styles/css-files/index/signin.css",
     "/styles/css-files/home-css/home.css",
@@ -39,6 +40,7 @@ const FILES_TO_CACHE = [
     "/styles/css-files/manager/employee-form.css",
     "/styles/css-files/manager/employee-list.css",
     "/styles/css-files/profile/leave-request.css",
+    "/styles/css-files/profile/leave-calendar.css",
     // Cache the main JS files
     "/backend/script-files/db/add/add-employess.js",
     "/backend/script-files/db/default/default-employess.js",
@@ -50,7 +52,7 @@ const FILES_TO_CACHE = [
     "/register-unregister-check.js",
     "/backend/script-files/support-group/digital-group/digital.js",
     "/backend/script-files/support-group/hr-group/hr-form.js",
-    "/backend/script-files/profile/leave-request.js",
+    "/backend/script-files//profile/leave/leave-request.js",
     // Cache the images files
     "/images/index-signin/hide-password.png",
     "/images/index-signin/show-password.png",
