@@ -2,7 +2,7 @@ let db = null;
 let dbReadyPromise = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 3;
+const DB_VERSION = 1;
 
 const form = document.getElementById("employeeForm");
 const employeeIdGenerator = document.getElementById("employeeId");
@@ -15,7 +15,7 @@ const saveButton = document.getElementById("saveButton");
 const radioInputMale = document.getElementById("radioInputMale");
 const radioInputFemale = document.getElementById("radioInputFemale");
 const employeeInputNationality = document.getElementById("employeeInputNationality");
-const employeeInputNumber = document.getElementById("employeeInputNumber");
+const employeeInputPhoneNumber = document.getElementById("employeeInputPhoneNumber");
 
 
 setFormState(false);
@@ -144,7 +144,7 @@ if (form) {
 
     function validateEmployeeID() {
         const value = employeeIdGenerator.value.trim();
-        if (value === ""){
+        if (value === "") {
             showNotification(submitMessageError, "Please generate an employee ID.")
             return false;
         }
@@ -200,7 +200,7 @@ if (form) {
     }
 
     function validatePhoneNumber() {
-        const value = employeeInputNumber.value.trim();
+        const value = employeeInputPhoneNumber.value.trim();
 
         if (value === "") {
             showNotification(submitMessageError, "Number is required.");
@@ -226,19 +226,19 @@ if (form) {
 
     function validateAllFields() {
         return (
+            validateEmployeeID() &&
             validateName() &&
             validateNationality() &&
             validateEmail() &&
             validatePhoneNumber() &&
-            validateGender(),
-            validateEmployeeID()
+            validateGender()
         );
     }
 
     employeeNameInput.addEventListener("input", validateName);
     employeeInputNationality.addEventListener("input", validateNationality);
     employeeEmailInput.addEventListener("input", validateEmail);
-    employeeInputNumber.addEventListener("input", validateNumber);
+    employeeInputPhoneNumber.addEventListener("input", validatePhoneNumber);
     radioInputMale.addEventListener("change", validateGender);
     radioInputFemale.addEventListener("change", validateGender);
 
@@ -264,7 +264,7 @@ if (form) {
                 email: employeeEmailInput.value.trim().toLowerCase(),
                 gender: gender,
                 nationality: employeeInputNationality.value.trim(),
-                phoneNumber: employeeInputNumber.value.trim(),
+                phoneNumber: employeeInputPhoneNumber.value.trim(),
             };
 
             const transaction = database.transaction(["employees"], "readwrite");
