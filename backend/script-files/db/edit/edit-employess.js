@@ -4,13 +4,23 @@ let currentEditingEmployeeId = null;
 let currentDeletingEmployeeId = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 const employeeTableBody = document.getElementById("employeeTableBody");
 const notificationSuccess = document.getElementById("notificationSuccess");
 const notificationError = document.getElementById("notificationError");
 const editModal = document.getElementById("editModal");
 const deleteModal = document.getElementById("deleteModal");
+
+const editEmployeeGenderMale = document.getElementById("editEmployeeGenderMale");
+const editEmployeeGenderFemale = document.getElementById("editEmployeeGenderFemale");
+const editEmployeeNationality = document.getElementById("editEmployeeNationality");
+const editEmployeeNumber = document.getElementById("editEmployeeNumber");
+
+const editEmployeeId = document.getElementById("editEmployeeId");
+const editEmployeeName = document.getElementById("editEmployeeName");
+const editEmployeeEmail = document.getElementById("editEmployeeEmail");
+
 
 dbReadyPromise = openDatabase();
 
@@ -38,6 +48,7 @@ function openDatabase() {
                 const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
                 employeeStore.createIndex("name", "name", { unique: false });
                 employeeStore.createIndex("email", "email", { unique: true });
+                employeeStore.createIndex("number", "number", { unique: true });
             }
 
             if (!database.objectStoreNames.contains("leaveRequests")) {
@@ -106,6 +117,9 @@ async function showEmployees() {
                     <td>${employee.id}</td>
                     <td>${employee.name}</td>
                     <td>${employee.email}</td>
+                    <td>${employee.gender}</td>
+                    <td>${employee.nationality}</td>
+                    <td>${employee.phoneNumber}</td>
                     <td>
                         <button type="button" class="action-btn" onclick="editEmployee('${employee.id}')">Edit</button>
                         <button type="button" class="action-btn btn-danger" onclick="openDeleteModal('${employee.id}')">Delete</button>
@@ -142,9 +156,13 @@ async function editEmployee(id) {
             }
 
             currentEditingEmployeeId = employee.id;
-            document.getElementById("editEmployeeId").value = employee.id;
-            document.getElementById("editEmployeeName").value = employee.name;
-            document.getElementById("editEmployeeEmail").value = employee.email;
+            editEmployeeId.value = employee.id;
+            editEmployeeName.value = employee.name;
+            editEmployeeEmail.value = employee.email;
+            currentEditingEmployeeGenderMale = editEmployeeGenderMale.checked = employee.gender === editEmployeeGenderMale.value;
+            currentEditingEmployeeGenderFemale = editEmployeeGenderFemale.checked = employee.gender === editEmployeeGenderFemale.value;
+            editEmployeeNationality.value = employee.nationality;
+            editEmployeeNumber.value = employee.phoneNumber;
 
             editModal.style.display = "block";
         };
@@ -164,24 +182,62 @@ function closeEditModal() {
     document.getElementById("editForm").reset();
 }
 
+
+/*
+    Used async because this function takes time to get the data and want to make sure that
+    all the data is stored in the {database}*/
 async function saveEdit() {
     try {
         const database = await ensureDatabase();
 
         if (!currentEditingEmployeeId) return;
 
-        const newName = document.getElementById("editEmployeeName").value.trim();
-        const newEmail = document.getElementById("editEmployeeEmail").value.trim().toLowerCase();
+        const newName = editEmployeeName.value.trim();
+        const newEmail = editEmployeeEmail.value.trim().toLowerCase();
+        const newNationality = editEmployeeNationality.value.trim();
+        const newNumber = editEmployeeNumber.value.trim();
+        const newGender = editEmployeeGenderMale.checked ? editEmployeeGenderMale.value : editEmployeeGenderFemale.checked ? editEmployeeGenderFemale.value : "";
 
-        if (!newName || !newEmail) {
+        const employeeDataEmptyNotification = [
+            newName,
+            newEmail,
+            newNationality,
+            newNumber,
+            newGender,
+        ]
+
+        if (employeeDataEmptyNotification.some(value => value === "")) {
             showNotification(notificationError, "Please fill in all fields.");
+            return;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(newName)) {
+            showNotification(notificationError, "Name must contain letters only ");
+            return;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(newNationality)) {
+            showNotification(notificationError, "Nationality must contain letters only ");
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail)) {
+            showNotification(notificationError, "please enter a valid email format.");
+            return;
+        }
+
+        if (!/^\d+$/.test(newNumber)) {
+            showNotification(notificationError, "Number must contain digits only .");
             return;
         }
 
         const updatedEmployee = {
             id: currentEditingEmployeeId,
-            name: newName.replace(/[^A-Za-z\s]/g, ""),
-            email: newEmail
+            name: newName,
+            email: newEmail,
+            gender: newGender,
+            nationality: newNationality,
+            phoneNumber: newNumber,
         };
 
         const transaction = database.transaction(["employees"], "readwrite");
@@ -195,7 +251,7 @@ async function saveEdit() {
         };
 
         updateRequest.onerror = (e) => {
-            if (e.target.error && e.target.error.name === "ConstraintError") {
+            if (e.target.error && e.target.error.name === "ConstraintError") { // Wrote this if condition because the email is unique:true
                 showNotification(notificationError, "Email already exists.");
             } else {
                 showNotification(notificationError, "Failed to update employee.");
