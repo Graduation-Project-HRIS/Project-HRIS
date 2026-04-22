@@ -52,7 +52,7 @@ function openDatabase() {
                 const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
                 employeeStore.createIndex("name", "name", { unique: false });
                 employeeStore.createIndex("email", "email", { unique: true });
-                employeeStore.createIndex("number", "number", { unique: true });
+                employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
             }
 
             if (!database.objectStoreNames.contains("leaveRequests")) {
@@ -141,6 +141,16 @@ if (employeeNameInput) {
 }
 
 if (form) {
+
+    function validateEmployeeID() {
+        const value = employeeIdGenerator.value.trim();
+        if (value === ""){
+            showNotification(submitMessageError, "Please generate an employee ID.")
+            return false;
+        }
+        return true;
+    }
+
     function validateName() {
         const value = employeeNameInput.value.trim();
 
@@ -189,7 +199,7 @@ if (form) {
         return true;
     }
 
-    function validateNumber() {
+    function validatePhoneNumber() {
         const value = employeeInputNumber.value.trim();
 
         if (value === "") {
@@ -219,8 +229,9 @@ if (form) {
             validateName() &&
             validateNationality() &&
             validateEmail() &&
-            validateNumber() &&
-            validateGender()
+            validatePhoneNumber() &&
+            validateGender(),
+            validateEmployeeID()
         );
     }
 
@@ -253,7 +264,7 @@ if (form) {
                 email: employeeEmailInput.value.trim().toLowerCase(),
                 gender: gender,
                 nationality: employeeInputNationality.value.trim(),
-                number: employeeInputNumber.value.trim(),
+                phoneNumber: employeeInputNumber.value.trim(),
             };
 
             const transaction = database.transaction(["employees"], "readwrite");
@@ -271,7 +282,7 @@ if (form) {
                 const error = event.target.error;
 
                 if (error && error.name === "ConstraintError") {
-                    showNotification(submitMessageError, "This email already exists.");
+                    showNotification(submitMessageError, "Email or phone number already exists.");
                     return;
                 }
 

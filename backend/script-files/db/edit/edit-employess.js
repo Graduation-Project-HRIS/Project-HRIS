@@ -15,7 +15,7 @@ const deleteModal = document.getElementById("deleteModal");
 const editEmployeeGenderMale = document.getElementById("editEmployeeGenderMale");
 const editEmployeeGenderFemale = document.getElementById("editEmployeeGenderFemale");
 const editEmployeeNationality = document.getElementById("editEmployeeNationality");
-const editEmployeeNumber = document.getElementById("editEmployeeNumber");
+const editEmployeePhoneNumber = document.getElementById("editEmployeePhoneNumber");
 
 const editEmployeeId = document.getElementById("editEmployeeId");
 const editEmployeeName = document.getElementById("editEmployeeName");
@@ -48,7 +48,7 @@ function openDatabase() {
                 const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
                 employeeStore.createIndex("name", "name", { unique: false });
                 employeeStore.createIndex("email", "email", { unique: true });
-                employeeStore.createIndex("number", "number", { unique: true });
+                employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
             }
 
             if (!database.objectStoreNames.contains("leaveRequests")) {
@@ -159,10 +159,10 @@ async function editEmployee(id) {
             editEmployeeId.value = employee.id;
             editEmployeeName.value = employee.name;
             editEmployeeEmail.value = employee.email;
-            currentEditingEmployeeGenderMale = editEmployeeGenderMale.checked = employee.gender === editEmployeeGenderMale.value;
-            currentEditingEmployeeGenderFemale = editEmployeeGenderFemale.checked = employee.gender === editEmployeeGenderFemale.value;
+            editEmployeeGenderMale.checked = employee.gender === editEmployeeGenderMale.value;
+            editEmployeeGenderFemale.checked = employee.gender === editEmployeeGenderFemale.value;
             editEmployeeNationality.value = employee.nationality;
-            editEmployeeNumber.value = employee.phoneNumber;
+            editEmployeePhoneNumber.value = employee.phoneNumber;
 
             editModal.style.display = "block";
         };
@@ -195,14 +195,14 @@ async function saveEdit() {
         const newName = editEmployeeName.value.trim();
         const newEmail = editEmployeeEmail.value.trim().toLowerCase();
         const newNationality = editEmployeeNationality.value.trim();
-        const newNumber = editEmployeeNumber.value.trim();
+        const newPhoneNumber = editEmployeePhoneNumber.value.trim();
         const newGender = editEmployeeGenderMale.checked ? editEmployeeGenderMale.value : editEmployeeGenderFemale.checked ? editEmployeeGenderFemale.value : "";
 
         const employeeDataEmptyNotification = [
             newName,
             newEmail,
             newNationality,
-            newNumber,
+            newPhoneNumber,
             newGender,
         ]
 
@@ -226,8 +226,8 @@ async function saveEdit() {
             return;
         }
 
-        if (!/^\d+$/.test(newNumber)) {
-            showNotification(notificationError, "Number must contain digits only .");
+        if (!/^\d{8}$/.test(newNumber)) {
+            showNotification(notificationError, "Number must be exactly 8 digits.");
             return;
         }
 
@@ -237,7 +237,7 @@ async function saveEdit() {
             email: newEmail,
             gender: newGender,
             nationality: newNationality,
-            phoneNumber: newNumber,
+            phoneNumber: newPhoneNumber,
         };
 
         const transaction = database.transaction(["employees"], "readwrite");
@@ -304,3 +304,5 @@ function showNotification(element, message) {
     element.classList.add("show");
     setTimeout(() => element.classList.remove("show"), 3000);
 }
+
+window.addEventListener("focus", showEmployees);
