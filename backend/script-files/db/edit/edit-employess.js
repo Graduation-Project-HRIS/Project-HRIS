@@ -4,7 +4,7 @@ let currentEditingEmployeeId = null;
 let currentDeletingEmployeeId = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 3;
+const DB_VERSION = 1;
 
 const employeeTableBody = document.getElementById("employeeTableBody");
 const notificationSuccess = document.getElementById("notificationSuccess");
@@ -226,7 +226,7 @@ async function saveEdit() {
             return;
         }
 
-        if (!/^\d{8}$/.test(newNumber)) {
+        if (!/^\d{8}$/.test(newPhoneNumber)) {
             showNotification(notificationError, "Number must be exactly 8 digits.");
             return;
         }

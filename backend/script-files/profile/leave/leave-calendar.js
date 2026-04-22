@@ -2,7 +2,7 @@ let db = null;
 let currentDate = new Date();
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 3;
+const DB_VERSION = 1;
 
 const monthTitle = document.getElementById("monthTitle");
 const calendarDays = document.getElementById("calendarDays");

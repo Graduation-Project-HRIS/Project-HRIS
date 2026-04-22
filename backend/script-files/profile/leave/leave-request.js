@@ -3,7 +3,7 @@ let dbReadyPromise = null;
 let lookupTimeout = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 3;
+const DB_VERSION = 1;
 
 const form = document.getElementById("leaveForm");
 const submitMessage = document.getElementById("submitMessage");
