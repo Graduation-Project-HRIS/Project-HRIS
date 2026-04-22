@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
             href="/styles/css-files/manager/employee-list.css">
-        <title>employeesDB</title>
+        <title>EmployeesDB</title>
     </head>
     <body>
         <!-- Notification Toast -->
@@ -18,13 +18,12 @@
         <table class="employees-list">
             <thead>
                 <tr>
-                    <th>Number</th>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Gender</th>
                     <th>Nationality</th>
-                    <th>Number</th>
+                    <th>phone Number</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -54,14 +53,20 @@
                             <input type="email" id="editEmployeeEmail" required>
                         </div>
                         <div class="form-group">
-                            <label for="editEmployeeGenderMale">Gender</label>
-                            <input type="radio" id="editEmployeeGenderMale"
-                                required>
+                            <label>Gender:</label>
+
+                            <div>
+                                <input type="radio" id="editEmployeeGenderMale"
+                                    name="editEmployeeGender" value="Male">
+                                <label for="editEmployeeGenderMale">Male</label>
+
+                                <input type="radio"
+                                    id="editEmployeeGenderFemale"
+                                    name="editEmployeeGender" value="Female">
+                                <label
+                                    for="editEmployeeGenderFemale">Female</label>
+                            </div>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="editEmployeeGenderMale">Gender</label>
-                            <input type="radio" id="editEmployeeGenderMale" required>
-                        </div> -->
                         <div class="form-group">
                             <label
                                 for="editEmployeeNationality">Nationality</label>
@@ -70,8 +75,8 @@
                         </div>
                         <div class="form-group">
                             <label
-                                for="editEmployeeNumber">Phone Number</label>
-                            <input type="text" id="editEmployeeNumber"
+                                for="editEmployeePhoneNumber">Phone Number</label>
+                            <input type="text" id="editEmployeePhoneNumber"
                                 required>
                         </div>
                     </form>
