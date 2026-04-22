@@ -2,7 +2,7 @@ let db = null;
 let currentDate = new Date();
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 const monthTitle = document.getElementById("monthTitle");
 const calendarDays = document.getElementById("calendarDays");
@@ -15,20 +15,24 @@ function openDatabase() {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
     request.onupgradeneeded = (e) => {
-        const database = e.target.result;
+        const db = e.target.result;
 
-        if (!database.objectStoreNames.contains("employees")) {
-            const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
+        if (!db.objectStoreNames.contains("employees")) {
+            const employeeStore = db.createObjectStore("employees", { keyPath: "id" });
             employeeStore.createIndex("name", "name", { unique: false });
             employeeStore.createIndex("email", "email", { unique: true });
         }
 
-        if (!database.objectStoreNames.contains("leaveRequests")) {
-            const leaveStore = database.createObjectStore("leaveRequests", { keyPath: "leaveId" });
-            leaveStore.createIndex("employeeId", "employeeId", { unique: false });
-            leaveStore.createIndex("name", "name", { unique: false });
-            leaveStore.createIndex("leaveType", "leaveType", { unique: false });
+        if (db.objectStoreNames.contains("leaveRequests")) {
+            db.deleteObjectStore("leaveRequests");
         }
+
+        const leaveStore = db.createObjectStore("leaveRequests", { keyPath: "leaveId" });
+        leaveStore.createIndex("employeeId", "employeeId", { unique: false });
+        leaveStore.createIndex("name", "name", { unique: false });
+        leaveStore.createIndex("leaveType", "leaveType", { unique: false });
+        leaveStore.createIndex("startDate", "startDate", { unique: false });
+        leaveStore.createIndex("endDate", "endDate", { unique: false });
     };
 
     request.onsuccess = (e) => {

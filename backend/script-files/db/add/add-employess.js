@@ -2,7 +2,7 @@ let db = null;
 let dbReadyPromise = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 const form = document.getElementById("employeeForm");
 const employeeIdGenerator = document.getElementById("employeeId");
@@ -12,6 +12,11 @@ const submitMessage = document.getElementById("submitMessage");
 const submitMessageError = document.getElementById("submitMessageError");
 const generateIdButton = document.getElementById("generateId");
 const saveButton = document.getElementById("saveButton");
+const radioInputMale = document.getElementById("radioInputMale");
+const radioInputFemale = document.getElementById("radioInputFemale");
+const employeeInputNationality = document.getElementById("employeeInputNationality");
+const employeeInputNumber = document.getElementById("employeeInputNumber");
+
 
 setFormState(false);
 dbReadyPromise = openDatabase();
@@ -47,6 +52,7 @@ function openDatabase() {
                 const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
                 employeeStore.createIndex("name", "name", { unique: false });
                 employeeStore.createIndex("email", "email", { unique: true });
+                employeeStore.createIndex("number", "number", { unique: true });
             }
 
             if (!database.objectStoreNames.contains("leaveRequests")) {
@@ -135,27 +141,120 @@ if (employeeNameInput) {
 }
 
 if (form) {
+    function validateName() {
+        const value = employeeNameInput.value.trim();
+
+        if (value === "") {
+            showNotification(submitMessageError, "Name is required.");
+            return false;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(value)) {
+            showNotification(submitMessageError, "Name must contain letters only.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateNationality() {
+        const value = employeeInputNationality.value.trim();
+
+        if (value === "") {
+            showNotification(submitMessageError, "Nationality is required.");
+            return false;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(value)) {
+            showNotification(submitMessageError, "Nationality must contain letters only.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateEmail() {
+        const value = employeeEmailInput.value.trim().toLowerCase();
+
+        if (value === "") {
+            showNotification(submitMessageError, "Email is required.");
+            return false;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            showNotification(submitMessageError, "Please enter a valid email format.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateNumber() {
+        const value = employeeInputNumber.value.trim();
+
+        if (value === "") {
+            showNotification(submitMessageError, "Number is required.");
+            return false;
+        }
+
+        if (!/^\d{8}$/.test(value)) {
+            showNotification(submitMessageError, "Number must be exactly 8 digits.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateGender() {
+        if (!radioInputMale.checked && !radioInputFemale.checked) {
+            showNotification(submitMessageError, "Please select a gender.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateAllFields() {
+        return (
+            validateName() &&
+            validateNationality() &&
+            validateEmail() &&
+            validateNumber() &&
+            validateGender()
+        );
+    }
+
+    employeeNameInput.addEventListener("input", validateName);
+    employeeInputNationality.addEventListener("input", validateNationality);
+    employeeEmailInput.addEventListener("input", validateEmail);
+    employeeInputNumber.addEventListener("input", validateNumber);
+    radioInputMale.addEventListener("change", validateGender);
+    radioInputFemale.addEventListener("change", validateGender);
+
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        if (!validateAllFields()) {
+            return;
+        }
 
         try {
             const database = await ensureDatabase();
 
+            const gender = radioInputMale.checked
+                ? radioInputMale.value
+                : radioInputFemale.checked
+                    ? radioInputFemale.value
+                    : "";
+
             const employeeData = {
                 id: employeeIdGenerator.value.trim(),
                 name: employeeNameInput.value.trim(),
-                email: employeeEmailInput.value.trim().toLowerCase()
+                email: employeeEmailInput.value.trim().toLowerCase(),
+                gender: gender,
+                nationality: employeeInputNationality.value.trim(),
+                number: employeeInputNumber.value.trim(),
             };
-
-            if (!employeeData.id || !employeeData.name || !employeeData.email) {
-                showNotification(submitMessageError, "Please fill in all fields.");
-                return;
-            }
-
-            if (!/^\d{8}$/.test(employeeData.id)) {
-                showNotification(submitMessageError, "Employee ID must be exactly 8 digits.");
-                return;
-            }
 
             const transaction = database.transaction(["employees"], "readwrite");
             const objectStore = transaction.objectStore("employees");
