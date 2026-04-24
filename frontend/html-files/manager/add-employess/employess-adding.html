@@ -51,7 +51,8 @@
                     <input class="radio-input" type="radio"
                         id="radioInputFemale"
                         name="employeeGender" value="Female">
-                    <label for="radioInputFemale" class="radio-label">Female</label>
+                    <label for="radioInputFemale"
+                        class="radio-label">Female</label>
                 </div>
             </div>
 
@@ -75,6 +76,17 @@
                         maxlength="8"
                         required>
                 </div>
+            </div>
+
+            <div>
+                <label for="departments">Departments:</label>
+                <select name="departments" id="departments">
+                    <option value="supportGroup"> Support Group </option>
+                    <option value>Sales/Revenue-generating groups</option>
+                    <option value>Control Groups</option>
+                    <option value>Executive Group</option>
+                </select>
+
             </div>
 
             <button type="submit" id="saveButton">Add Employee</button>
