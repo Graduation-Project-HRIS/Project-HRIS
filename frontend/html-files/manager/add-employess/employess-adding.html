@@ -57,7 +57,7 @@
             </div>
 
             <div>
-                <label for="employeeNationality">Nationality:</label>
+                <label for="employeeInputNationality">Nationality:</label>
                 <input type="text" id="employeeInputNationality"
                     placeholder="Employee Nationality"
                     required>
@@ -81,12 +81,19 @@
             <div>
                 <label for="departments">Departments:</label>
                 <select name="departments" id="departments">
-                    <option value="supportGroup"> Support Group </option>
-                    <option value>Sales/Revenue-generating groups</option>
-                    <option value>Control Groups</option>
-                    <option value>Executive Group</option>
+                    <option value="supportGroup"> Support Groups </option>
+                    <option value="salesRevenue">Sales/Revenue-generating groups</option>
+                    <option value="controlGroups">Control Groups</option>
+                    <option value="executiveGroups">Executive Group</option>
                 </select>
+            </div>
 
+            <div>
+                <label for="roleOfUser">Select Role:</label>
+                <select id="roleOfUser">
+                    <option value="manager">Manager</option>
+                    <option value="employee">Employee</option>
+                </select>
             </div>
 
             <button type="submit" id="saveButton">Add Employee</button>

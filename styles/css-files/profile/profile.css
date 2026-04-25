@@ -149,6 +149,7 @@ body {
 /* actions */
 .profile-action-tile {
     min-height: 180px;
+    margin-top: 20px;
     border: 1.6px solid #d4dde8;
     border-radius: 22px;
     background: #ffffff;
