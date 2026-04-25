@@ -7,7 +7,7 @@
             href="/styles/css-files/manager/employee-list.css">
         <title>EmployeesDB</title>
     </head>
-    <body>
+    <body data-protected-page="true" data-allowed-roles="Manager">
         <!-- Notification Toast -->
         <div id="notificationSuccess" class="toast-notification toast-success"
             role="status" aria-live="polite"></div>
@@ -155,6 +155,6 @@
 
         <script src="/backend/script-files/db/edit/edit-employess.js"></script>
         <script src="/register-unregister-check.js"></script>
-        <!-- <script src="/sw.js"></script> -->
+        <script src="/backend/script-files/auth/role-ui.js"></script>
     </body>
 </html>

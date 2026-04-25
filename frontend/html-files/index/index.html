@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- This is the sign-in page for the HRIS system -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"
-            href="/styles/css-files/index/signin.css">
+
+        <link rel="stylesheet" href="/styles/css-files/index/signin.css">
+
         <title>HRIS</title>
     </head>
+
     <body>
         <div class="login-container">
-            <div class="wrapper">
-                <form class="form-signin" id="formSignIn">
-                    <h2 class="form-signin-heading">Sign In</h2>
+            <form class="form-signin" id="formSignIn">
+                <h2 class="form-signin-heading">Sign In</h2>
 
-                    <div class="input-group-container id-container">
-                        <input type="text" class="form-control" name="username"
-                            id="userId" placeholder="ID" maxlength="8" required
-                            autofocus autocomplete="username">
-                        <h3 id="idError" class="error-message"></h3>
+                <div class="input-group-container">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        id="userId"
+                        placeholder="ID"
+                        maxlength="8"
+                        required
+                        autofocus
+                        autocomplete="off">
+
+                    <h3 id="idError" class="error-message"></h3>
+                </div>
+
+                <div class="input-group-container">
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            id="userPassword"
+                            maxlength="6"
+                            placeholder="Password"
+                            required
+                            autocomplete="off">
+
+                        <button type="button" id="togglePassword"
+                            aria-label="Show password">
+                            <span id="passwordToggleText">Show</span>
+                        </button>
                     </div>
 
-                    <div class="input-group-container password-container">
-                        <div class="password-field">
-                            <input type="password" class="form-control"
-                                name="password" id="userPassword" maxlength="6"
-                                placeholder="Password" required
-                                autocomplete="current-password">
-                            <button type="button" id="togglePassword">
-                                <img
-                                    src="../../../images/index-signin/hide-password.png"
-                                    alt="Hide Password" id="hidePasswordIcon">
-                                <img
-                                    src="../../../images/index-signin/show-password.png"
-                                    alt="Show Password" id="showPasswordIcon">
+                    <h3 id="passwordError" class="error-message"></h3>
+                </div>
 
-                            </button>
-                        </div>
-                        <h3 id="passwordError" class="error-message"></h3>
-                    </div>
+                <button
+                    class="btn-block"
+                    type="submit"
+                    id="SignInButton">
+                    Sign In
+                </button>
 
-                    <button class="btn btn-lg btn-primary btn-block"
-                        type="submit" id="SignInButton">Sign In</button>
-                    <a href="#">Forget password</a>
-                </form>
-            </div>
+                <a href="#" class="forgot-password-link">Forget password</a>
+            </form>
         </div>
 
         <script src="/backend/script-files/index/signin.js"></script>
