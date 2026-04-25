@@ -53,6 +53,7 @@ const FILES_TO_CACHE = [
     "/backend/script-files/support-group/digital-group/digital.js",
     "/backend/script-files/support-group/hr-group/hr-form.js",
     "/backend/script-files//profile/leave/leave-request.js",
+    "/backend/script-files/auth/role-ui.js",
     // Cache the images files
     "/images/index-signin/hide-password.png",
     "/images/index-signin/show-password.png",

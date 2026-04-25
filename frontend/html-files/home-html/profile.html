@@ -17,7 +17,7 @@
             </nav>
 
             <header class="profile-hero">
-                <h1 class="profile-hero-title">Welcome John Doe</h1>
+                <h1 class="profile-hero-title" id="profileWelcome"></h1>
             </header>
 
             <main class="profile-layout">
@@ -27,29 +27,41 @@
                     <div class="profile-details-grid">
                         <div class="profile-detail-item">
                             <span class="profile-detail-label">Name</span>
-                            <span class="profile-detail-value">John Doe</span>
+                            <span class="profile-detail-value"
+                                id="profileName">Loading...</span>
                         </div>
 
                         <div class="profile-detail-item">
                             <span class="profile-detail-label">ID</span>
-                            <span class="profile-detail-value">12345678</span>
+                            <span class="profile-detail-value"
+                                id="profileId">Loading...</span>
                         </div>
 
                         <div class="profile-detail-item">
-                            <span class="profile-detail-label">Position</span>
-                            <span class="profile-detail-value">HR Manager</span>
+                            <span class="profile-detail-label">Role</span>
+                            <span class="profile-detail-value"
+                                id="profileRole">Loading...</span>
                         </div>
 
                         <div class="profile-detail-item">
                             <span class="profile-detail-label">Department</span>
-                            <span class="profile-detail-value">HR Group</span>
+                            <span class="profile-detail-value"
+                                id="profileDepartment">Loading...</span>
                         </div>
 
                         <div
                             class="profile-detail-item profile-detail-item-full">
                             <span class="profile-detail-label">Email</span>
-                            <span
-                                class="profile-detail-value">John_Doe@gmail.com</span>
+                            <span class="profile-detail-value"
+                                id="profileEmail">Loading...</span>
+                        </div>
+
+                        <div
+                            class="profile-detail-item profile-detail-item-full">
+                            <span class="profile-detail-label">Phone
+                                Number</span>
+                            <span class="profile-detail-value"
+                                id="profilePhoneNumber">Loading...</span>
                         </div>
                     </div>
                 </section>
@@ -64,8 +76,9 @@
 
                     <a href="/frontend/html-files/leave/leave-calendar.html"
                         class="profile-action-tile">
-                        <span class="profile-action-title">Leave Calender</span>
+                        <span class="profile-action-title">Leave Calendar</span>
                     </a>
+
                 </aside>
             </main>
 
@@ -78,4 +91,7 @@
         <script src="/register-unregister-check.js"></script>
         <script src="/sw.js"></script>
     </body>
+    <script src="/register-unregister-check.js"></script>
+    <script src="/backend/script-files/auth/role-ui.js"></script>
+    <script src="/sw.js"></script>
 </html>

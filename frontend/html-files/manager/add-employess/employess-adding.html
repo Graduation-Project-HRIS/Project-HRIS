@@ -7,7 +7,7 @@
         <link rel="stylesheet"
             href="/styles/css-files/manager/employee-form.css">
     </head>
-    <body>
+    <body data-protected-page="true" data-allowed-roles="Manager">
         <h1 class="e-form">Employee Form</h1>
         <div id="submitMessage" class="top-notification" role="status"
             aria-live="polite"></div>
@@ -81,8 +81,10 @@
             <div>
                 <label for="departments">Departments:</label>
                 <select name="departments" id="departments">
+                    <option value=""></option>
                     <option value="sSupport Groups"> Support Groups </option>
-                    <option value="Sales Revenue groups">Sales/Revenue-generating
+                    <option
+                        value="Sales Revenue groups">Sales/Revenue-generating
                         groups</option>
                     <option value="Control Groups">Control Groups</option>
                     <option value="Executive Groups">Executive Groups</option>
@@ -92,6 +94,7 @@
             <div>
                 <label for="roleOfUser">Select Role:</label>
                 <select id="roleOfUser">
+                    <option value=""></option>
                     <option value="Manager">Manager</option>
                     <option value="Employee">Employee</option>
                 </select>
@@ -106,6 +109,6 @@
         </div>
         <script src="/backend/script-files/db/add/add-employess.js"></script>
         <script src="/register-unregister-check.js"></script>
-        <!-- <script src="/sw.js"></script> -->
+        <script src="/backend/script-files/auth/role-ui.js"></script>
     </body>
 </html>

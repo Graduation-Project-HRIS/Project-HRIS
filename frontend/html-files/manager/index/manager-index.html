@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
-            content="width=device-width, idddnitial-scale=1.0">
+            content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/styles/css-files/home-css/home.css">
         <link rel="stylesheet" href="/styles/css-files/home-css/navber.css">
         <title>Manager page</title>
     </head>
-    <body>
+    <body data-protected-page="true" data-allowed-roles="Manager">
         <div class="home-container">
             <nav>
                 <div class="left-nav">
                     <a class="active"
                         href="/frontend/html-files/index/index.html">Logout</a>
                     <a class="active"
-                        href="/frontend//html-files/home-html/home.html">Home</a>
+                        href="/frontend/html-files/home-html/home.html">Home</a>
                 </div>
             </nav>
             <nav>
@@ -39,7 +39,8 @@
                         class="department-link hr-link">Add Employee</a>
                     <a
                         href="/frontend/html-files/manager/edit-employess/employess-edit.html"
-                        class="department-link it-link">Edit-Delete-See Data Base</a>
+                        class="department-link it-link">Edit-Delete-See Data
+                        Base</a>
                 </div>
                 <div class="page-tools">
                     <a class="back-button"
@@ -48,6 +49,7 @@
                 </div>
             </div>
             <script src="/register-unregister-check.js"></script>
+            <script src="/backend/script-files/auth/role-ui.js"></script>
 
         </body>
     </html>
