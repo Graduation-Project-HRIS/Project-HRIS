@@ -91,16 +91,29 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <label
-                                for="editEmployeeRole">Role</label>
-                            <input type="text" id="editEmployeeRole"
-                                required>
+                            <label for="editEmployeeRole">Role</label>
+                            <select id="editEmployeeRole" required>
+                                <option value>Select role</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Employee">Employee</option>
+                            </select>
                         </div>
+
                         <div class="form-group">
                             <label
                                 for="editEmployeeDepartment">Department</label>
-                            <input type="text" id="editEmployeeDepartment"
-                                required>
+                            <select id="editEmployeeDepartment" required>
+                                <option value>Select department</option>
+                                <option value="Support Groups">Support
+                                    Groups</option>
+                                <option
+                                    value="Sales Revenue Groups">Sales/Revenue-generating
+                                    groups</option>
+                                <option value="Control Groups">Control
+                                    Groups</option>
+                                <option value="Executive Groups">Executive
+                                    Groups</option>
+                            </select>
                         </div>
                     </form>
                 </div>

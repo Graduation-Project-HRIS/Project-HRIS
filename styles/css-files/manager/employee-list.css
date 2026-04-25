@@ -197,17 +197,21 @@ body {
     font-size: 0.95rem;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid #b8c9e7;
     border-radius: 8px;
     font-size: 0.95rem;
     font-family: inherit;
+    color: #1d3f67;
+    background-color: #ffffff;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: #4d8cf0;
     box-shadow: 0 0 0 3px rgba(77, 140, 240, 0.1);

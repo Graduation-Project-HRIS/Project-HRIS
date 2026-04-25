@@ -21,7 +21,7 @@ const editEmployeeId = document.getElementById("editEmployeeId");
 const editEmployeeName = document.getElementById("editEmployeeName");
 const editEmployeeEmail = document.getElementById("editEmployeeEmail");
 const editEmployeeRole = document.getElementById("editEmployeeRole");
-const editEmployeeDepartments = document.getElementById("editEmployeeDepartments");
+const editEmployeeDepartment = document.getElementById("editEmployeeDepartment");
 
 dbReadyPromise = openDatabase();
 
@@ -121,8 +121,8 @@ async function showEmployees() {
                     <td>${employee.gender}</td>
                     <td>${employee.nationality}</td>
                     <td>${employee.phoneNumber}</td>
-                    <td>${employee.role}</td>
-                    <td>${employee.department}</td>
+                    <td>${employee.role || "No Role"}</td>
+                    <td>${employee.department || "No Department"}</td>
                     <td>
                         <button type="button" class="action-btn" onclick="editEmployee('${employee.id}')">Edit</button>
                         <button type="button" class="action-btn btn-danger" onclick="openDeleteModal('${employee.id}')">Delete</button>
@@ -166,8 +166,8 @@ async function editEmployee(id) {
             editEmployeeGenderFemale.checked = employee.gender === editEmployeeGenderFemale.value;
             editEmployeeNationality.value = employee.nationality;
             editEmployeePhoneNumber.value = employee.phoneNumber;
-            editEmployeeRole.value = employee.role;
-            editEmployeeDepartments.value = employee.department;
+            editEmployeeRole.value = employee.role || "";
+            editEmployeeDepartment.value = employee.department || "";
             editModal.style.display = "block";
         };
 
@@ -202,7 +202,7 @@ async function saveEdit() {
         const newPhoneNumber = editEmployeePhoneNumber.value.trim();
         const newGender = editEmployeeGenderMale.checked ? editEmployeeGenderMale.value : editEmployeeGenderFemale.checked ? editEmployeeGenderFemale.value : "";
         const newRole = editEmployeeRole.value;
-        const newDepartment = editEmployeeDepartments.value;
+        const newDepartment = editEmployeeDepartment.value;
 
 
         const employeeDataEmptyNotification = [
