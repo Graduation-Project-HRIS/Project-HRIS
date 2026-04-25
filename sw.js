@@ -1,4 +1,4 @@
-const CACHE_NAME = 'HRIS-cache-v1';
+const CACHE_NAME = 'HRIS-cache-v2';
 
 const FILES_TO_CACHE = [
     // Cache the root and main HTML files
@@ -45,20 +45,20 @@ const FILES_TO_CACHE = [
     "/backend/script-files/db/add/add-employess.js",
     "/backend/script-files/db/default/default-employess.js",
     "/backend/script-files/db/edit/edit-employess.js",
-    "/backend/script-files/db/db.js",
     "/backend/script-files/home-js/home.js",
     "/backend/script-files/index/signin.js",
     "/sw.js",
     "/register-unregister-check.js",
     "/backend/script-files/support-group/digital-group/digital.js",
     "/backend/script-files/support-group/hr-group/hr-form.js",
-    "/backend/script-files//profile/leave/leave-request.js",
+    "/backend/script-files/profile/leave/leave-request.js",
+    "/backend/script-files/profile/leave/leave-calendar.js",
     "/backend/script-files/auth/role-ui.js",
     // Cache the images files
     "/images/index-signin/hide-password.png",
     "/images/index-signin/show-password.png",
     "/images/navbar/profile-icons.png"
-]
+];
 
 // install: save important files
 self.addEventListener('install', event => {
@@ -113,7 +113,7 @@ self.addEventListener('fetch', (event) => { //handles every request
                     })
             })
     )
-})
+});
 
 
 

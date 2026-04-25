@@ -8,6 +8,7 @@ const form = document.getElementById("employeeForm");
 const employeeIdGenerator = document.getElementById("employeeId");
 const employeeNameInput = document.getElementById("employeeName");
 const employeeEmailInput = document.getElementById("employeeEmail");
+const employeePasswordInput = document.getElementById("employeePassword");
 const submitMessage = document.getElementById("submitMessage");
 const submitMessageError = document.getElementById("submitMessageError");
 const generateIdButton = document.getElementById("generateId");
@@ -219,6 +220,45 @@ if (form) {
         return true;
     }
 
+    function validatePassword() {
+        let value = employeePasswordInput.value.trim();
+
+        value = value.slice(0, 6);
+        employeePasswordInput.value = value;
+
+        if (value === "") {
+            showNotification(submitMessageError, "Password is required.");
+            return false;
+        }
+
+        if (/\s/.test(value)) {
+            showNotification(submitMessageError, "Password must not contain spaces.");
+            return false;
+        }
+
+        if (/[0-9]/.test(value)) {
+            showNotification(submitMessageError, "Password must include characters, not numbers.");
+            return false;
+        }
+
+        if (value.length !== 6) {
+            showNotification(submitMessageError, "Password must be exactly 6 characters.");
+            return false;
+        }
+
+        if (!/[A-Z]/.test(value)) {
+            showNotification(submitMessageError, "Password must include at least one uppercase letter.");
+            return false;
+        }
+
+        if (!/[!@#$%^&*(),.?\":{}|<>_\-\\/[\];'`~+=]/.test(value)) {
+            showNotification(submitMessageError, "Password must include at least one special character.");
+            return false;
+        }
+
+        return true;
+    }
+
     /* Validates that the phone number is exactly 8 digits. */
     function validatePhoneNumber() {
         const value = employeeInputPhoneNumber.value.trim();
@@ -275,6 +315,7 @@ if (form) {
             validateName() &&
             validateNationality() &&
             validateEmail() &&
+            validatePassword() &&
             validatePhoneNumber() &&
             validateGender() &&
             validateRole() &&
@@ -285,6 +326,7 @@ if (form) {
     employeeNameInput.addEventListener("input", validateName);
     employeeInputNationality.addEventListener("input", validateNationality);
     employeeEmailInput.addEventListener("input", validateEmail);
+    employeePasswordInput.addEventListener("input", validatePassword);
     employeeInputPhoneNumber.addEventListener("input", validatePhoneNumber);
     radioInputMale.addEventListener("change", validateGender);
     radioInputFemale.addEventListener("change", validateGender);
@@ -311,6 +353,7 @@ if (form) {
                 id: employeeIdGenerator.value.trim(),
                 name: employeeNameInput.value.trim(),
                 email: employeeEmailInput.value.trim().toLowerCase(),
+                password: employeePasswordInput.value.trim(),
                 gender: gender,
                 nationality: employeeInputNationality.value.trim(),
                 phoneNumber: employeeInputPhoneNumber.value.trim(),

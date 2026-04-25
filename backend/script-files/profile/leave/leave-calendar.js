@@ -11,28 +11,43 @@ const nextMonthButton = document.getElementById("nextMonth");
 
 openDatabase();
 
+function ensureIndex(objectStore, name, keyPath, options) {
+    if (!objectStore.indexNames.contains(name)) {
+        objectStore.createIndex(name, keyPath, options);
+    }
+}
+
 function openDatabase() {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
     request.onupgradeneeded = (e) => {
-        const db = e.target.result;
+        const database = e.target.result;
+        const upgradeTransaction = e.target.transaction;
+        let employeeStore;
+        let leaveStore;
 
-        if (!db.objectStoreNames.contains("employees")) {
-            const employeeStore = db.createObjectStore("employees", { keyPath: "id" });
-            employeeStore.createIndex("name", "name", { unique: false });
-            employeeStore.createIndex("email", "email", { unique: true });
+        if (database.objectStoreNames.contains("employees")) {
+            employeeStore = upgradeTransaction.objectStore("employees");
+        } else {
+            employeeStore = database.createObjectStore("employees", { keyPath: "id" });
         }
 
-        if (db.objectStoreNames.contains("leaveRequests")) {
-            db.deleteObjectStore("leaveRequests");
+        ensureIndex(employeeStore, "name", "name", { unique: false });
+        ensureIndex(employeeStore, "email", "email", { unique: true });
+        ensureIndex(employeeStore, "phoneNumber", "phoneNumber", { unique: true });
+
+        if (database.objectStoreNames.contains("leaveRequests")) {
+            leaveStore = upgradeTransaction.objectStore("leaveRequests");
+        } else {
+            leaveStore = database.createObjectStore("leaveRequests", { keyPath: "leaveId" });
         }
 
-        const leaveStore = db.createObjectStore("leaveRequests", { keyPath: "leaveId" });
-        leaveStore.createIndex("employeeId", "employeeId", { unique: false });
-        leaveStore.createIndex("name", "name", { unique: false });
-        leaveStore.createIndex("leaveType", "leaveType", { unique: false });
-        leaveStore.createIndex("startDate", "startDate", { unique: false });
-        leaveStore.createIndex("endDate", "endDate", { unique: false });
+        ensureIndex(leaveStore, "employeeId", "employeeId", { unique: false });
+        ensureIndex(leaveStore, "name", "name", { unique: false });
+        ensureIndex(leaveStore, "leaveType", "leaveType", { unique: false });
+        ensureIndex(leaveStore, "leaveDate", "leaveDate", { unique: false });
+        ensureIndex(leaveStore, "startDate", "startDate", { unique: false });
+        ensureIndex(leaveStore, "endDate", "endDate", { unique: false });
     };
 
     request.onsuccess = (e) => {

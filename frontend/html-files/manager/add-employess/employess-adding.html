@@ -37,6 +37,17 @@
                     placeholder="Employee Email"
                     required>
             </div>
+
+            <div>
+                <label for="employeePassword">Password:</label>
+                <input
+                    type="password"
+                    id="employeePassword"
+                    placeholder="6 characters, 1 uppercase, 1 special"
+                    maxlength="6"
+                    autocomplete="new-password"
+                    required>
+            </div>
             <label for="employeeGender">Gender</label>
 
             <div class="radio-group">
@@ -82,9 +93,9 @@
                 <label for="departments">Departments:</label>
                 <select name="departments" id="departments">
                     <option value=""></option>
-                    <option value="sSupport Groups"> Support Groups </option>
+                    <option value="Support Groups"> Support Groups </option>
                     <option
-                        value="Sales Revenue groups">Sales/Revenue-generating
+                        value="Sales Revenue Groups">Sales/Revenue-generating
                         groups</option>
                     <option value="Control Groups">Control Groups</option>
                     <option value="Executive Groups">Executive Groups</option>

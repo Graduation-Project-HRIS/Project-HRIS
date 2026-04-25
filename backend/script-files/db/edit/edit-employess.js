@@ -1,6 +1,7 @@
 let db = null;
 let dbReadyPromise = null;
 let currentEditingEmployeeId = null;
+let currentEditingEmployee = null;
 let currentDeletingEmployeeId = null;
 
 const DB_NAME = "EmployeeDB";
@@ -20,6 +21,7 @@ const editEmployeePhoneNumber = document.getElementById("editEmployeePhoneNumber
 const editEmployeeId = document.getElementById("editEmployeeId");
 const editEmployeeName = document.getElementById("editEmployeeName");
 const editEmployeeEmail = document.getElementById("editEmployeeEmail");
+const editEmployeePassword = document.getElementById("editEmployeePassword");
 const editEmployeeRole = document.getElementById("editEmployeeRole");
 const editEmployeeDepartment = document.getElementById("editEmployeeDepartment");
 
@@ -159,9 +161,11 @@ async function editEmployee(id) {
             }
 
             currentEditingEmployeeId = employee.id;
+            currentEditingEmployee = employee;
             editEmployeeId.value = employee.id;
             editEmployeeName.value = employee.name;
             editEmployeeEmail.value = employee.email;
+            editEmployeePassword.value = "";
             editEmployeeGenderMale.checked = employee.gender === editEmployeeGenderMale.value;
             editEmployeeGenderFemale.checked = employee.gender === editEmployeeGenderFemale.value;
             editEmployeeNationality.value = employee.nationality;
@@ -183,7 +187,34 @@ async function editEmployee(id) {
 function closeEditModal() {
     editModal.style.display = "none";
     currentEditingEmployeeId = null;
+    currentEditingEmployee = null;
     document.getElementById("editForm").reset();
+}
+
+function getPasswordValidationMessage(password) {
+    if (password === "") return "";
+
+    if (/\s/.test(password)) {
+        return "Password must not contain spaces.";
+    }
+
+    if (/[0-9]/.test(password)) {
+        return "Password must include characters, not numbers.";
+    }
+
+    if (password.length !== 6) {
+        return "Password must be exactly 6 characters.";
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        return "Password must include at least one uppercase letter.";
+    }
+
+    if (!/[!@#$%^&*(),.?\":{}|<>_\-\\/[\];'`~+=]/.test(password)) {
+        return "Password must include at least one special character.";
+    }
+
+    return "";
 }
 
 
@@ -200,9 +231,26 @@ async function saveEdit() {
         const newEmail = editEmployeeEmail.value.trim().toLowerCase();
         const newNationality = editEmployeeNationality.value.trim();
         const newPhoneNumber = editEmployeePhoneNumber.value.trim();
+        const newPassword = editEmployeePassword.value.trim();
         const newGender = editEmployeeGenderMale.checked ? editEmployeeGenderMale.value : editEmployeeGenderFemale.checked ? editEmployeeGenderFemale.value : "";
         const newRole = editEmployeeRole.value;
         const newDepartment = editEmployeeDepartment.value;
+        const passwordValidationMessage = getPasswordValidationMessage(newPassword);
+
+        if (passwordValidationMessage) {
+            showNotification(notificationError, passwordValidationMessage);
+            return;
+        }
+
+        const existingPassword = currentEditingEmployee && typeof currentEditingEmployee.password === "string"
+            ? currentEditingEmployee.password
+            : "";
+        const finalPassword = newPassword || existingPassword;
+
+        if (finalPassword === "") {
+            showNotification(notificationError, "Please set a password for this employee.");
+            return;
+        }
 
 
         const employeeDataEmptyNotification = [
@@ -247,6 +295,7 @@ async function saveEdit() {
             gender: newGender,
             nationality: newNationality,
             phoneNumber: newPhoneNumber,
+            password: finalPassword,
             role: newRole,
             department: newDepartment,
         };
