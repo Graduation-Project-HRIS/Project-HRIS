@@ -70,12 +70,6 @@ function validatePassword() {
         return false;
     }
 
-    if (/\s/.test(userPassword)) {
-        passwordError.textContent = "Password must not contain spaces.";
-        userPasswordInput.style.border = "3.5px solid red";
-        return false;
-    }
-
     if (/[0-9]/.test(userPassword)) {
         passwordError.textContent = "Password must include characters, not numbers.";
         userPasswordInput.style.border = "3.5px solid red";
@@ -142,7 +136,9 @@ function openDatabase() {
     });
 }
 
-async function getEmployeeById(database, employeeId) {
+async function findEmployeeById(employeeId) {
+    const database = await openDatabase();
+
     return new Promise((resolve, reject) => {
         const transaction = database.transaction(["employees"], "readonly");
         const objectStore = transaction.objectStore("employees");
@@ -158,41 +154,6 @@ async function getEmployeeById(database, employeeId) {
     });
 }
 
-async function hasConfiguredPasswords(database) {
-    return new Promise((resolve, reject) => {
-        const transaction = database.transaction(["employees"], "readonly");
-        const objectStore = transaction.objectStore("employees");
-        const getAllRequest = objectStore.getAll();
-
-        getAllRequest.onsuccess = () => {
-            const employees = getAllRequest.result || [];
-            resolve(employees.some(employee => typeof employee.password === "string" && employee.password !== ""));
-        };
-
-        getAllRequest.onerror = () => {
-            reject(getAllRequest.error);
-        };
-    });
-}
-
-async function saveEmployeePassword(database, employee, password) {
-    return new Promise((resolve, reject) => {
-        const transaction = database.transaction(["employees"], "readwrite");
-        const objectStore = transaction.objectStore("employees");
-        const putRequest = objectStore.put({
-            ...employee,
-            password,
-        });
-
-        putRequest.onsuccess = () => {
-            resolve();
-        };
-
-        putRequest.onerror = () => {
-            reject(putRequest.error);
-        };
-    });
-}
 
 formSignIn.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -206,9 +167,7 @@ formSignIn.addEventListener("submit", async (e) => {
 
     try {
         const employeeId = userIdInput.value.trim();
-        const enteredPassword = userPasswordInput.value.trim();
-        const database = await openDatabase();
-        const employee = await getEmployeeById(database, employeeId);
+        const employee = await findEmployeeById(employeeId);
 
         if (!employee) {
             idError.textContent = "Employee ID does not exist please contact HR department .";
@@ -221,34 +180,6 @@ formSignIn.addEventListener("submit", async (e) => {
             userIdInput.style.border = "3.5px solid red";
             return;
         }
-
-        const storedPassword = typeof employee.password === "string" ? employee.password : "";
-        const isManager = String(employee.role).trim().toLowerCase() === "manager";
-
-        if (!storedPassword) {
-            if (!isManager) {
-                passwordError.textContent = "This account does not have a password yet. Contact a manager.";
-                userPasswordInput.style.border = "3.5px solid red";
-                return;
-            }
-
-            const anyPasswordsConfigured = await hasConfiguredPasswords(database);
-
-            if (anyPasswordsConfigured) {
-                passwordError.textContent = "This manager account does not have a password yet. Ask another manager to set it.";
-                userPasswordInput.style.border = "3.5px solid red";
-                return;
-            }
-
-            await saveEmployeePassword(database, employee, enteredPassword);
-        } else if (storedPassword !== enteredPassword) {
-            passwordError.textContent = "Incorrect password.";
-            userPasswordInput.style.border = "3.5px solid red";
-            return;
-        }
-
-        passwordError.textContent = "";
-        userPasswordInput.style.border = "3.5px solid green";
         sessionStorage.setItem("currentEmployeeId", employee.id);
 
         window.location.href = "/frontend/html-files/home-html/home.html";
