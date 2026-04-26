@@ -3,13 +3,140 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DB Records </title>
+        <title>DB Records</title>
+
+        <link rel="stylesheet"
+            href="/styles/css-files/manager/employee-list.css">
+
+        <style>
+            .records-section {
+                width: 95%;
+                margin: 30px auto;
+            }
+
+            .records-title {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .records-buttons {
+                width: 95%;
+                margin: 25px auto;
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .records-buttons button {
+                padding: 10px 18px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+
+            #importJsonButton {
+                background-color: #0d4988;
+                color: white;
+            }
+
+            #refreshButton {
+                background-color: #e8eef7;
+                color: #0d4988;
+            }
+
+            #recordsMessage {
+                width: 95%;
+                margin: 15px auto;
+                text-align: center;
+                font-weight: 600;
+            }
+        </style>
     </head>
-    <body>
+
+    <body data-protected-page="true" data-allowed-roles="Manager">
+
+        <h2 class="employee-list-head">Database Records</h2>
+
+        <div class="records-buttons">
+            <button type="button" id="importJsonButton">Import JSON
+                Records</button>
+            <button type="button" id="refreshButton">Refresh Records</button>
+        </div>
+
+        <div id="recordsMessage"></div>
+
+        <section class="records-section">
+            <h3 class="records-title">Employees</h3>
+
+            <table class="employees-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Nationality</th>
+                        <th>Phone Number</th>
+                        <th>Role</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeTableBody"></tbody>
+            </table>
+        </section>
+
+        <section class="records-section">
+            <h3 class="records-title">Leave Requests</h3>
+
+            <table class="employees-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Leave ID</th>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Leave Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+
+                <tbody id="leaveTableBody"></tbody>
+            </table>
+        </section>
+
+        <section class="records-section">
+            <h3 class="records-title">HR Requests</h3>
+
+            <table class="employees-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>HR Request ID</th>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Request Type</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+
+                <tbody id="hrTableBody"></tbody>
+            </table>
+        </section>
+
         <div class="page-tools">
             <a class="back-button"
-                href="/frontend/html-files/manager/index/manager-index.html">Go
-                Back</a>
+                href="/frontend/html-files/manager/index/manager-index.html">
+                Go Back
+            </a>
         </div>
+        <script src="/register-unregister-check.js"></script>
+        <script src="/backend/script-files/db/records/db-records.js"></script>
+        <script src="/backend/script-files/auth/role-ui.js"></script>
     </body>
 </html>

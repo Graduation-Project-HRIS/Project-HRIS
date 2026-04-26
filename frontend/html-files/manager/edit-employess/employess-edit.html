@@ -17,22 +17,25 @@
         <h2 class="employee-list-head">Employees List</h2>
         <input type="search" placeholder="Search by ID or Phone Number"
             class="search-bar" id="searchBar">
-        <table class="employees-list">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Nationality</th>
-                    <th>phone Number</th>
-                    <th>Role</th>
-                    <th>Department</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="employeeTableBody"></tbody>
+<div class="table-wrapper">
+    <table class="employees-list">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody"></tbody>
+    </table>
+</div>
         </table>
         <!-- Edit Modal -->
         <div id="editModal" class="modal">
@@ -154,8 +157,8 @@
                 href="/frontend/html-files/manager/index/manager-index.html">Go
                 Back</a>
         </div>
-
         <script src="/register-unregister-check.js"></script>
+        <script src="/backend/script-files/db/records/fetch-data.js"></script>
         <script src="/backend/script-files/db/edit/edit-employess.js"></script>
         <script src="/backend/script-files/auth/role-ui.js"></script>
     </body>
