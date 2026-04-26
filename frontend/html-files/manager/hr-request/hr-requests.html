@@ -33,6 +33,7 @@
                             <th>Request Type</th>
                             <th>Details</th>
                             <th>Request ID</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
@@ -42,11 +43,33 @@
                 </table>
             </section>
         </main>
+        <div id="deleteModal" class="modal">
+            <div class="modal-content modal-danger">
+                <div class="modal-header">
+                    <h3>Delete HR Request</h3>
+                    <span class="modal-close"
+                        onclick="closeDeleteModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this HR request? This
+                        action cannot be undone.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel"
+                        onclick="closeDeleteModal()">Cancel</button>
+                    <button type="button" class="btn-delete"
+                        onclick="confirmDelete()">Delete</button>
+                </div>
+            </div>
+        </div>
         <div class="page-tools">
             <a class="back-button"
-                href="/frontend/html-files/home-html/home.html">Go
+                href="/frontend/html-files/manager/index/manager-index.html">Go
                 Back</a>
         </div>
-        <script src="/backend/script-files/support-group/hr-group/hr-form.js" defer></script>
+        <script src="/backend/script-files/support-group/hr-group/hr-form.js"
+            defer></script>
     </body>
 </html>

@@ -31,6 +31,7 @@ const FILES_TO_CACHE = [
     "/frontend/html-files/support-groups/support-groups-departments/operations-group.html",
     "/frontend/html-files/support-groups/support-groups-index/support-groups-departments.html",
     "/frontend/html-files/manager/hr-request/hr-requests.html",
+    "/frontend/html-files/manager/records/db-records.html",
 
     // Cached JS files
     "/backend/script-files/auth/role-ui.js",
@@ -43,6 +44,7 @@ const FILES_TO_CACHE = [
     "/backend/script-files/support-group/digital-group/digital.js",
     "/backend/script-files/support-group/hr-group/hr-form.js",
     "/register-unregister-check.js",
+    "/backend/script-files/db/records/db-records.js",
 
     // Cached CSS files
     "/styles/css-files/home-css/home.css",
@@ -61,6 +63,9 @@ const FILES_TO_CACHE = [
     "/images/index-signin/hide-password.png",
     "/images/index-signin/show-password.png",
     "/images/navbar/profile-icons.png",
+
+    // Cached JSON file
+    "/backend/script-files/db/json/records.json"
 ];
 
 // install: save important files

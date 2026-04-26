@@ -19,6 +19,8 @@ const hrForm = document.getElementById("hrForm");
 const hrRequestsTableBody = document.getElementById("hrRequestsTableBody");
 const emptyMessage = document.getElementById("emptyMessage");
 const refreshButton = document.getElementById("refreshButton");
+const deleteModal = document.getElementById("deleteModal");
+let currentDeletingHrRequestId = null;
 
 if (submitButton) {
     submitButton.disabled = true;
@@ -239,6 +241,11 @@ if (requestType) {
     requestType.addEventListener("change", validateRequestType);
 }
 
+function generateRandomHrRequestsId() {
+    return Math.floor(1000000000 + Math.random() * 9000000000).toString();
+}
+
+
 if (hrForm) {
     hrForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -280,8 +287,11 @@ if (hrForm) {
                 return;
             }
 
+            const requestId = generateRandomHrRequestsId();
+
+            
             const hrRequestData = {
-                hrID: Date.now().toString(),
+                hrID: requestId,
                 employeeId: employeeId,
                 name: employee.name,
                 details: details,
@@ -352,6 +362,11 @@ function showHrRequests() {
                 <td>${hrRequest.requestType}</td>
                 <td>${hrRequest.details}</td>
                 <td>${hrRequest.hrID}</td>
+                <td>
+                    <button type="button" class="btn-delete" onclick="openDeleteModal('${hrRequest.hrID}')">
+                        Delete
+                    </button>
+                </td>
             `;
 
             hrRequestsTableBody.appendChild(row);
@@ -362,6 +377,44 @@ function showHrRequests() {
         showEmptyMessage("Could not load HR requests.");
     };
 }
+
+function openDeleteModal(requestId) {
+    currentDeletingHrRequestId = requestId;
+
+    if (deleteModal) {
+        deleteModal.style.display = "block";
+    }
+}
+
+function closeDeleteModal() {
+    currentDeletingHrRequestId = null;
+
+    if (deleteModal) {
+        deleteModal.style.display = "none";
+    }
+}
+
+function confirmDelete() {
+    if (!db) return;
+
+    if (!currentDeletingHrRequestId) return;
+
+    const transaction = db.transaction("humanResourceRequests", "readwrite");
+    const store = transaction.objectStore("humanResourceRequests");
+    const request = store.delete(currentDeletingHrRequestId);
+
+    request.onsuccess = function () {
+        closeDeleteModal();
+        showHrRequests();
+    };
+
+    request.onerror = function () {
+        closeDeleteModal();
+        showEmptyMessage("Could not delete HR request.");
+    };
+}
+
+
 
 if (refreshButton) {
     refreshButton.addEventListener("click", function () {

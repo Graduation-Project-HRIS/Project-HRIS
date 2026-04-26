@@ -1,0 +1,3404 @@
+{
+    "employees": [
+        {
+            "id": 57339649,
+            "name": "Hessa Alfayez",
+            "email": "hessa.alfayez1@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 95907106,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4420297933,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "7/27/2026",
+                "endDate": "8/4/2026"
+            }
+        },
+        {
+            "id": 17724559,
+            "name": "Zainab Alshammari",
+            "email": "zainab.alshammari2@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 15246621,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 8806051153,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "11/4/2026",
+                "endDate": "11/17/2026"
+            }
+        },
+        {
+            "id": 95434620,
+            "name": "Zainab Alrashidi",
+            "email": "zainab.alrashidi3@gmail.com",
+            "gender": "Female",
+            "nationality": "Lebanese",
+            "phoneNumber": 77551119,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 3413646435,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "12/18/2026",
+                "endDate": "1/1/2027"
+            }
+        },
+        {
+            "id": 18178591,
+            "name": "Saud Alrashidi",
+            "email": "saud.alrashidi4@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 43566875,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 4941394621,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "4/28/2026",
+                "endDate": "5/10/2026"
+            }
+        },
+        {
+            "id": 62041909,
+            "name": "Dana Alrashidi",
+            "email": "dana.alrashidi5@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 26496171,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3771723628,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/10/2026",
+                "endDate": "11/22/2026"
+            }
+        },
+        {
+            "id": 29391075,
+            "name": "Nasser Alshammari",
+            "email": "nasser.alshammari6@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 57210252,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7010956404,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/8/2026",
+                "endDate": "4/18/2026"
+            }
+        },
+        {
+            "id": 72034650,
+            "name": "Mohammed Alharbi",
+            "email": "mohammed.alharbi7@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 60047772,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2680721848,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/1/2026",
+                "endDate": "7/3/2026"
+            }
+        },
+        {
+            "id": 44403004,
+            "name": "Mona Alessa",
+            "email": "mona.alessa8@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 52474649,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8512800498,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "5/25/2026",
+                "endDate": "6/4/2026"
+            }
+        },
+        {
+            "id": 33506504,
+            "name": "Faisal Alghanim",
+            "email": "faisal.alghanim9@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 75545331,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 6063361886,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/28/2026",
+                "endDate": "11/7/2026"
+            }
+        },
+        {
+            "id": 13958528,
+            "name": "Lulwa Alkandari",
+            "email": "lulwa.alkandari10@gmail.com",
+            "gender": "Female",
+            "nationality": "Qatari",
+            "phoneNumber": 64219758,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7022576990,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "6/20/2026",
+                "endDate": "6/25/2026"
+            }
+        },
+        {
+            "id": 97884993,
+            "name": "Nada Alsubaie",
+            "email": "nada.alsubaie11@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 60746373,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3803198864,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "6/25/2026",
+                "endDate": "6/27/2026"
+            }
+        },
+        {
+            "id": 83677387,
+            "name": "Sami Alali",
+            "email": "sami.alali12@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 17824704,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 2028380165,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "5/1/2026",
+                "endDate": "5/6/2026"
+            }
+        },
+        {
+            "id": 77326405,
+            "name": "Tariq Almousa",
+            "email": "tariq.almousa13@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 43960264,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 4303133663,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/4/2026",
+                "endDate": "11/15/2026"
+            }
+        },
+        {
+            "id": 69598823,
+            "name": "Aisha Alotaibi",
+            "email": "aisha.alotaibi14@gmail.com",
+            "gender": "Female",
+            "nationality": "Lebanese",
+            "phoneNumber": 19443445,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 4218362849,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "6/15/2026",
+                "endDate": "6/20/2026"
+            }
+        },
+        {
+            "id": 41429967,
+            "name": "Ruqaya Alzahrani",
+            "email": "ruqaya.alzahrani15@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 19493379,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3383960500,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "6/3/2026",
+                "endDate": "6/12/2026"
+            }
+        },
+        {
+            "id": 60566909,
+            "name": "Hamad Alrashidi",
+            "email": "hamad.alrashidi16@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 49689408,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3047787612,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/3/2026",
+                "endDate": "5/11/2026"
+            }
+        },
+        {
+            "id": 10789110,
+            "name": "Salem Alrashed",
+            "email": "salem.alrashed17@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 77036958,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 2776286439,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/22/2026",
+                "endDate": "7/5/2026"
+            }
+        },
+        {
+            "id": 70678537,
+            "name": "Hamad Alsubaie",
+            "email": "hamad.alsubaie18@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 48641011,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3281094778,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "10/25/2026",
+                "endDate": "10/28/2026"
+            }
+        },
+        {
+            "id": 42613267,
+            "name": "Layla Alqahtani",
+            "email": "layla.alqahtani19@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 34389520,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8623164140,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "11/19/2026",
+                "endDate": "11/25/2026"
+            }
+        },
+        {
+            "id": 25038197,
+            "name": "Ahmed Alfahad",
+            "email": "ahmed.alfahad20@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 40469028,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5883108114,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/6/2026",
+                "endDate": "11/11/2026"
+            }
+        },
+        {
+            "id": 67142891,
+            "name": "Noor Alotaibi",
+            "email": "noor.alotaibi21@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 37006735,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4133304371,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "1/14/2026",
+                "endDate": "1/19/2026"
+            }
+        },
+        {
+            "id": 88715711,
+            "name": "Maha Alzahrani",
+            "email": "maha.alzahrani22@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 95164974,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 7173119828,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "8/27/2026",
+                "endDate": "9/7/2026"
+            }
+        },
+        {
+            "id": 88101737,
+            "name": "Noura Alenezi",
+            "email": "noura.alenezi23@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 48148862,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 4482916021,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "9/4/2026",
+                "endDate": "9/6/2026"
+            }
+        },
+        {
+            "id": 54205430,
+            "name": "Noor Alfahad",
+            "email": "noor.alfahad24@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 87205325,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 1555826092,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/28/2026",
+                "endDate": "12/31/2026"
+            }
+        },
+        {
+            "id": 11832614,
+            "name": "Shaikha Almousa",
+            "email": "shaikha.almousa25@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 14705069,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 7160510957,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "9/5/2026",
+                "endDate": "9/8/2026"
+            }
+        },
+        {
+            "id": 14740812,
+            "name": "Dalal Alfahad",
+            "email": "dalal.alfahad26@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 36144594,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 3913879159,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/6/2026",
+                "endDate": "5/16/2026"
+            }
+        },
+        {
+            "id": 93805797,
+            "name": "Jassim Alharbi",
+            "email": "jassim.alharbi27@gmail.com",
+            "gender": "Male",
+            "nationality": "Emirati",
+            "phoneNumber": 50190963,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 6657166771,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "3/4/2026",
+                "endDate": "3/12/2026"
+            }
+        },
+        {
+            "id": 16433790,
+            "name": "Abrar Alqahtani",
+            "email": "abrar.alqahtani28@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 33536176,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7434686622,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/29/2026",
+                "endDate": "8/3/2026"
+            }
+        },
+        {
+            "id": 71985358,
+            "name": "Noor Alfahad",
+            "email": "noor.alfahad29@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 71662228,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 9547054474,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "4/14/2026",
+                "endDate": "4/23/2026"
+            }
+        },
+        {
+            "id": 18010584,
+            "name": "Ruqaya Alomar",
+            "email": "ruqaya.alomar30@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 96932518,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4902175360,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "6/29/2026",
+                "endDate": "7/11/2026"
+            }
+        },
+        {
+            "id": 65417956,
+            "name": "Hassan Alzahrani",
+            "email": "hassan.alzahrani31@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 29078612,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8186950288,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "1/31/2026",
+                "endDate": "2/7/2026"
+            }
+        },
+        {
+            "id": 86448850,
+            "name": "Abdullah Alfayez",
+            "email": "abdullah.alfayez32@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 61347370,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5293436085,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "1/27/2026",
+                "endDate": "1/30/2026"
+            }
+        },
+        {
+            "id": 36047673,
+            "name": "Saud Alabdullah",
+            "email": "saud.alabdullah33@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 90905172,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4867721923,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "12/4/2026",
+                "endDate": "12/18/2026"
+            }
+        },
+        {
+            "id": 77963857,
+            "name": "Mubarak Alsaleh",
+            "email": "mubarak.alsaleh34@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 36083483,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 8798390174,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "3/6/2026",
+                "endDate": "3/12/2026"
+            }
+        },
+        {
+            "id": 41595351,
+            "name": "Dina Almansour",
+            "email": "dina.almansour35@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 22723666,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 6162612274,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "4/27/2026",
+                "endDate": "5/3/2026"
+            }
+        },
+        {
+            "id": 36661960,
+            "name": "Mohammed Alzahrani",
+            "email": "mohammed.alzahrani36@gmail.com",
+            "gender": "Male",
+            "nationality": "Emirati",
+            "phoneNumber": 18241431,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 7059674593,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "1/29/2026",
+                "endDate": "2/12/2026"
+            }
+        },
+        {
+            "id": 68666605,
+            "name": "Mishari Alzahrani",
+            "email": "mishari.alzahrani37@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 98670275,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 8444289868,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "2/26/2026",
+                "endDate": "3/3/2026"
+            }
+        },
+        {
+            "id": 18018875,
+            "name": "Zaid Aljaber",
+            "email": "zaid.aljaber38@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 69769939,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 8269011431,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "10/25/2026",
+                "endDate": "11/2/2026"
+            }
+        },
+        {
+            "id": 84036825,
+            "name": "Zainab Alajmi",
+            "email": "zainab.alajmi39@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 91350678,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 8118787418,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "11/17/2026",
+                "endDate": "11/28/2026"
+            }
+        },
+        {
+            "id": 51817038,
+            "name": "Salem Alhajri",
+            "email": "salem.alhajri40@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 22563818,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5175460381,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/26/2026",
+                "endDate": "1/3/2027"
+            }
+        },
+        {
+            "id": 71196617,
+            "name": "Nasser Alali",
+            "email": "nasser.alali41@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 63528298,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 8924158904,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/15/2026",
+                "endDate": "12/22/2026"
+            }
+        },
+        {
+            "id": 38258167,
+            "name": "Rashed Alsubaie",
+            "email": "rashed.alsubaie42@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 70363495,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 1655948796,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/3/2026",
+                "endDate": "5/13/2026"
+            }
+        },
+        {
+            "id": 45525602,
+            "name": "Zaid Alhamad",
+            "email": "zaid.alhamad43@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 18810236,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 2721232342,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "9/29/2026",
+                "endDate": "10/1/2026"
+            }
+        },
+        {
+            "id": 53298702,
+            "name": "Fahad Alajmi",
+            "email": "fahad.alajmi44@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 15050458,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 1866300360,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/2/2026",
+                "endDate": "8/6/2026"
+            }
+        },
+        {
+            "id": 25540705,
+            "name": "Ibrahim Alali",
+            "email": "ibrahim.alali45@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 60772035,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 5118322894,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/14/2026",
+                "endDate": "12/23/2026"
+            }
+        },
+        {
+            "id": 56074904,
+            "name": "Nasser Alenezi",
+            "email": "nasser.alenezi46@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 32763160,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4246135280,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/17/2026",
+                "endDate": "5/19/2026"
+            }
+        },
+        {
+            "id": 53738202,
+            "name": "Amal Alshammari",
+            "email": "amal.alshammari47@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 36202894,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 7809305835,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/4/2026",
+                "endDate": "12/9/2026"
+            }
+        },
+        {
+            "id": 58166028,
+            "name": "Ali Alrashidi",
+            "email": "ali.alrashidi48@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 99309002,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3606899971,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/18/2026",
+                "endDate": "12/27/2026"
+            }
+        },
+        {
+            "id": 58954731,
+            "name": "Mohammed Alnasser",
+            "email": "mohammed.alnasser49@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 52850817,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5887034659,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "12/1/2026",
+                "endDate": "12/2/2026"
+            }
+        },
+        {
+            "id": 82675027,
+            "name": "Zaid Alabdullah",
+            "email": "zaid.alabdullah50@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 15645813,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8121609123,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "6/24/2026",
+                "endDate": "6/30/2026"
+            }
+        },
+        {
+            "id": 88623364,
+            "name": "Layla Almansour",
+            "email": "layla.almansour51@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 34680562,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 2280636899,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/19/2026",
+                "endDate": "7/21/2026"
+            }
+        },
+        {
+            "id": 30334508,
+            "name": "Hamad Alajmi",
+            "email": "hamad.alajmi52@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 27273478,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 9578022151,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "7/6/2026",
+                "endDate": "7/8/2026"
+            }
+        },
+        {
+            "id": 83369744,
+            "name": "Ahmed Alshammari",
+            "email": "ahmed.alshammari53@gmail.com",
+            "gender": "Male",
+            "nationality": "Emirati",
+            "phoneNumber": 29899711,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 7796595074,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "10/29/2026",
+                "endDate": "11/2/2026"
+            }
+        },
+        {
+            "id": 63138845,
+            "name": "Asma Alsaleh",
+            "email": "asma.alsaleh54@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 61507554,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 7960209414,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/11/2026",
+                "endDate": "10/22/2026"
+            }
+        },
+        {
+            "id": 38034180,
+            "name": "Dalal Aljaber",
+            "email": "dalal.aljaber55@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 69745973,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2387876533,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "5/15/2026",
+                "endDate": "5/24/2026"
+            }
+        },
+        {
+            "id": 36732168,
+            "name": "Layla Almutairi",
+            "email": "layla.almutairi56@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 18708569,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 1381894503,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "6/16/2026",
+                "endDate": "6/27/2026"
+            }
+        },
+        {
+            "id": 73917566,
+            "name": "Nasser Alhamad",
+            "email": "nasser.alhamad57@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 36942536,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3528268765,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "12/29/2026",
+                "endDate": "1/5/2027"
+            }
+        },
+        {
+            "id": 36472294,
+            "name": "Sami Alsubaie",
+            "email": "sami.alsubaie58@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 48514910,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 5166527656,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "5/19/2026",
+                "endDate": "5/23/2026"
+            }
+        },
+        {
+            "id": 23313356,
+            "name": "Layla Alqahtani",
+            "email": "layla.alqahtani59@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 80053438,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 9836627454,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "7/31/2026",
+                "endDate": "8/14/2026"
+            }
+        },
+        {
+            "id": 51119409,
+            "name": "Dana Alomar",
+            "email": "dana.alomar60@gmail.com",
+            "gender": "Female",
+            "nationality": "Jordanian",
+            "phoneNumber": 67890103,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 7604279962,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "3/12/2026",
+                "endDate": "3/25/2026"
+            }
+        },
+        {
+            "id": 91631719,
+            "name": "Rawan Alkandari",
+            "email": "rawan.alkandari61@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 40947179,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 2917835136,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/5/2026",
+                "endDate": "10/14/2026"
+            }
+        },
+        {
+            "id": 28726466,
+            "name": "Noor Almansour",
+            "email": "noor.almansour62@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 24727692,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 7374691363,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "12/15/2026",
+                "endDate": "12/25/2026"
+            }
+        },
+        {
+            "id": 20107225,
+            "name": "Ali Alkandari",
+            "email": "ali.alkandari63@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 85489549,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 3711904961,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "2/11/2026",
+                "endDate": "2/16/2026"
+            }
+        },
+        {
+            "id": 35108929,
+            "name": "Dana Alomar",
+            "email": "dana.alomar64@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 85452131,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 2347643871,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "5/10/2026",
+                "endDate": "5/11/2026"
+            }
+        },
+        {
+            "id": 98305470,
+            "name": "Farah Alrashidi",
+            "email": "farah.alrashidi65@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 12987585,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3767098496,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "2/17/2026",
+                "endDate": "2/20/2026"
+            }
+        },
+        {
+            "id": 62120201,
+            "name": "Yaqoub Alotaibi",
+            "email": "yaqoub.alotaibi66@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 33828943,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 2758210654,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "1/21/2026",
+                "endDate": "2/4/2026"
+            }
+        },
+        {
+            "id": 62625305,
+            "name": "Salem Almutairi",
+            "email": "salem.almutairi67@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 27919137,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 7864939374,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/21/2026",
+                "endDate": "8/26/2026"
+            }
+        },
+        {
+            "id": 32281466,
+            "name": "Shaikha Alfayez",
+            "email": "shaikha.alfayez68@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 44797366,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7199159868,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/22/2026",
+                "endDate": "7/6/2026"
+            }
+        },
+        {
+            "id": 85176269,
+            "name": "Zainab Alrashed",
+            "email": "zainab.alrashed69@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 36838491,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 3045583428,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "6/6/2026",
+                "endDate": "6/9/2026"
+            }
+        },
+        {
+            "id": 70580087,
+            "name": "Amal Alfayez",
+            "email": "amal.alfayez70@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 93513043,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9240065340,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/12/2026",
+                "endDate": "3/16/2026"
+            }
+        },
+        {
+            "id": 77892128,
+            "name": "Hassan Alsubaie",
+            "email": "hassan.alsubaie71@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 97432639,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8591106369,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "4/7/2026",
+                "endDate": "4/8/2026"
+            }
+        },
+        {
+            "id": 76118090,
+            "name": "Rana Alessa",
+            "email": "rana.alessa72@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 79073627,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 7987282701,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "10/13/2026",
+                "endDate": "10/18/2026"
+            }
+        },
+        {
+            "id": 77112530,
+            "name": "Mohammed Almansour",
+            "email": "mohammed.almansour73@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 64727077,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3295521336,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "8/12/2026",
+                "endDate": "8/21/2026"
+            }
+        },
+        {
+            "id": 74622466,
+            "name": "Faisal Alnasser",
+            "email": "faisal.alnasser74@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 33477424,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 9733877805,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/11/2026",
+                "endDate": "3/19/2026"
+            }
+        },
+        {
+            "id": 64182177,
+            "name": "Asma Alabdullah",
+            "email": "asma.alabdullah75@gmail.com",
+            "gender": "Female",
+            "nationality": "Jordanian",
+            "phoneNumber": 75225784,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5127098353,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/17/2026",
+                "endDate": "3/18/2026"
+            }
+        },
+        {
+            "id": 20679937,
+            "name": "Shaikha Alomar",
+            "email": "shaikha.alomar76@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 23200543,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 6819216278,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/8/2026",
+                "endDate": "10/20/2026"
+            }
+        },
+        {
+            "id": 75752266,
+            "name": "Tariq Alabdullah",
+            "email": "tariq.alabdullah77@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 10058925,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 5154827726,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "6/14/2026",
+                "endDate": "6/18/2026"
+            }
+        },
+        {
+            "id": 48134170,
+            "name": "Noura Alabdullah",
+            "email": "noura.alabdullah78@gmail.com",
+            "gender": "Female",
+            "nationality": "Jordanian",
+            "phoneNumber": 32685769,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 1604702690,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/10/2026",
+                "endDate": "12/15/2026"
+            }
+        },
+        {
+            "id": 16431782,
+            "name": "Sami Alomar",
+            "email": "sami.alomar79@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 79407545,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 7033500297,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "1/14/2026",
+                "endDate": "1/15/2026"
+            }
+        },
+        {
+            "id": 59663546,
+            "name": "Layla Alfahad",
+            "email": "layla.alfahad80@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 72770580,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 1198980862,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/10/2026",
+                "endDate": "6/16/2026"
+            }
+        },
+        {
+            "id": 46546850,
+            "name": "Bassam Alzahrani",
+            "email": "bassam.alzahrani81@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 27118804,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9480642195,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "10/21/2026",
+                "endDate": "10/28/2026"
+            }
+        },
+        {
+            "id": 48415180,
+            "name": "Adel Almousa",
+            "email": "adel.almousa82@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 51068750,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 1873133999,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "8/25/2026",
+                "endDate": "8/31/2026"
+            }
+        },
+        {
+            "id": 31375990,
+            "name": "Zaid Alzahrani",
+            "email": "zaid.alzahrani83@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 88059748,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9942241531,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "5/21/2026",
+                "endDate": "5/30/2026"
+            }
+        },
+        {
+            "id": 83524745,
+            "name": "Mohammed Alkandari",
+            "email": "mohammed.alkandari84@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 59128453,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 1557489548,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/25/2026",
+                "endDate": "10/29/2026"
+            }
+        },
+        {
+            "id": 67760370,
+            "name": "Yousef Alomar",
+            "email": "yousef.alomar85@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 50895951,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5177036246,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/27/2026",
+                "endDate": "8/3/2026"
+            }
+        },
+        {
+            "id": 38878159,
+            "name": "Noor Alhajri",
+            "email": "noor.alhajri86@gmail.com",
+            "gender": "Female",
+            "nationality": "Qatari",
+            "phoneNumber": 42644109,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 3639668212,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "10/8/2026",
+                "endDate": "10/12/2026"
+            }
+        },
+        {
+            "id": 86062810,
+            "name": "Omar Alajmi",
+            "email": "omar.alajmi87@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 62124881,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 5368998966,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "10/28/2026",
+                "endDate": "11/11/2026"
+            }
+        },
+        {
+            "id": 82712861,
+            "name": "Maha Alfahad",
+            "email": "maha.alfahad88@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 57475386,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4649090490,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "10/8/2026",
+                "endDate": "10/21/2026"
+            }
+        },
+        {
+            "id": 32637693,
+            "name": "Ibrahim Almousa",
+            "email": "ibrahim.almousa89@gmail.com",
+            "gender": "Male",
+            "nationality": "Emirati",
+            "phoneNumber": 49338170,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 1092770753,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "5/17/2026",
+                "endDate": "5/21/2026"
+            }
+        },
+        {
+            "id": 15567708,
+            "name": "Haneen Alhamad",
+            "email": "haneen.alhamad90@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 89556723,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5479036092,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "8/31/2026",
+                "endDate": "9/3/2026"
+            }
+        },
+        {
+            "id": 98425376,
+            "name": "Lulwa Alotaibi",
+            "email": "lulwa.alotaibi91@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 61195200,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 1102637370,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "4/24/2026",
+                "endDate": "4/27/2026"
+            }
+        },
+        {
+            "id": 53917180,
+            "name": "Faisal Almutairi",
+            "email": "faisal.almutairi92@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 38249481,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7132597749,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "3/10/2026",
+                "endDate": "3/13/2026"
+            }
+        },
+        {
+            "id": 49607694,
+            "name": "Majed Alhamad",
+            "email": "majed.alhamad93@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 64882629,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 4033089408,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "3/8/2026",
+                "endDate": "3/17/2026"
+            }
+        },
+        {
+            "id": 23397641,
+            "name": "Hussein Alhamad",
+            "email": "hussein.alhamad94@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 73303442,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 5928675973,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "1/4/2026",
+                "endDate": "1/14/2026"
+            }
+        },
+        {
+            "id": 36632069,
+            "name": "Saleh Alfayez",
+            "email": "saleh.alfayez95@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 52358499,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 4511098253,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/29/2026",
+                "endDate": "11/5/2026"
+            }
+        },
+        {
+            "id": 27383191,
+            "name": "Mishari Alzahrani",
+            "email": "mishari.alzahrani96@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 36521016,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 7985366022,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/29/2026",
+                "endDate": "5/30/2026"
+            }
+        },
+        {
+            "id": 22829404,
+            "name": "Majed Almarri",
+            "email": "majed.almarri97@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 64867306,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 7504248102,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "6/25/2026",
+                "endDate": "7/2/2026"
+            }
+        },
+        {
+            "id": 86735729,
+            "name": "Abrar Alsaleh",
+            "email": "abrar.alsaleh98@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 93149683,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9276263563,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/6/2026",
+                "endDate": "12/9/2026"
+            }
+        },
+        {
+            "id": 20168571,
+            "name": "Joud Alenezi",
+            "email": "joud.alenezi99@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 62371271,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 7456076131,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "2/7/2026",
+                "endDate": "2/11/2026"
+            }
+        },
+        {
+            "id": 39929718,
+            "name": "Joud Alkhaldi",
+            "email": "joud.alkhaldi100@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 37167853,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 8715713023,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "3/22/2026",
+                "endDate": "4/5/2026"
+            }
+        },
+        {
+            "id": 73045249,
+            "name": "Layla Alkandari",
+            "email": "layla.alkandari101@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 32017168,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 7236834423,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "2/10/2026",
+                "endDate": "2/16/2026"
+            }
+        },
+        {
+            "id": 59539049,
+            "name": "Hussein Alabdullah",
+            "email": "hussein.alabdullah102@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 93331152,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 1295965844,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/29/2026",
+                "endDate": "7/31/2026"
+            }
+        },
+        {
+            "id": 23301681,
+            "name": "Hessa Alzahrani",
+            "email": "hessa.alzahrani103@gmail.com",
+            "gender": "Female",
+            "nationality": "Qatari",
+            "phoneNumber": 98007382,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 6614476893,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "4/30/2026",
+                "endDate": "5/6/2026"
+            }
+        },
+        {
+            "id": 62521521,
+            "name": "Hamad Alsaad",
+            "email": "hamad.alsaad104@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 97623934,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8540358250,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/4/2026",
+                "endDate": "12/5/2026"
+            }
+        },
+        {
+            "id": 16834159,
+            "name": "Ibrahim Alfahad",
+            "email": "ibrahim.alfahad105@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 54056614,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9154615856,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "9/23/2026",
+                "endDate": "9/24/2026"
+            }
+        },
+        {
+            "id": 88219517,
+            "name": "Salma Alessa",
+            "email": "salma.alessa106@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 29043863,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 4966816437,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "4/12/2026",
+                "endDate": "4/19/2026"
+            }
+        },
+        {
+            "id": 90667907,
+            "name": "Salem Alotaibi",
+            "email": "salem.alotaibi107@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 91377468,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 2958687467,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/8/2026",
+                "endDate": "3/18/2026"
+            }
+        },
+        {
+            "id": 75783948,
+            "name": "Abrar Almutairi",
+            "email": "abrar.almutairi108@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 85293316,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 8222663828,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/28/2026",
+                "endDate": "1/1/2027"
+            }
+        },
+        {
+            "id": 27848163,
+            "name": "Hussein Alzahrani",
+            "email": "hussein.alzahrani109@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 70873479,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 2947760395,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "9/2/2026",
+                "endDate": "9/3/2026"
+            }
+        },
+        {
+            "id": 13827740,
+            "name": "Khaled Alfahad",
+            "email": "khaled.alfahad110@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 35555404,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 8503880406,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/2/2026",
+                "endDate": "4/11/2026"
+            }
+        },
+        {
+            "id": 34323758,
+            "name": "Salem Alotaibi",
+            "email": "salem.alotaibi111@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 10451068,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 1446505538,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "12/9/2026",
+                "endDate": "12/20/2026"
+            }
+        },
+        {
+            "id": 88872738,
+            "name": "Faisal Alomar",
+            "email": "faisal.alomar112@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 12482643,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8693194129,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/24/2026",
+                "endDate": "8/7/2026"
+            }
+        },
+        {
+            "id": 76687532,
+            "name": "Dina Alnasser",
+            "email": "dina.alnasser113@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 50231477,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 5443643550,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "2/17/2026",
+                "endDate": "2/27/2026"
+            }
+        },
+        {
+            "id": 65534786,
+            "name": "Saleh Aljaber",
+            "email": "saleh.aljaber114@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 16509978,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4948253191,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/21/2026",
+                "endDate": "12/22/2026"
+            }
+        },
+        {
+            "id": 70544940,
+            "name": "Yousef Alabdullah",
+            "email": "yousef.alabdullah115@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 25904089,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5767918339,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/29/2026",
+                "endDate": "1/5/2027"
+            }
+        },
+        {
+            "id": 59860192,
+            "name": "Mubarak Alqahtani",
+            "email": "mubarak.alqahtani116@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 93524738,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 4970163165,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "10/28/2026",
+                "endDate": "11/3/2026"
+            }
+        },
+        {
+            "id": 15850304,
+            "name": "Bader Alhamad",
+            "email": "bader.alhamad117@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 22285463,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 9774993465,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "7/17/2026",
+                "endDate": "7/26/2026"
+            }
+        },
+        {
+            "id": 99112822,
+            "name": "Bassam Alfayez",
+            "email": "bassam.alfayez118@gmail.com",
+            "gender": "Male",
+            "nationality": "Emirati",
+            "phoneNumber": 61121652,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 2251936122,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/19/2026",
+                "endDate": "3/25/2026"
+            }
+        },
+        {
+            "id": 23465391,
+            "name": "Ruqaya Alzahrani",
+            "email": "ruqaya.alzahrani119@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 27867036,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 5211088147,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/2/2026",
+                "endDate": "8/11/2026"
+            }
+        },
+        {
+            "id": 24436118,
+            "name": "Sara Almansour",
+            "email": "sara.almansour120@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 60563365,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 2027968540,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/6/2026",
+                "endDate": "6/20/2026"
+            }
+        },
+        {
+            "id": 59571325,
+            "name": "Saleh Alali",
+            "email": "saleh.alali121@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 15561945,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 6094067155,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "7/11/2026",
+                "endDate": "7/25/2026"
+            }
+        },
+        {
+            "id": 85011521,
+            "name": "Saleh Alomar",
+            "email": "saleh.alomar122@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 61867170,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 1909497011,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "12/1/2026",
+                "endDate": "12/10/2026"
+            }
+        },
+        {
+            "id": 74864949,
+            "name": "Salma Alali",
+            "email": "salma.alali123@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 79510085,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5971653279,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "8/29/2026",
+                "endDate": "9/4/2026"
+            }
+        },
+        {
+            "id": 23983860,
+            "name": "Ruqaya Alhamad",
+            "email": "ruqaya.alhamad124@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 13622212,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 1681585470,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/3/2026",
+                "endDate": "4/13/2026"
+            }
+        },
+        {
+            "id": 73348052,
+            "name": "Omar Alkandari",
+            "email": "omar.alkandari125@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 74996823,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8525983245,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "10/21/2026",
+                "endDate": "10/31/2026"
+            }
+        },
+        {
+            "id": 23878683,
+            "name": "Yaqoub Alali",
+            "email": "yaqoub.alali126@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 57061508,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 4361213817,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/26/2026",
+                "endDate": "5/1/2026"
+            }
+        },
+        {
+            "id": 41636871,
+            "name": "Amal Alfayez",
+            "email": "amal.alfayez127@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 47125431,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8337674818,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "12/11/2026",
+                "endDate": "12/21/2026"
+            }
+        },
+        {
+            "id": 80688531,
+            "name": "Ahmed Alrashed",
+            "email": "ahmed.alrashed128@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 65390275,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5551188748,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "6/25/2026",
+                "endDate": "7/7/2026"
+            }
+        },
+        {
+            "id": 40192563,
+            "name": "Zainab Alharbi",
+            "email": "zainab.alharbi129@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 37220014,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 6424045017,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/15/2026",
+                "endDate": "7/24/2026"
+            }
+        },
+        {
+            "id": 65534054,
+            "name": "Ahmed Alajmi",
+            "email": "ahmed.alajmi130@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 73671457,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 4189343447,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "9/16/2026",
+                "endDate": "9/19/2026"
+            }
+        },
+        {
+            "id": 15107150,
+            "name": "Hessa Alsaleh",
+            "email": "hessa.alsaleh131@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 42433014,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 4179348244,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/29/2026",
+                "endDate": "6/4/2026"
+            }
+        },
+        {
+            "id": 71030018,
+            "name": "Asma Alfayez",
+            "email": "asma.alfayez132@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 76995533,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 1840713727,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "9/2/2026",
+                "endDate": "9/14/2026"
+            }
+        },
+        {
+            "id": 49926962,
+            "name": "Shaikha Almarri",
+            "email": "shaikha.almarri133@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 96375557,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3235741907,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/18/2026",
+                "endDate": "7/19/2026"
+            }
+        },
+        {
+            "id": 56316722,
+            "name": "Fahad Alfayez",
+            "email": "fahad.alfayez134@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 91861852,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4907905343,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "1/2/2026",
+                "endDate": "1/4/2026"
+            }
+        },
+        {
+            "id": 20769153,
+            "name": "Hassan Alrashed",
+            "email": "hassan.alrashed135@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 60275857,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4528989294,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/8/2026",
+                "endDate": "5/15/2026"
+            }
+        },
+        {
+            "id": 79715710,
+            "name": "Hind Almansour",
+            "email": "hind.almansour136@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 69877177,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3511554057,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "4/16/2026",
+                "endDate": "4/20/2026"
+            }
+        },
+        {
+            "id": 24005095,
+            "name": "Yousef Alhashem",
+            "email": "yousef.alhashem137@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 41360949,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 1054067752,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "8/16/2026",
+                "endDate": "8/30/2026"
+            }
+        },
+        {
+            "id": 96049000,
+            "name": "Omar Aljaber",
+            "email": "omar.aljaber138@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 90445341,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 1840683596,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "5/10/2026",
+                "endDate": "5/18/2026"
+            }
+        },
+        {
+            "id": 63678198,
+            "name": "Rawan Alenezi",
+            "email": "rawan.alenezi139@gmail.com",
+            "gender": "Female",
+            "nationality": "Lebanese",
+            "phoneNumber": 98740066,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 9952441486,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/1/2026",
+                "endDate": "11/6/2026"
+            }
+        },
+        {
+            "id": 19444411,
+            "name": "Fahad Alkhaldi",
+            "email": "fahad.alkhaldi140@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 98210987,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 2139383466,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "9/29/2026",
+                "endDate": "10/8/2026"
+            }
+        },
+        {
+            "id": 60604228,
+            "name": "Hessa Almansour",
+            "email": "hessa.almansour141@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 18647736,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3730248666,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "6/11/2026",
+                "endDate": "6/24/2026"
+            }
+        },
+        {
+            "id": 21003786,
+            "name": "Ahmed Alomar",
+            "email": "ahmed.alomar142@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 32087622,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 2093915137,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/15/2026",
+                "endDate": "8/22/2026"
+            }
+        },
+        {
+            "id": 70678251,
+            "name": "Hind Alabdullah",
+            "email": "hind.alabdullah143@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 72323900,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 5970532389,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "5/15/2026",
+                "endDate": "5/28/2026"
+            }
+        },
+        {
+            "id": 29322157,
+            "name": "Amal Alfayez",
+            "email": "amal.alfayez144@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 34144645,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 8278241531,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "10/13/2026",
+                "endDate": "10/26/2026"
+            }
+        },
+        {
+            "id": 49729722,
+            "name": "Ali Alrashidi",
+            "email": "ali.alrashidi145@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 12888950,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 8441186158,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "12/29/2026",
+                "endDate": "1/10/2027"
+            }
+        },
+        {
+            "id": 77991537,
+            "name": "Fatima Alghanim",
+            "email": "fatima.alghanim146@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 68091803,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2667553252,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/27/2026",
+                "endDate": "7/30/2026"
+            }
+        },
+        {
+            "id": 49576617,
+            "name": "Dana Alkhaldi",
+            "email": "dana.alkhaldi147@gmail.com",
+            "gender": "Female",
+            "nationality": "Qatari",
+            "phoneNumber": 63802703,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 8527299847,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "7/21/2026",
+                "endDate": "7/22/2026"
+            }
+        },
+        {
+            "id": 87854429,
+            "name": "Farah Alajmi",
+            "email": "farah.alajmi148@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 22042116,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 9348113921,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/29/2026",
+                "endDate": "4/8/2026"
+            }
+        },
+        {
+            "id": 23410821,
+            "name": "Hassan Almousa",
+            "email": "hassan.almousa149@gmail.com",
+            "gender": "Male",
+            "nationality": "Bahraini",
+            "phoneNumber": 43727921,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2483809105,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "10/20/2026",
+                "endDate": "10/27/2026"
+            }
+        },
+        {
+            "id": 88198820,
+            "name": "Khaled Alotaibi",
+            "email": "khaled.alotaibi150@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 49697729,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3771293385,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "1/8/2026",
+                "endDate": "1/14/2026"
+            }
+        },
+        {
+            "id": 40034304,
+            "name": "Omar Alrashidi",
+            "email": "omar.alrashidi151@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 46470105,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 4835288028,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "12/27/2026",
+                "endDate": "1/9/2027"
+            }
+        },
+        {
+            "id": 92179139,
+            "name": "Zaid Alajmi",
+            "email": "zaid.alajmi152@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 24553978,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 2484764332,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/28/2026",
+                "endDate": "6/7/2026"
+            }
+        },
+        {
+            "id": 60712206,
+            "name": "Abdullah Alsubaie",
+            "email": "abdullah.alsubaie153@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 69372981,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 5271407061,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "11/5/2026",
+                "endDate": "11/10/2026"
+            }
+        },
+        {
+            "id": 24438205,
+            "name": "Mona Alessa",
+            "email": "mona.alessa154@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 40456773,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 3154738190,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/28/2026",
+                "endDate": "12/8/2026"
+            }
+        },
+        {
+            "id": 53113076,
+            "name": "Lulwa Alharbi",
+            "email": "lulwa.alharbi155@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 49249416,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 5522496991,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/8/2026",
+                "endDate": "3/17/2026"
+            }
+        },
+        {
+            "id": 19978333,
+            "name": "Yousef Alrashed",
+            "email": "yousef.alrashed156@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 18730606,
+            "department": "Sales-Revenue groups",
+            "role": "Manager",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 4157711709,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/21/2026",
+                "endDate": "8/25/2026"
+            }
+        },
+        {
+            "id": 19139235,
+            "name": "Hamad Alharbi",
+            "email": "hamad.alharbi157@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 21280854,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 7227218542,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/30/2026",
+                "endDate": "4/3/2026"
+            }
+        },
+        {
+            "id": 21716461,
+            "name": "Nasser Alshammari",
+            "email": "nasser.alshammari158@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 72842078,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9698470105,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/25/2026",
+                "endDate": "8/5/2026"
+            }
+        },
+        {
+            "id": 59792274,
+            "name": "Mubarak Alkandari",
+            "email": "mubarak.alkandari159@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 54736057,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 5083843136,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "2/22/2026",
+                "endDate": "2/27/2026"
+            }
+        },
+        {
+            "id": 76730628,
+            "name": "Faisal Alkandari",
+            "email": "faisal.alkandari160@gmail.com",
+            "gender": "Male",
+            "nationality": "Filipino",
+            "phoneNumber": 31078343,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 4891496274,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/20/2026",
+                "endDate": "7/3/2026"
+            }
+        },
+        {
+            "id": 48610781,
+            "name": "Dalal Alghanim",
+            "email": "dalal.alghanim161@gmail.com",
+            "gender": "Female",
+            "nationality": "Bahraini",
+            "phoneNumber": 30047784,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5420706029,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/14/2026",
+                "endDate": "4/15/2026"
+            }
+        },
+        {
+            "id": 97749213,
+            "name": "Aisha Almarri",
+            "email": "aisha.almarri162@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 53191615,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 1369441665,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "7/26/2026",
+                "endDate": "8/1/2026"
+            }
+        },
+        {
+            "id": 41521838,
+            "name": "Adel Alsaad",
+            "email": "adel.alsaad163@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 99389819,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 5925861165,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "5/5/2026",
+                "endDate": "5/14/2026"
+            }
+        },
+        {
+            "id": 24480262,
+            "name": "Dalal Alrashed",
+            "email": "dalal.alrashed164@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 62105633,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 3806411178,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "3/25/2026",
+                "endDate": "4/8/2026"
+            }
+        },
+        {
+            "id": 15358647,
+            "name": "Dana Almansour",
+            "email": "dana.almansour165@gmail.com",
+            "gender": "Female",
+            "nationality": "Emirati",
+            "phoneNumber": 48010667,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3262812045,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "6/12/2026",
+                "endDate": "6/16/2026"
+            }
+        },
+        {
+            "id": 85159705,
+            "name": "Salem Alkhaldi",
+            "email": "salem.alkhaldi166@gmail.com",
+            "gender": "Male",
+            "nationality": "Qatari",
+            "phoneNumber": 96219463,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 6872261741,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/14/2026",
+                "endDate": "5/20/2026"
+            }
+        },
+        {
+            "id": 80659955,
+            "name": "Lulwa Alzahrani",
+            "email": "lulwa.alzahrani167@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 82682463,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 2098549725,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "8/31/2026",
+                "endDate": "9/8/2026"
+            }
+        },
+        {
+            "id": 86130576,
+            "name": "Anas Almutairi",
+            "email": "anas.almutairi168@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 39192827,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4606088373,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "2/7/2026",
+                "endDate": "2/19/2026"
+            }
+        },
+        {
+            "id": 96519124,
+            "name": "Adel Alsaleh",
+            "email": "adel.alsaleh169@gmail.com",
+            "gender": "Male",
+            "nationality": "Omani",
+            "phoneNumber": 18077239,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 1843459499,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "9/4/2026",
+                "endDate": "9/17/2026"
+            }
+        },
+        {
+            "id": 79422432,
+            "name": "Bassam Alsaad",
+            "email": "bassam.alsaad170@gmail.com",
+            "gender": "Male",
+            "nationality": "Lebanese",
+            "phoneNumber": 31938288,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 9025770602,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "4/11/2026",
+                "endDate": "4/20/2026"
+            }
+        },
+        {
+            "id": 68667603,
+            "name": "Sami Alabdullah",
+            "email": "sami.alabdullah171@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 48219294,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8286040299,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "6/21/2026",
+                "endDate": "7/5/2026"
+            }
+        },
+        {
+            "id": 32495000,
+            "name": "Lulwa Alghanim",
+            "email": "lulwa.alghanim172@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 55733879,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 8399783475,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "11/19/2026",
+                "endDate": "11/23/2026"
+            }
+        },
+        {
+            "id": 97286887,
+            "name": "Hamad Alnasser",
+            "email": "hamad.alnasser173@gmail.com",
+            "gender": "Male",
+            "nationality": "Egyptian",
+            "phoneNumber": 99052443,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 7530685696,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "4/13/2026",
+                "endDate": "4/19/2026"
+            }
+        },
+        {
+            "id": 69132333,
+            "name": "Reem Alrashidi",
+            "email": "reem.alrashidi174@gmail.com",
+            "gender": "Female",
+            "nationality": "Syrian",
+            "phoneNumber": 97991603,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2500753050,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "1/23/2026",
+                "endDate": "1/24/2026"
+            }
+        },
+        {
+            "id": 53643140,
+            "name": "Mubarak Alotaibi",
+            "email": "mubarak.alotaibi175@gmail.com",
+            "gender": "Male",
+            "nationality": "Indian",
+            "phoneNumber": 31649798,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3624172601,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "7/6/2026",
+                "endDate": "7/19/2026"
+            }
+        },
+        {
+            "id": 10819796,
+            "name": "Sara Almutairi",
+            "email": "sara.almutairi176@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 24792987,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5118331813,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "8/25/2026",
+                "endDate": "8/30/2026"
+            }
+        },
+        {
+            "id": 42532010,
+            "name": "Dana Almarri",
+            "email": "dana.almarri177@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 86386435,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Department",
+            "hrRequestId": 2910309673,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "5/7/2026",
+                "endDate": "5/11/2026"
+            }
+        },
+        {
+            "id": 72737211,
+            "name": "Yousef Alkandari",
+            "email": "yousef.alkandari178@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 52590740,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 2345066472,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "9/9/2026",
+                "endDate": "9/23/2026"
+            }
+        },
+        {
+            "id": 51366429,
+            "name": "Bassam Alomar",
+            "email": "bassam.alomar179@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 26910427,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 9680209478,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "1/1/2026",
+                "endDate": "1/5/2026"
+            }
+        },
+        {
+            "id": 75359632,
+            "name": "Asma Alotaibi",
+            "email": "asma.alotaibi180@gmail.com",
+            "gender": "Female",
+            "nationality": "Lebanese",
+            "phoneNumber": 23971830,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 7598937504,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "3/29/2026",
+                "endDate": "4/1/2026"
+            }
+        },
+        {
+            "id": 67126259,
+            "name": "Nasser Alkandari",
+            "email": "nasser.alkandari181@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 75681310,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 5911337998,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "9/13/2026",
+                "endDate": "9/15/2026"
+            }
+        },
+        {
+            "id": 49069013,
+            "name": "Rashed Alsaad",
+            "email": "rashed.alsaad182@gmail.com",
+            "gender": "Male",
+            "nationality": "Saudi",
+            "phoneNumber": 25173168,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 5522986650,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "2/18/2026",
+                "endDate": "2/23/2026"
+            }
+        },
+        {
+            "id": 68561733,
+            "name": "Jana Alhamad",
+            "email": "jana.alhamad183@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 49892626,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 8169326951,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/8/2026",
+                "endDate": "3/16/2026"
+            }
+        },
+        {
+            "id": 42007867,
+            "name": "Anas Alsaleh",
+            "email": "anas.alsaleh184@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 77042213,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3941795192,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "2/19/2026",
+                "endDate": "3/1/2026"
+            }
+        },
+        {
+            "id": 70674314,
+            "name": "Noura Alotaibi",
+            "email": "noura.alotaibi185@gmail.com",
+            "gender": "Female",
+            "nationality": "Filipino",
+            "phoneNumber": 71042116,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 6478259722,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "1/1/2026",
+                "endDate": "1/3/2026"
+            }
+        },
+        {
+            "id": 61827619,
+            "name": "Maha Alomar",
+            "email": "maha.alomar186@gmail.com",
+            "gender": "Female",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 95811757,
+            "department": "Sales-Revenue groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 3236082818,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "10/13/2026",
+                "endDate": "10/14/2026"
+            }
+        },
+        {
+            "id": 98394875,
+            "name": "Aisha Alkandari",
+            "email": "aisha.alkandari187@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 76516863,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 1380210567,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "7/4/2026",
+                "endDate": "7/6/2026"
+            }
+        },
+        {
+            "id": 35424694,
+            "name": "Nada Alajmi",
+            "email": "nada.alajmi188@gmail.com",
+            "gender": "Female",
+            "nationality": "Egyptian",
+            "phoneNumber": 45823652,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 5904872482,
+            "leaveType": "Maternity Leave",
+            "leaveDate": {
+                "startDate": "12/22/2026",
+                "endDate": "12/29/2026"
+            }
+        },
+        {
+            "id": 66564027,
+            "name": "Bader Alomar",
+            "email": "bader.alomar189@gmail.com",
+            "gender": "Male",
+            "nationality": "Pakistani",
+            "phoneNumber": 78900783,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Nationality",
+            "hrRequestId": 4117915677,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "11/26/2026",
+                "endDate": "11/27/2026"
+            }
+        },
+        {
+            "id": 21238427,
+            "name": "Yousef Alghanim",
+            "email": "yousef.alghanim190@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 37075515,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 2015696980,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "11/15/2026",
+                "endDate": "11/26/2026"
+            }
+        },
+        {
+            "id": 88361159,
+            "name": "Shaikha Alghanim",
+            "email": "shaikha.alghanim191@gmail.com",
+            "gender": "Female",
+            "nationality": "Omani",
+            "phoneNumber": 79356705,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Phone Number",
+            "hrRequestId": 9821985062,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "5/23/2026",
+                "endDate": "5/30/2026"
+            }
+        },
+        {
+            "id": 68164762,
+            "name": "Sara Alotaibi",
+            "email": "sara.alotaibi192@gmail.com",
+            "gender": "Female",
+            "nationality": "Jordanian",
+            "phoneNumber": 54045040,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 8154390352,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "8/21/2026",
+                "endDate": "8/24/2026"
+            }
+        },
+        {
+            "id": 16990785,
+            "name": "Rana Alhashem",
+            "email": "rana.alhashem193@gmail.com",
+            "gender": "Female",
+            "nationality": "Indian",
+            "phoneNumber": 24685397,
+            "department": "Control Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 3203335194,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "8/1/2026",
+                "endDate": "8/2/2026"
+            }
+        },
+        {
+            "id": 70491400,
+            "name": "Faisal Alzahrani",
+            "email": "faisal.alzahrani194@gmail.com",
+            "gender": "Male",
+            "nationality": "Kuwaiti",
+            "phoneNumber": 20883661,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 7738085829,
+            "leaveType": "Study Leave",
+            "leaveDate": {
+                "startDate": "3/21/2026",
+                "endDate": "3/22/2026"
+            }
+        },
+        {
+            "id": 60828371,
+            "name": "Sara Alrashidi",
+            "email": "sara.alrashidi195@gmail.com",
+            "gender": "Female",
+            "nationality": "Qatari",
+            "phoneNumber": 52378636,
+            "department": "Support Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 4342137873,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "2/28/2026",
+                "endDate": "3/3/2026"
+            }
+        },
+        {
+            "id": 84259973,
+            "name": "Rana Alzahrani",
+            "email": "rana.alzahrani196@gmail.com",
+            "gender": "Female",
+            "nationality": "Pakistani",
+            "phoneNumber": 40261398,
+            "department": "Control Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2662051562,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "2/4/2026",
+                "endDate": "2/7/2026"
+            }
+        },
+        {
+            "id": 12782827,
+            "name": "Jassim Alshammari",
+            "email": "jassim.alshammari197@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 73329676,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Email",
+            "hrRequestId": 6139093395,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "9/2/2026",
+                "endDate": "9/5/2026"
+            }
+        },
+        {
+            "id": 77794902,
+            "name": "Rashed Alhamad",
+            "email": "rashed.alhamad198@gmail.com",
+            "gender": "Male",
+            "nationality": "Syrian",
+            "phoneNumber": 12125369,
+            "department": "Executive Groups",
+            "role": "Employee",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 4792215341,
+            "leaveType": "Official Holiday Leave",
+            "leaveDate": {
+                "startDate": "11/30/2026",
+                "endDate": "12/13/2026"
+            }
+        },
+        {
+            "id": 47221773,
+            "name": "Salem Alomar",
+            "email": "salem.alomar199@gmail.com",
+            "gender": "Male",
+            "nationality": "Jordanian",
+            "phoneNumber": 62508806,
+            "department": "Support Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Role",
+            "hrRequestId": 5865813410,
+            "leaveType": "Sick Leave",
+            "leaveDate": {
+                "startDate": "3/30/2026",
+                "endDate": "4/9/2026"
+            }
+        },
+        {
+            "id": 50449300,
+            "name": "Aisha Alhamad",
+            "email": "aisha.alhamad200@gmail.com",
+            "gender": "Female",
+            "nationality": "Saudi",
+            "phoneNumber": 42330992,
+            "department": "Executive Groups",
+            "role": "Manager",
+            "hrRequestType": "Change Name",
+            "hrRequestId": 2764910612,
+            "leaveType": "Annual Leave",
+            "leaveDate": {
+                "startDate": "2/25/2026",
+                "endDate": "2/26/2026"
+            }
+        }
+    ]
+}
