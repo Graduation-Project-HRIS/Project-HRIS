@@ -59,6 +59,11 @@ function setupDatabase(event) {
         employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
     }
 
+    if (!employeeStore.indexNames.contains("department")) {
+        employeeStore.createIndex("department", "department", { unique: false });
+    }
+
+
     // =========================
     // leaveRequests store
     // =========================
@@ -289,7 +294,7 @@ if (hrForm) {
 
             const requestId = generateRandomHrRequestsId();
 
-            
+
             const hrRequestData = {
                 hrID: requestId,
                 employeeId: employeeId,

@@ -55,6 +55,10 @@ function setupDatabase(event) {
         employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
     }
 
+    if (!employeeStore.indexNames.contains("department")) {
+        employeeStore.createIndex("department", "department", { unique: false });
+    }
+
     // =========================
     // leaveRequests store
     // =========================
@@ -202,11 +206,16 @@ function displayEmployees(employees) {
 }
 
 /* Searches only by employee ID and phone number */
+/* Searches by employee ID, name, email, and phone number */
 function searchEmployees() {
     if (!db) return;
 
     const searchValue = searchBar.value.trim().toLowerCase();
-    const phoneSearchValue = searchValue.replace("+965", "").replace(/\D/g, "");
+
+    // This keeps only numbers for phone search
+    const phoneSearchValue = searchValue
+        .replace("+965", "")
+        .replace(/\D/g, "");
 
     const transaction = db.transaction(["employees"], "readonly");
     const objectStore = transaction.objectStore("employees");
@@ -222,6 +231,9 @@ function searchEmployees() {
 
         const filteredEmployees = employees.filter((employee) => {
             const id = String(employee.id || "").toLowerCase();
+            const name = String(employee.name || "").toLowerCase();
+            const email = String(employee.email || "").toLowerCase();
+            const department = String(employee.department || "").toLowerCase();
 
             const phoneNumber = String(employee.phoneNumber || "")
                 .replace("+965", "")
@@ -229,7 +241,10 @@ function searchEmployees() {
 
             return (
                 id.includes(searchValue) ||
-                (phoneSearchValue !== "" && phoneNumber.includes(phoneSearchValue))
+                name.includes(searchValue) ||
+                email.includes(searchValue) ||
+                (phoneSearchValue !== "" && phoneNumber.includes(phoneSearchValue)) ||
+                department.includes(searchValue)
             );
         });
 

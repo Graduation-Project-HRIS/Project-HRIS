@@ -252,6 +252,26 @@ body {
     background-color: #a61f1f;
 }
 
+.search-bar {
+    display: block;
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 8px 16px;
+    text-align: center;
+    color: #1f365d;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-radius: 20px;
+    border: 2px solid #1f365d;
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: #0f51c1;
+    box-shadow: 0 0 0 3px rgba(15, 81, 193, 0.15);
+}
+
+
 
 @media (max-width: 700px) {
     .page-header {
@@ -265,5 +285,11 @@ body {
 
     .page-header h1 {
         font-size: 26px;
+    }
+
+    .search-bar {
+        font-size: 1rem;
+        padding: 10px 14px;
+        margin-bottom: 22px;
     }
 }

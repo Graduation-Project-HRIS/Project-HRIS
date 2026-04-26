@@ -131,6 +131,11 @@ function setupDatabase(event) {
     if (!employeeStore.indexNames.contains("phoneNumber")) {
         employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
     }
+    
+    if (!employeeStore.indexNames.contains("department")) {
+        employeeStore.createIndex("department", "department", { unique: false });
+    }
+
 
     // =========================
     // leaveRequests store
