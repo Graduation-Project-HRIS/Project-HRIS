@@ -7,14 +7,15 @@
 body {
     margin: 0;
     min-height: 100vh;
-    padding: 24px 16px 100px;
+    padding: 18px 20px 120px;
     background-color: #E8F0FF;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #1d3f67;
+    overflow-x: hidden;
 }
 
 .employee-list-head {
-    margin: 0 0 24px;
+    margin: 0 0 18px;
     text-align: center;
     color: #1f365d;
     font-size: 2rem;
@@ -22,16 +23,23 @@ body {
 }
 
 .search-bar {
-    margin: 0 0 24px;
+    display: block;
     width: 100%;
+    margin: 0 0 30px;
+    padding: 8px 16px;
     text-align: center;
     color: #1f365d;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 400;
     border-radius: 20px;
-    border-color: #1f365d;
+    border: 2px solid #1f365d;
+    outline: none;
 }
 
+.search-bar:focus {
+    border-color: #0f51c1;
+    box-shadow: 0 0 0 3px rgba(15, 81, 193, 0.15);
+}
 
 .employees-list {
     width: 100%;
@@ -50,7 +58,7 @@ body {
 
 .employees-list th,
 .employees-list td {
-    padding: 20px 24px;
+    padding: 16px 14px;
     text-align: left;
     border-bottom: 1px solid #e7edf6;
     vertical-align: middle;
@@ -61,12 +69,12 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .employees-list tbody td {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.92rem;
 }
 
 .employees-list tbody tr:last-child td {
@@ -79,19 +87,20 @@ body {
 
 .employees-list th:last-child,
 .employees-list td:last-child {
+    width: 170px;
+    min-width: 170px;
     white-space: nowrap;
-    width: 180px;
 }
 
 .action-btn {
-    padding: 10px 16px;
-    margin-right: 10px;
+    padding: 9px 13px;
+    margin-right: 8px;
     color: #ffffff;
     background-color: #0f51c1;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -309,23 +318,23 @@ body {
     transform: translateY(-1px);
 }
 
+/* Go Back button */
 .page-tools {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 999;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    padding: 0 20px 15px;
-    background: transparent;
+    padding: 0;
 }
 
 .back-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 22px;
+    padding: 13px 26px;
     background-color: #0d4988;
     color: #ffffff;
     border-radius: 14px;
@@ -347,13 +356,29 @@ body {
     }
 
     .employees-list {
-        min-width: 1100px;
+        min-width: 1050px;
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding: 16px 12px 90px;
+        padding: 16px 12px 30px;
+    }
+
+    .employee-list-head {
+        font-size: 1.6rem;
+        margin-bottom: 14px;
+    }
+
+    .search-bar {
+        font-size: 1rem;
+        padding: 10px 14px;
+        margin-bottom: 22px;
+    }
+
+    .employees-list th,
+    .employees-list td {
+        padding: 14px 12px;
     }
 
     .modal {
@@ -366,8 +391,7 @@ body {
     }
 
     .page-tools {
-        position: static;
-        padding: 20px 0 0;
+        margin-top: 20px;
     }
 
     .back-button {
