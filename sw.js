@@ -46,6 +46,7 @@ const FILES_TO_CACHE = [
     "/register-unregister-check.js",
     "/backend/script-files/db/records/db-records.js",
     "/backend/script-files/db/records/fetch-data.js",
+    "/backend/script-files/support-group/hr-group/hr-requests.js"
 
     // Cached CSS files
     "/styles/css-files/home-css/home.css",
