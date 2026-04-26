@@ -1,4 +1,4 @@
-const CACHE_NAME = 'HRIS-cache-v5';
+const CACHE_NAME = 'HRIS-cache-v1';
 
 const FILES_TO_CACHE = [
     // Cached HTML files
