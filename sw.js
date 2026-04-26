@@ -97,17 +97,21 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys()
-            .then(cacheNames => {
+            .then((cacheNames) => {
                 return Promise.all(
-                    cacheNames.map(cacheName => {
+                    cacheNames.map((cacheName) => {
                         if (cacheName !== CACHE_NAME) {
                             return caches.delete(cacheName);
                         }
+
+                        return Promise.resolve();
                     })
                 );
             })
+            .then(() => {
+                return self.clients.claim();
+            })
     );
-    self.clients.claim(); // Take control of all current pages now.
 });
 
 // fetch: try cache first, then network

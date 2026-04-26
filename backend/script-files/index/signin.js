@@ -192,8 +192,10 @@ formSignIn.addEventListener("submit", async (e) => {
             userIdInput.style.border = "3.5px solid red";
             return;
         }
-        sessionStorage.setItem("currentEmployeeId", employee.id);
+        sessionStorage.setItem("currentEmployeeId", String(employee.id));
+        localStorage.setItem("currentEmployeeId", String(employee.id));
 
+        console.log("Saved currentEmployeeId:", employee.id);
         window.location.href = "/frontend/html-files/home-html/home.html";
     } catch (error) {
         console.error(error);
@@ -201,3 +203,7 @@ formSignIn.addEventListener("submit", async (e) => {
         userIdInput.style.border = "3.5px solid red";
     }
 });
+
+
+
+
