@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HR requests</title>
+
+        <link rel="stylesheet" href="/styles/css-files/manager/hr-requests.css">
+    </head>
+
+    <body>
+        <main class="page-container">
+            <header class="page-header">
+                <div>
+                    <h1>HR Requests</h1>
+                    <p>View all HR requests submitted by employees.</p>
+                </div>
+
+                <button id="refreshButton" type="button">Refresh</button>
+            </header>
+
+            <section class="requests-section">
+                <div id="emptyMessage" class="empty-message">
+                    No HR requests found.
+                </div>
+
+                <table class="requests-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Request Type</th>
+                            <th>Details</th>
+                            <th>Request ID</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="hrRequestsTableBody">
+                        <!-- HR requests will show here using JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <div class="page-tools">
+            <a class="back-button"
+                href="/frontend/html-files/home-html/home.html">Go
+                Back</a>
+        </div>
+        <script src="/backend/script-files/support-group/hr-group/hr-form.js" defer></script>
+    </body>
+</html>

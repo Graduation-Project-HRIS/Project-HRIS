@@ -1,6 +1,6 @@
 (() => {
     const AUTH_DB_NAME = "EmployeeDB";
-    const AUTH_DB_VERSION = 1;
+    const AUTH_DB_VERSION = 4;
 
     const ROLE_LOGIN_PAGE = "/frontend/html-files/index/index.html";
     const ROLE_HOME_PAGE = "/frontend/html-files/home-html/home.html";
