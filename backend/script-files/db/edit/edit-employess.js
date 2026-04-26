@@ -72,9 +72,19 @@ function openDatabase() {
                 );
             };
 
-            console.log("Edit page database opened successfully.");
-            showEmployees();
-            resolve(db);
+            Promise.resolve(
+                typeof window.seedDefaultEmployees === "function"
+                    ? window.seedDefaultEmployees(db)
+                    : undefined
+            )
+                .catch((error) => {
+                    console.error("Default employee seed failed:", error);
+                })
+                .finally(() => {
+                    console.log("Edit page database opened successfully.");
+                    showEmployees();
+                    resolve(db);
+                });
         };
     });
 }

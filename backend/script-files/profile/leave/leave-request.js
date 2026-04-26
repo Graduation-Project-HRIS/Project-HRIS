@@ -90,9 +90,19 @@ function openDatabase() {
                 setFormState(false);
             };
 
-            console.log("Leave form database opened successfully.");
-            setFormState(true);
-            resolve(db);
+            Promise.resolve(
+                typeof window.seedDefaultEmployees === "function"
+                    ? window.seedDefaultEmployees(db)
+                    : undefined
+            )
+                .catch((error) => {
+                    console.error("Default employee seed failed:", error);
+                })
+                .finally(() => {
+                    console.log("Leave form database opened successfully.");
+                    setFormState(true);
+                    resolve(db);
+                });
         };
     });
 }

@@ -52,7 +52,18 @@ function openDatabase() {
 
     request.onsuccess = (e) => {
         db = e.target.result;
-        renderCalendar();
+
+        Promise.resolve(
+            typeof window.seedDefaultEmployees === "function"
+                ? window.seedDefaultEmployees(db)
+                : undefined
+        )
+            .catch((error) => {
+                console.error("Default employee seed failed:", error);
+            })
+            .finally(() => {
+                renderCalendar();
+            });
     };
 
     request.onerror = (event) => {

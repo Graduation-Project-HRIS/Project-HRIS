@@ -127,7 +127,19 @@ function openDatabase() {
         };
 
         request.onsuccess = (e) => {
-            resolve(e.target.result);
+            const database = e.target.result;
+
+            Promise.resolve(
+                typeof window.seedDefaultEmployees === "function"
+                    ? window.seedDefaultEmployees(database)
+                    : undefined
+            )
+                .catch((error) => {
+                    console.error("Default employee seed failed:", error);
+                })
+                .finally(() => {
+                    resolve(database);
+                });
         };
 
         request.onerror = (e) => {

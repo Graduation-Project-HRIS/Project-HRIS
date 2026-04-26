@@ -13,13 +13,25 @@ body {
     color: #1d3f67;
 }
 
-#employeeListHead {
+.employee-list-head {
     margin: 0 0 24px;
     text-align: center;
     color: #1f365d;
     font-size: 2rem;
     font-weight: 700;
 }
+
+.search-bar {
+    margin: 0 0 24px;
+    width: 100%;
+    text-align: center;
+    color: #1f365d;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 20px;
+    border-color: #1f365d;
+}
+
 
 .employees-list {
     width: 100%;
