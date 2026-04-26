@@ -32,31 +32,40 @@
                 <h1>HR Department</h1>
                 <h2>Use this form to submit your requests </h2>
             </div>
-            <div id="submit-message" class="top-notification" role="status"
+            <div id="submitMessageSuccess" class="top-notification"
+                role="status"
                 aria-live="polite"></div>
 
+            <div id="submitMessageError" class="top-notification-error"></div>
+
             <div class="hr-form">
-                <form id="hr-form"
+                <form id="hrForm"
                     action="/frontend/html-files/home-html/home.html"
                     method="get">
-                    <label for="employee-id">Employee ID</label>
-                    <input type="text" name="employee-id" id="employee-id"
+                    <label for="employeeIdInput">Employee ID</label>
+                    <input type="text" name="employeeIdInput" id="employeeIdInput" maxlength="8"
                         required>
-                    <div id="employee-id-error" class="error-message"></div>
+                    <div id="employeeIdError" class="error-message"></div>
 
-                    <label for="request-type">Request Type:</label>
-                    <select name="request-type" id="request-type" required>
-                        <option value=""></option>
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" name="employeeName" id="employeeName">
+
+                    <label for="requestType">Request Type:</label>
+                    <select name="requestType" id="requestType" required>
+                        <option value></option>
                         <option value="Change Name">Change Name</option>
-                        <option value="Change Phone Number">Change Phone Number</option>
+                        <option value="Change Phone Number">Change Phone
+                            Number</option>
                         <option value="Change Email">Change Email</option>
-                        <option value="Change Nationality">Change Nationality</option>
-                        <option value="Change Department">Change Department</option>
+                        <option value="Change Nationality">Change
+                            Nationality</option>
+                        <option value="Change Department">Change
+                            Department</option>
                         <option value="Change Role">Change Role</option>
                     </select>
 
-                    <label for="details">Details:</label>
-                    <textarea id="details" name="details" rows="4"
+                    <label for="detailsInput">Details:</label>
+                    <textarea id="detailsInput" name="detailsInput" rows="4"
                         placeholder="Provide more details about your request..."
                         required></textarea>
 

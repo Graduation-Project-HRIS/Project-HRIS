@@ -111,7 +111,7 @@ button:hover {
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.top-notification.show {
+.top-notification-error.show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }

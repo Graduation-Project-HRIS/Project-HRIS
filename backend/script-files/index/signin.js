@@ -8,7 +8,7 @@ const passwordError = document.getElementById("passwordError");
 
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 1;
+const DB_VERSION = 4;
 
 const togglePasswordButton = document.getElementById("togglePassword");
 const passwordToggleText = document.getElementById("passwordToggleText");
@@ -101,30 +101,103 @@ function validatePassword() {
 
 userPasswordInput.addEventListener("input", validatePassword);
 
+function setupDatabase(event) {
+    const database = event.target.result;
+    const transaction = event.target.transaction;
+
+    let employeeStore;
+    let leaveStore;
+    let hrStore;
+
+    // =========================
+    // employees store
+    // =========================
+    if (!database.objectStoreNames.contains("employees")) {
+        employeeStore = database.createObjectStore("employees", {
+            keyPath: "id"
+        });
+    } else {
+        employeeStore = transaction.objectStore("employees");
+    }
+
+    if (!employeeStore.indexNames.contains("name")) {
+        employeeStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!employeeStore.indexNames.contains("email")) {
+        employeeStore.createIndex("email", "email", { unique: true });
+    }
+
+    if (!employeeStore.indexNames.contains("phoneNumber")) {
+        employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+    }
+
+    // =========================
+    // leaveRequests store
+    // =========================
+    if (!database.objectStoreNames.contains("leaveRequests")) {
+        leaveStore = database.createObjectStore("leaveRequests", {
+            keyPath: "leaveId"
+        });
+    } else {
+        leaveStore = transaction.objectStore("leaveRequests");
+    }
+
+    if (!leaveStore.indexNames.contains("employeeId")) {
+        leaveStore.createIndex("employeeId", "employeeId", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("name")) {
+        leaveStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("leaveType")) {
+        leaveStore.createIndex("leaveType", "leaveType", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("leaveDate")) {
+        leaveStore.createIndex("leaveDate", "leaveDate", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("startDate")) {
+        leaveStore.createIndex("startDate", "startDate", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("endDate")) {
+        leaveStore.createIndex("endDate", "endDate", { unique: false });
+    }
+
+    // =========================
+    // humanResourceRequests store
+    // =========================
+    if (!database.objectStoreNames.contains("humanResourceRequests")) {
+        hrStore = database.createObjectStore("humanResourceRequests", {
+            keyPath: "hrID"
+        });
+    } else {
+        hrStore = transaction.objectStore("humanResourceRequests");
+    }
+
+    if (!hrStore.indexNames.contains("employeeId")) {
+        hrStore.createIndex("employeeId", "employeeId", { unique: false });
+    }
+
+    if (!hrStore.indexNames.contains("name")) {
+        hrStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!hrStore.indexNames.contains("requestType")) {
+        hrStore.createIndex("requestType", "requestType", { unique: false });
+    }
+}
+
+
+
 function openDatabase() {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(DB_NAME, DB_VERSION);
 
-        request.onupgradeneeded = (e) => {
-            const database = e.target.result;
-
-            if (!database.objectStoreNames.contains("employees")) {
-                const employeeStore = database.createObjectStore("employees", { keyPath: "id" });
-
-                employeeStore.createIndex("name", "name", { unique: false });
-                employeeStore.createIndex("email", "email", { unique: true });
-                employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
-            }
-
-            if (!database.objectStoreNames.contains("leaveRequests")) {
-                const leaveStore = database.createObjectStore("leaveRequests", { keyPath: "leaveId" });
-
-                leaveStore.createIndex("employeeId", "employeeId", { unique: false });
-                leaveStore.createIndex("name", "name", { unique: false });
-                leaveStore.createIndex("leaveType", "leaveType", { unique: false });
-                leaveStore.createIndex("leaveDate", "leaveDate", { unique: false });
-            }
-        };
+        request.onupgradeneeded = setupDatabase;
 
         request.onsuccess = (e) => {
             const database = e.target.result;

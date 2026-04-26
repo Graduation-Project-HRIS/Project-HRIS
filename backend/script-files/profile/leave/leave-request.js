@@ -1,11 +1,11 @@
 let db = null;
 
 const DB_NAME = "EmployeeDB";
-const DB_VERSION = 1;
+const DB_VERSION = 4;
 
 const form = document.getElementById("leaveForm");
 
-const submitMessage = document.getElementById("submitMessage");
+const submitMessageSuccess = document.getElementById("submitMessageSuccess");
 const submitMessageError = document.getElementById("submitMessageError");
 
 const employeeIdInput = document.getElementById("employeeId");
@@ -25,35 +25,102 @@ if (submitButton) {
 
 openDatabase();
 
+function setupDatabase(event) {
+    const database = event.target.result;
+    const transaction = event.target.transaction;
+
+    let employeeStore;
+    let leaveStore;
+    let hrStore;
+
+    // =========================
+    // employees store
+    // =========================
+    if (!database.objectStoreNames.contains("employees")) {
+        employeeStore = database.createObjectStore("employees", {
+            keyPath: "id"
+        });
+    } else {
+        employeeStore = transaction.objectStore("employees");
+    }
+
+    if (!employeeStore.indexNames.contains("name")) {
+        employeeStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!employeeStore.indexNames.contains("email")) {
+        employeeStore.createIndex("email", "email", { unique: true });
+    }
+
+    if (!employeeStore.indexNames.contains("phoneNumber")) {
+        employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+    }
+
+    // =========================
+    // leaveRequests store
+    // =========================
+    if (!database.objectStoreNames.contains("leaveRequests")) {
+        leaveStore = database.createObjectStore("leaveRequests", {
+            keyPath: "leaveId"
+        });
+    } else {
+        leaveStore = transaction.objectStore("leaveRequests");
+    }
+
+    if (!leaveStore.indexNames.contains("employeeId")) {
+        leaveStore.createIndex("employeeId", "employeeId", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("name")) {
+        leaveStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("leaveType")) {
+        leaveStore.createIndex("leaveType", "leaveType", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("leaveDate")) {
+        leaveStore.createIndex("leaveDate", "leaveDate", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("startDate")) {
+        leaveStore.createIndex("startDate", "startDate", { unique: false });
+    }
+
+    if (!leaveStore.indexNames.contains("endDate")) {
+        leaveStore.createIndex("endDate", "endDate", { unique: false });
+    }
+
+    // =========================
+    // humanResourceRequests store
+    // =========================
+    if (!database.objectStoreNames.contains("humanResourceRequests")) {
+        hrStore = database.createObjectStore("humanResourceRequests", {
+            keyPath: "hrID"
+        });
+    } else {
+        hrStore = transaction.objectStore("humanResourceRequests");
+    }
+
+    if (!hrStore.indexNames.contains("employeeId")) {
+        hrStore.createIndex("employeeId", "employeeId", { unique: false });
+    }
+
+    if (!hrStore.indexNames.contains("name")) {
+        hrStore.createIndex("name", "name", { unique: false });
+    }
+
+    if (!hrStore.indexNames.contains("requestType")) {
+        hrStore.createIndex("requestType", "requestType", { unique: false });
+    }
+}
+
+
+
 function openDatabase() {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
-    request.onupgradeneeded = function (event) {
-        const database = event.target.result;
-
-        if (!database.objectStoreNames.contains("employees")) {
-            const employeeStore = database.createObjectStore("employees", {
-                keyPath: "id"
-            });
-
-            employeeStore.createIndex("name", "name", { unique: false });
-            employeeStore.createIndex("email", "email", { unique: true });
-            employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
-        }
-
-        if (!database.objectStoreNames.contains("leaveRequests")) {
-            const leaveStore = database.createObjectStore("leaveRequests", {
-                keyPath: "leaveId"
-            });
-
-            leaveStore.createIndex("employeeId", "employeeId", { unique: false });
-            leaveStore.createIndex("name", "name", { unique: false });
-            leaveStore.createIndex("leaveType", "leaveType", { unique: false });
-            leaveStore.createIndex("startDate", "startDate", { unique: false });
-            leaveStore.createIndex("endDate", "endDate", { unique: false });
-        }
-    };
-
+    request.onupgradeneeded = setupDatabase;
     request.onsuccess = function (event) {
         db = event.target.result;
 
@@ -240,14 +307,14 @@ function saveLeaveRequest(leaveData) {
 }
 
 function showSuccess(message) {
-    submitMessage.textContent = message;
-    submitMessage.classList.add("show");
+    submitMessageSuccess.textContent = message;
+    submitMessageSuccess.classList.add("show");
 
     submitMessageError.textContent = "";
     submitMessageError.classList.remove("show");
 
     setTimeout(function () {
-        submitMessage.classList.remove("show");
+        submitMessageSuccess.classList.remove("show");
     }, 3000);
 }
 
@@ -255,8 +322,8 @@ function showError(message) {
     submitMessageError.textContent = message;
     submitMessageError.classList.add("show");
 
-    submitMessage.textContent = "";
-    submitMessage.classList.remove("show");
+    submitMessageSuccess.textContent = "";
+    submitMessageSuccess.classList.remove("show");
 
     setTimeout(function () {
         submitMessageError.classList.remove("show");

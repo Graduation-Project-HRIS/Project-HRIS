@@ -30,6 +30,7 @@ const FILES_TO_CACHE = [
     "/frontend/html-files/support-groups/support-groups-departments/marketing-and-corporate-communications-group.html",
     "/frontend/html-files/support-groups/support-groups-departments/operations-group.html",
     "/frontend/html-files/support-groups/support-groups-index/support-groups-departments.html",
+    "/frontend/html-files/manager/hr-request/hr-requests.html",
 
     // Cached JS files
     "/backend/script-files/auth/role-ui.js",
@@ -54,6 +55,7 @@ const FILES_TO_CACHE = [
     "/styles/css-files/profile/profile.css",
     "/styles/css-files/support-group/digital-group/digital.css",
     "/styles/css-files/support-group/hr-css/hr-form.css",
+    "/styles/css-files/manager/hr-requests.css",
 
     // Cached Image files
     "/images/index-signin/hide-password.png",
