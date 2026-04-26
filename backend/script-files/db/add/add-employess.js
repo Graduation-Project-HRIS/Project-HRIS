@@ -82,11 +82,21 @@ function openDatabase() {
                 setFormState(false);
             };
 
-            setFormState(true);
+            Promise.resolve(
+                typeof window.seedDefaultEmployees === "function"
+                    ? window.seedDefaultEmployees(db)
+                    : undefined
+            )
+                .catch((error) => {
+                    console.error("Default employee seed failed:", error);
+                })
+                .finally(() => {
+                    setFormState(true);
 
-            console.log("Database opened successfully.");
+                    console.log("Database opened successfully.");
 
-            resolve(db);
+                    resolve(db);
+                });
         };
     });
 }

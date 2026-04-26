@@ -4,6 +4,8 @@ const AUTH_DB_VERSION = 1;
 const LOGIN_PAGE = "/frontend/html-files/index/index.html";
 const HOME_PAGE = "/frontend/html-files/home-html/home.html";
 
+
+
 function openAuthDatabase() {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(AUTH_DB_NAME, AUTH_DB_VERSION);
@@ -30,7 +32,19 @@ function openAuthDatabase() {
         };
 
         request.onsuccess = (e) => {
-            resolve(e.target.result);
+            const database = e.target.result;
+
+            Promise.resolve(
+                typeof window.seedDefaultEmployees === "function"
+                    ? window.seedDefaultEmployees(database)
+                    : undefined
+            )
+                .catch((error) => {
+                    console.error("Default employee seed failed:", error);
+                })
+                .finally(() => {
+                    resolve(database);
+                });
         };
 
         request.onerror = (e) => {
@@ -45,7 +59,6 @@ async function getCurrentUser() {
     if (!currentEmployeeId) {
         return null;
     }
-
     const database = await openAuthDatabase();
 
     return new Promise((resolve, reject) => {
@@ -133,10 +146,6 @@ async function initRoleBasedUI() {
     try {
         const currentUser = await getCurrentUser();
 
-        if (!currentUser) {
-            window.location.href = LOGIN_PAGE;
-            return;
-        }
 
         applyRoleBasedUI(currentUser);
         protectPage(currentUser);
