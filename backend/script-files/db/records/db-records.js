@@ -6,6 +6,7 @@ const DB_VERSION = 4;
 const importJsonButton = document.getElementById("importJsonButton");
 const refreshButton = document.getElementById("refreshButton");
 const recordsMessage = document.getElementById("recordsMessage");
+const searchBar = document.getElementById("searchBar");
 
 const employeeTableBody = document.getElementById("employeeTableBody");
 const leaveTableBody = document.getElementById("leaveTableBody");
@@ -21,6 +22,9 @@ function setupDatabase(event) {
     let leaveStore;
     let hrStore;
 
+    // =========================
+    // employees store
+    // =========================
     if (!database.objectStoreNames.contains("employees")) {
         employeeStore = database.createObjectStore("employees", {
             keyPath: "id"
@@ -40,12 +44,14 @@ function setupDatabase(event) {
     if (!employeeStore.indexNames.contains("phoneNumber")) {
         employeeStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
     }
-    
+
     if (!employeeStore.indexNames.contains("department")) {
         employeeStore.createIndex("department", "department", { unique: false });
     }
 
-
+    // =========================
+    // leaveRequests store
+    // =========================
     if (!database.objectStoreNames.contains("leaveRequests")) {
         leaveStore = database.createObjectStore("leaveRequests", {
             keyPath: "leaveId"
@@ -78,6 +84,9 @@ function setupDatabase(event) {
         leaveStore.createIndex("endDate", "endDate", { unique: false });
     }
 
+    // =========================
+    // humanResourceRequests store
+    // =========================
     if (!database.objectStoreNames.contains("humanResourceRequests")) {
         hrStore = database.createObjectStore("humanResourceRequests", {
             keyPath: "hrID"
@@ -106,11 +115,21 @@ function openDatabase() {
 
     request.onsuccess = function (event) {
         db = event.target.result;
+
+        db.onversionchange = function () {
+            db.close();
+            showMessage("Database changed. Refresh the page.", "red");
+        };
+
         showAllRecords();
     };
 
     request.onerror = function () {
         showMessage("Database could not open.", "red");
+    };
+
+    request.onblocked = function () {
+        showMessage("Close other tabs, then refresh.", "red");
     };
 }
 
@@ -119,7 +138,17 @@ if (importJsonButton) {
 }
 
 if (refreshButton) {
-    refreshButton.addEventListener("click", showAllRecords);
+    refreshButton.addEventListener("click", function () {
+        if (searchBar) {
+            searchBar.value = "";
+        }
+
+        showAllRecords();
+    });
+}
+
+if (searchBar) {
+    searchBar.addEventListener("input", searchAllRecords);
 }
 
 function importJsonRecords() {
@@ -212,6 +241,11 @@ function saveJsonRecords(records) {
 
     transaction.oncomplete = function () {
         showMessage("JSON records imported successfully.", "green");
+
+        if (searchBar) {
+            searchBar.value = "";
+        }
+
         showAllRecords();
     };
 
@@ -227,6 +261,127 @@ function showAllRecords() {
     showEmployees();
     showLeaveRequests();
     showHrRequests();
+}
+
+function searchAllRecords() {
+    if (!db) return;
+
+    const searchValue = searchBar.value.trim().toLowerCase();
+
+    if (searchValue === "") {
+        showAllRecords();
+        return;
+    }
+
+    searchEmployeesRecords(searchValue);
+    searchLeaveRecords(searchValue);
+    searchHrRecords(searchValue);
+}
+
+function searchEmployeesRecords(searchValue) {
+    const transaction = db.transaction("employees", "readonly");
+    const store = transaction.objectStore("employees");
+    const request = store.getAll();
+
+    request.onsuccess = function () {
+        const employees = request.result;
+
+        const filteredEmployees = employees.filter(function (employee) {
+            const id = String(employee.id || "").toLowerCase();
+            const name = String(employee.name || "").toLowerCase();
+            const email = String(employee.email || "").toLowerCase();
+            const gender = String(employee.gender || "").toLowerCase();
+            const nationality = String(employee.nationality || "").toLowerCase();
+            const phoneNumber = String(employee.phoneNumber || "").toLowerCase();
+            const role = String(employee.role || "").toLowerCase();
+            const department = String(employee.department || "").toLowerCase();
+
+            return (
+                id.includes(searchValue) ||
+                name.includes(searchValue) ||
+                email.includes(searchValue) ||
+                gender.includes(searchValue) ||
+                nationality.includes(searchValue) ||
+                phoneNumber.includes(searchValue) ||
+                role.includes(searchValue) ||
+                department.includes(searchValue)
+            );
+        });
+
+        displayEmployees(filteredEmployees);
+    };
+
+    request.onerror = function () {
+        showMessage("Employee search failed.", "red");
+    };
+}
+
+function searchLeaveRecords(searchValue) {
+    const transaction = db.transaction("leaveRequests", "readonly");
+    const store = transaction.objectStore("leaveRequests");
+    const request = store.getAll();
+
+    request.onsuccess = function () {
+        const leaveRequests = request.result;
+
+        const filteredLeaveRequests = leaveRequests.filter(function (leave) {
+            const leaveId = String(leave.leaveId || "").toLowerCase();
+            const employeeId = String(leave.employeeId || "").toLowerCase();
+            const name = String(leave.name || "").toLowerCase();
+            const leaveType = String(leave.leaveType || "").toLowerCase();
+            const startDate = String(leave.startDate || "").toLowerCase();
+            const endDate = String(leave.endDate || "").toLowerCase();
+            const details = String(leave.details || "").toLowerCase();
+
+            return (
+                leaveId.includes(searchValue) ||
+                employeeId.includes(searchValue) ||
+                name.includes(searchValue) ||
+                leaveType.includes(searchValue) ||
+                startDate.includes(searchValue) ||
+                endDate.includes(searchValue) ||
+                details.includes(searchValue)
+            );
+        });
+
+        displayLeaveRequests(filteredLeaveRequests);
+    };
+
+    request.onerror = function () {
+        showMessage("Leave request search failed.", "red");
+    };
+}
+
+function searchHrRecords(searchValue) {
+    const transaction = db.transaction("humanResourceRequests", "readonly");
+    const store = transaction.objectStore("humanResourceRequests");
+    const request = store.getAll();
+
+    request.onsuccess = function () {
+        const hrRequests = request.result;
+
+        const filteredHrRequests = hrRequests.filter(function (hrRequest) {
+            const hrID = String(hrRequest.hrID || "").toLowerCase();
+            const employeeId = String(hrRequest.employeeId || "").toLowerCase();
+            const name = String(hrRequest.name || "").toLowerCase();
+            const requestType = String(hrRequest.requestType || "").toLowerCase();
+            const details = String(hrRequest.details || "").toLowerCase();
+
+            return (
+                hrID.includes(searchValue) ||
+                employeeId.includes(searchValue) ||
+                name.includes(searchValue) ||
+                requestType.includes(searchValue) ||
+                details.includes(searchValue)
+            );
+        });
+
+        displayHrRequests(filteredHrRequests);
+    };
+
+    request.onerror = function () {
+        showMessage("HR request search failed.", "red");
+    };
 }
 
 function showEmployees() {
@@ -260,14 +415,14 @@ function displayEmployees(employees) {
 
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${employee.id}</td>
-            <td>${employee.name}</td>
-            <td>${employee.email}</td>
-            <td>${employee.gender}</td>
-            <td>${employee.nationality}</td>
-            <td>${employee.phoneNumber}</td>
-            <td>${employee.role}</td>
-            <td>${employee.department}</td>
+            <td>${employee.id || ""}</td>
+            <td>${employee.name || ""}</td>
+            <td>${employee.email || ""}</td>
+            <td>${employee.gender || ""}</td>
+            <td>${employee.nationality || ""}</td>
+            <td>${employee.phoneNumber || ""}</td>
+            <td>${employee.role || ""}</td>
+            <td>${employee.department || ""}</td>
         `;
 
         employeeTableBody.appendChild(row);
@@ -305,13 +460,13 @@ function displayLeaveRequests(leaveRequests) {
 
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${leave.leaveId}</td>
-            <td>${leave.employeeId}</td>
-            <td>${leave.name}</td>
-            <td>${leave.leaveType}</td>
-            <td>${leave.startDate}</td>
-            <td>${leave.endDate}</td>
-            <td>${leave.details}</td>
+            <td>${leave.leaveId || ""}</td>
+            <td>${leave.employeeId || ""}</td>
+            <td>${leave.name || ""}</td>
+            <td>${leave.leaveType || ""}</td>
+            <td>${leave.startDate || ""}</td>
+            <td>${leave.endDate || ""}</td>
+            <td>${leave.details || ""}</td>
         `;
 
         leaveTableBody.appendChild(row);
@@ -349,11 +504,11 @@ function displayHrRequests(hrRequests) {
 
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${hrRequest.hrID}</td>
-            <td>${hrRequest.employeeId}</td>
-            <td>${hrRequest.name}</td>
-            <td>${hrRequest.requestType}</td>
-            <td>${hrRequest.details}</td>
+            <td>${hrRequest.hrID || ""}</td>
+            <td>${hrRequest.employeeId || ""}</td>
+            <td>${hrRequest.name || ""}</td>
+            <td>${hrRequest.requestType || ""}</td>
+            <td>${hrRequest.details || ""}</td>
         `;
 
         hrTableBody.appendChild(row);
