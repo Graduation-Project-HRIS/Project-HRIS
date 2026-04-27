@@ -32,6 +32,7 @@ const FILES_TO_CACHE = [
     "/frontend/html-files/support-groups/support-groups-index/support-groups-departments.html",
     "/frontend/html-files/manager/hr-request/hr-requests.html",
     "/frontend/html-files/manager/records/db-records.html",
+    "/frontend/html-files/chart/chart.html",
 
     // Cached JS files
     "/backend/script-files/auth/role-ui.js",
@@ -46,7 +47,8 @@ const FILES_TO_CACHE = [
     "/register-unregister-check.js",
     "/backend/script-files/db/records/db-records.js",
     "/backend/script-files/db/records/fetch-data.js",
-    "/backend/script-files/support-group/hr-group/hr-requests.js"
+    "/backend/script-files/support-group/hr-group/hr-requests.js",
+    "/backend/script-files/chart/chart.js",
 
     // Cached CSS files
     "/styles/css-files/home-css/home.css",
@@ -60,6 +62,7 @@ const FILES_TO_CACHE = [
     "/styles/css-files/support-group/digital-group/digital.css",
     "/styles/css-files/support-group/hr-css/hr-form.css",
     "/styles/css-files/manager/hr-requests.css",
+    "/styles/css-files/chart/chart.css",
 
     // Cached Image files
     "/images/index-signin/hide-password.png",
