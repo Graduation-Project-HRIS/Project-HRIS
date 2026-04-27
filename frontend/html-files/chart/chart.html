@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DB Chart</title>
+
+        <link rel="stylesheet"
+            href="/styles/css-files/manager/employee-list.css">
+        <link rel="stylesheet" href="/styles/css-files/chart/chart.css">
+    </head>
+
+    <body data-protected-page="true" data-allowed-roles="Manager">
+
+        <main class="chart-page">
+
+            <aside class="chart-sidebar">
+                <h2>Database Charts</h2>
+                <p>Choose the data and chart style.</p>
+
+                <div class="chart-control">
+                    <label for="roleFilter">Filter by Role</label>
+
+                    <select id="roleFilter">
+                        <option value="all">All Employees</option>
+                        <option value="manager">Managers Only</option>
+                        <option value="employee">Employees Only</option>
+                    </select>
+                </div>
+
+                <div class="chart-control">
+                    <label for="dataFilter">Choose Data</label>
+
+                    <select id="dataFilter">
+                        <option value="total">Total Records</option>
+                        <option value="department">Employees by
+                            Department</option>
+                        <option value="role">Employees by Role</option>
+                        <option value="leave">Leave Requests by Type</option>
+                        <option value="hr">HR Requests by Type</option>
+                    </select>
+                </div>
+
+                <div class="chart-control">
+                    <label for="chartTypeFilter">Chart Type</label>
+
+                    <select id="chartTypeFilter">
+                        <option value="bar">Bar Chart</option>
+                        <option value="pie">Pie Chart</option>
+                        <option value="doughnut">Doughnut Chart</option>
+                        <option value="horizontalBar">Horizontal Bar
+                            Chart</option>
+                    </select>
+                </div>
+
+                <div id="chartMessage" class="chart-message"></div>
+
+                <a class="back-button"
+                    href="/frontend/html-files/manager/index/manager-index.html">
+                    Go Back
+                </a>
+            </aside>
+
+            <section class="chart-main">
+                <div class="chart-header">
+                    <h3 id="chartTitle">Total Records</h3>
+                    <p>The chart updates when you change the options.</p>
+                </div>
+
+                <div class="big-chart-card">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </section>
+
+        </main>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+
+        <script src="/register-unregister-check.js"></script>
+        <script src="/backend/script-files/chart/chart.js"></script>
+        <script src="/backend/script-files/auth/role-ui.js"></script>
+    </body>
+</html>
