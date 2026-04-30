@@ -142,6 +142,7 @@
         const isProtectedPage = body.dataset.protectedPage === "true";
         const allowedRolesText = body.dataset.allowedRoles;
 
+
         if (!isProtectedPage || !allowedRolesText) {
             return;
         }
